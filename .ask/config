@@ -1,0 +1,33 @@
+{
+  "deploy_settings": {
+    "default": {
+      "skill_id": "amzn1.ask.skill.9484ba84-35a0-4de5-b5b6-9002f69372a0",
+      "was_cloned": false,
+      "merge": {},
+      "resources": {
+        "manifest": {
+          "eTag": "168ca1d5454d7ae87f1e9a4a51c2550d"
+        },
+        "interactionModel": {
+          "en-US": {
+            "eTag": "f58521535104c50db83812b15fb1de75"
+          }
+        },
+        "lambda": [
+          {
+            "alexaUsage": [
+              "custom/default"
+            ],
+            "arn": "arn:aws:lambda:us-east-1:679180307287:function:StarWarsDatabank",
+            "awsRegion": "us-east-1",
+            "codeUri": "lambda/custom",
+            "functionName": "StarWarsDatabank",
+            "handler": "index.handler",
+            "revisionId": "297dd570-abfb-40ae-a2b9-4f09163c806c",
+            "runtime": "nodejs8.10"
+          }
+        ]
+      }
+    }
+  }
+}

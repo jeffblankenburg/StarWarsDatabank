@@ -1,0 +1,72 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "star wars databank",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "CharacterIntent",
+                    "slots": [
+                        {
+                            "name": "character",
+                            "type": "Character"
+                        }
+                    ],
+                    "samples": [
+                        "{character}",
+                        "who is {character}",
+                        "give me information about {character}",
+                        "tell me about {character}"
+                    ]
+                },
+                {
+                    "name": "DroidIntent",
+                    "slots": [
+                        {
+                            "name": "droid",
+                            "type": "Droid"
+                        }
+                    ],
+                    "samples": [
+                        "{droid}",
+                        "who is {droid}",
+                        "what is {droid}",
+                        "give me information about {droid}",
+                        "tell me about {droid}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "Character",
+                    "values": [
+                        {"name": { "value": "Darth Vader","synonyms": ["vader"]}},
+                        {"name": { "value": "Luke Skywalker","synonyms": []}}
+                    ]
+                },
+                {
+                    "name": "Droid",
+                    "values": [
+                        {"name": { "value": "R2-D2","synonyms": ["artoo", "artoo deetoo"]}},
+                        {"name": { "value": "C-3PO","synonyms": ["threepio", "see threepio"]}}
+                    ]
+                }
+            ]
+        }
+    }
+}
