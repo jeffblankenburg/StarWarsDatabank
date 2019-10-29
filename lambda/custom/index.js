@@ -1,8 +1,3 @@
-/* *
- * This sample demonstrates handling intents from an Alexa skill using the Alexa Skills Kit SDK (v2).
- * Please visit https://alexa.design/cookbook for additional examples on implementing slots, dialog management,
- * session persistence, api calls, and more.
- * */
 const Alexa = require('ask-sdk-core');
 const https = require("https");
 const Airtable = require("airtable");
@@ -12,12 +7,15 @@ const LaunchRequestHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest';
     },
-    handle(handlerInput) {
-        const speakOutput = "Welcome.";
+    async handle(handlerInput) {
+        const welcome = await getRandomSpeech("Welcome");
+        const actionQuery = await getRandomSpeech("ActionQuery");
+
+        var speakOutput = welcome + " " + actionQuery;
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
-            .reprompt(speakOutput)
+            .reprompt(actionQuery)
             .getResponse();
     }
 };
@@ -32,7 +30,7 @@ const CharacterIntentHandler = {
         var resolvedWords = getResolvedWords(handlerInput, "character");
         var item;
         if (resolvedWords != undefined) {
-            item = await getSpecificItem("Character", resolvedWords);
+            item = await getSpecificData("Character", resolvedWords);
         }
         
 
@@ -52,6 +50,141 @@ const DroidIntentHandler = {
     },
     handle(handlerInput) {
         const speakOutput = "You asked me for a droid.";
+
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .reprompt(speakOutput)
+            .getResponse();
+    }
+};
+
+const CreatureIntentHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'CreatureIntent';
+    },
+    handle(handlerInput) {
+        const speakOutput = "You asked me for a creature.";
+
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .reprompt(speakOutput)
+            .getResponse();
+    }
+};
+
+const VehicleIntentHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'VehicleIntent';
+    },
+    handle(handlerInput) {
+        const speakOutput = "You asked me for a vehicle.";
+
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .reprompt(speakOutput)
+            .getResponse();
+    }
+};
+
+const WeaponIntentHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'WeaponIntent';
+    },
+    handle(handlerInput) {
+        const speakOutput = "You asked me for a weapon.";
+
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .reprompt(speakOutput)
+            .getResponse();
+    }
+};
+
+const TechnologyIntentHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'TechnologyIntent';
+    },
+    handle(handlerInput) {
+        const speakOutput = "You asked me for a technology.";
+
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .reprompt(speakOutput)
+            .getResponse();
+    }
+};
+
+const ThingIntentHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'ThingIntent';
+    },
+    handle(handlerInput) {
+        const speakOutput = "You asked me for a thing.";
+
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .reprompt(speakOutput)
+            .getResponse();
+    }
+};
+
+const LocationIntentHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'LocationIntent';
+    },
+    handle(handlerInput) {
+        const speakOutput = "You asked me for a location.";
+
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .reprompt(speakOutput)
+            .getResponse();
+    }
+};
+
+const SpeciesIntentHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'SpeciesIntent';
+    },
+    handle(handlerInput) {
+        const speakOutput = "You asked me for a species.";
+
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .reprompt(speakOutput)
+            .getResponse();
+    }
+};
+
+const OrganizationIntentHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'OrganizationIntent';
+    },
+    handle(handlerInput) {
+        const speakOutput = "You asked me for an organization.";
+
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .reprompt(speakOutput)
+            .getResponse();
+    }
+};
+
+const MediaIntentHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'MediaIntent';
+    },
+    handle(handlerInput) {
+        const speakOutput = "You asked me for a media.";
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -144,11 +277,18 @@ const ErrorHandler = {
     }
 };
 
-async function getSpecificItem(table, resolvedWords) {
+async function getRandomSpeech(table) {
+    const response = await httpGet(process.env.airtable_base_speech, "&filterByFormula=AND(IsDisabled%3DFALSE())", table);
+    const speech = getRandomItem(response.records);
+    console.log("RANDOM SPEECH = " + JSON.stringify(speech));
+    return speech.fields.VoiceResponse;
+}
+
+async function getSpecificData(table, resolvedWords) {
     const response = await httpGet(process.env.airtable_base_data, "&filterByFormula=AND(IsDisabled%3DFALSE(),Name%3D%22" + encodeURIComponent(resolvedWords) + "%22)", table);
-    const item = response.records[0];
-    console.log("SPECIFIC ITEM = " + JSON.stringify(item));
-    return item;
+    const data = response.records[0];
+    console.log("SPECIFIC ITEM = " + JSON.stringify(data));
+    return data;
 }
 
 function getSpokenWords(handlerInput, slot) {
@@ -169,12 +309,23 @@ function getResolvedWords(handlerInput, slot) {
         && handlerInput.requestEnvelope.request.intent.slots
         && handlerInput.requestEnvelope.request.intent.slots[slot]
         && handlerInput.requestEnvelope.request.intent.slots[slot].resolutions
+        && handlerInput.requestEnvelope.request.intent.slots[slot].resolutions.resolutionsPerAuthority
         && handlerInput.requestEnvelope.request.intent.slots[slot].resolutions.resolutionsPerAuthority[0]
+        && handlerInput.requestEnvelope.request.intent.slots[slot].resolutions.resolutionsPerAuthority[0].values
         && handlerInput.requestEnvelope.request.intent.slots[slot].resolutions.resolutionsPerAuthority[0].values[0]
         && handlerInput.requestEnvelope.request.intent.slots[slot].resolutions.resolutionsPerAuthority[0].values[0].value
         && handlerInput.requestEnvelope.request.intent.slots[slot].resolutions.resolutionsPerAuthority[0].values[0].value.name)
         return handlerInput.requestEnvelope.request.intent.slots.character.resolutions.resolutionsPerAuthority[0].values[0].value.name
     else return undefined;
+}
+
+function getRandomItem(items) {
+    var random = getRandom(0, items.length-1);
+    return items[random];
+}
+
+function getRandom(min, max){
+    return Math.floor(Math.random() * (max-min+1)+min);
 }
 
 function httpGet(base, filter, table = "Data"){
@@ -189,7 +340,7 @@ function httpGet(base, filter, table = "Data"){
         method: "GET",
     };
 
-    console.log("FULL PATH = http://" + options.host + options.path);
+    //console.log("FULL PATH = http://" + options.host + options.path);
     
     return new Promise(((resolve, reject) => {
       const request = https.request(options, (response) => {
@@ -241,6 +392,15 @@ exports.handler = Alexa.SkillBuilders.custom()
         LaunchRequestHandler,
         CharacterIntentHandler,
         DroidIntentHandler,
+        CreatureIntentHandler,
+        VehicleIntentHandler,
+        WeaponIntentHandler,
+        TechnologyIntentHandler,
+        ThingIntentHandler,
+        LocationIntentHandler,
+        SpeciesIntentHandler,
+        OrganizationIntentHandler,
+        MediaIntentHandler,
         HelpIntentHandler,
         CancelAndStopIntentHandler,
         SessionEndedRequestHandler,
