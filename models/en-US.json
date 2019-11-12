@@ -1,809 +1,4398 @@
 {
-    "interactionModel": {
-        "languageModel": {
-            "invocationName": "star wars databank",
-            "intents": [
-                {
-                    "name": "AMAZON.CancelIntent",
-                    "samples": []
-                },
-                {
-                    "name": "AMAZON.HelpIntent",
-                    "samples": []
-                },
-                {
-                    "name": "AMAZON.StopIntent",
-                    "samples": []
-                },
-                {
-                    "name": "AMAZON.NavigateHomeIntent",
-                    "samples": []
-                },
-                {
-                    "name": "CharacterIntent",
-                    "slots": [
-                        {
-                            "name": "character",
-                            "type": "Character"
-                        }
-                    ],
-                    "samples": [
-                        "{character}",
-                        "who is {character}",
-                        "give me information about {character}",
-                        "tell me about {character}"
-                    ]
-                },
-                {
-                    "name": "DroidIntent",
-                    "slots": [
-                        {
-                            "name": "droid",
-                            "type": "Droid"
-                        }
-                    ],
-                    "samples": [
-                        "{droid}",
-                        "who is {droid}",
-                        "what is {droid}",
-                        "give me information about {droid}",
-                        "tell me about {droid}"
-                    ]
-                },
-                {
-                    "name": "CreatureIntent",
-                    "slots": [
-                        {
-                            "name": "creature",
-                            "type": "Creature"
-                        }
-                    ],
-                    "samples": [
-                        "{creature}",
-                        "who is {creature}",
-                        "what is {creature}",
-                        "give me information about {creature}",
-                        "tell me about {creature}"
-                    ]
-                },
-                {
-                    "name": "VehicleIntent",
-                    "slots": [
-                        {
-                            "name": "vehicle",
-                            "type": "Vehicle"
-                        }
-                    ],
-                    "samples": [
-                        "{vehicle}",
-                        "who is {vehicle}",
-                        "what is {vehicle}",
-                        "give me information about {vehicle}",
-                        "tell me about {vehicle}"
-                    ]
-                },
-                {
-                    "name": "WeaponIntent",
-                    "slots": [
-                        {
-                            "name": "weapon",
-                            "type": "Weapon"
-                        }
-                    ],
-                    "samples": [
-                        "{weapon}",
-                        "who is {weapon}",
-                        "what is {weapon}",
-                        "give me information about {weapon}",
-                        "tell me about {weapon}"
-                    ]
-                },
-                {
-                    "name": "TechnologyIntent",
-                    "slots": [
-                        {
-                            "name": "technology",
-                            "type": "Technology"
-                        }
-                    ],
-                    "samples": [
-                        "{technology}",
-                        "who is {technology}",
-                        "what is {technology}",
-                        "give me information about {technology}",
-                        "tell me about {technology}"
-                    ]
-                },
-                {
-                    "name": "ThingIntent",
-                    "slots": [
-                        {
-                            "name": "thing",
-                            "type": "Thing"
-                        }
-                    ],
-                    "samples": [
-                        "{thing}",
-                        "who is {thing}",
-                        "what is {thing}",
-                        "give me information about {thing}",
-                        "tell me about {thing}"
-                    ]
-                },
-                {
-                    "name": "LocationIntent",
-                    "slots": [
-                        {
-                            "name": "location",
-                            "type": "Location"
-                        }
-                    ],
-                    "samples": [
-                        "{location}",
-                        "who is {location}",
-                        "what is {location}",
-                        "give me information about {location}",
-                        "tell me about {location}"
-                    ]
-                },
-                {
-                    "name": "SpeciesIntent",
-                    "slots": [
-                        {
-                            "name": "species",
-                            "type": "Species"
-                        }
-                    ],
-                    "samples": [
-                        "{species}",
-                        "who is {species}",
-                        "what is {species}",
-                        "give me information about {species}",
-                        "tell me about {species}"
-                    ]
-                },
-                {
-                    "name": "OrganizationIntent",
-                    "slots": [
-                        {
-                            "name": "organization",
-                            "type": "Organization"
-                        }
-                    ],
-                    "samples": [
-                        "{organization}",
-                        "who is {organization}",
-                        "what is {organization}",
-                        "give me information about {organization}",
-                        "tell me about {organization}"
-                    ]
-                },
-                {
-                    "name": "MediaIntent",
-                    "slots": [
-                        {
-                            "name": "media",
-                            "type": "Media"
-                        }
-                    ],
-                    "samples": [
-                        "{media}",
-                        "who is {media}",
-                        "what is {media}",
-                        "give me information about {media}",
-                        "tell me about {media}"
-                    ]
-                }
-            ],
-            "types": [
-                {
-                    "name": "Character",
-                    "values": [
-                        {"id": "reckZIgK7rYUXmFUS", "name": { "value": "Aayla Secura","synonyms": []}},
-{"id": "recYU0ccW00w7CTLu", "name": { "value": "Adi Gallia","synonyms": []}},
-{"id": "recZdWSzSwoX38gF2", "name": { "value": "Admiral Ackbar","synonyms": ["ackbar"]}},
-{"id": "recXaTJTWBehhHM5D", "name": { "value": "Admiral Coburn","synonyms": ["coburn"]}},
-{"id": "recBDZBamBJBuMs0i", "name": { "value": "Admiral Garrick Versio","synonyms": ["garrick versio"]}},
-{"id": "recmPAgloDcoSsRXU", "name": { "value": "Admiral Kassius Konstantine","synonyms": ["kassius constantine"]}},
-{"id": "recOtWb0giTcPvqIz", "name": { "value": "Admiral Kilian","synonyms": ["killian"]}},
-{"id": "recgH6LbmXSDQ6Eqi", "name": { "value": "Admiral Motti","synonyms": ["motti", "motty"]}},
-{"id": "recvAlSD2xUfuVm5G", "name": { "value": "Admiral Ozzel","synonyms": ["ozzel"]}},
-{"id": "recV2jPvats7rwMBd", "name": { "value": "Admiral Piett","synonyms": ["piett"]}},
-{"id": "rec1xpsl0L7qZpcMB", "name": { "value": "Admiral Raddus","synonyms": ["raddus"]}},
-{"id": "recgyo8TYBfbw6yAK", "name": { "value": "Admiral Statura","synonyms": ["stratura"]}},
-{"id": "recqIQBqS0Q2av83C", "name": { "value": "Admiral Trench","synonyms": ["trench"]}},
-{"id": "recrZR7h0as3v2tOx", "name": { "value": "Aemon Gremm","synonyms": ["gremm"]}},
-{"id": "rec1nTAAFY54eQe0I", "name": { "value": "Agen Kolar","synonyms": []}},
-{"id": "recbxJcF7ZkER0OO3", "name": { "value": "Agent Del Meeko","synonyms": ["del meeko"]}},
-{"id": "recGe6ECrnIZlOvWV", "name": { "value": "Agent Gideon Hask","synonyms": ["gideon hask"]}},
-{"id": "recXXkseQavvsGDYi", "name": { "value": "Ahsoka Tano","synonyms": ["ahsoka"]}},
-{"id": "rec68pG47kO5f00t0", "name": { "value": "Alcida-Auka","synonyms": []}},
-{"id": "receyYJDAj9dftDqr", "name": { "value": "Aleksandr Kallus","synonyms": []}},
-{"id": "recEYDTfN9jlwHrld", "name": { "value": "Alora","synonyms": []}},
-{"id": "recLjiP7UdWlB4WbK", "name": { "value": "Alrich Wren","synonyms": []}},
-{"id": "recIAT170u3tXTTOI", "name": { "value": "Alton Kastle","synonyms": []}},
-{"id": "recasvPu8JnC0yenh", "name": { "value": "Amda Wabo","synonyms": []}},
-{"id": "rectrygLNjELfq2Wd", "name": { "value": "Amilyn Holdo","synonyms": ["holdo", "admiral holdo", "vice admiral holdo"]}},
-{"id": "reckPpRopHyfedgYi", "name": { "value": "Amis","synonyms": []}},
-{"id": "recv0oLShR9MxnJxi", "name": { "value": "Anakin Skywalker","synonyms": ["anakin"]}},
-{"id": "recS3I7pWtHlEo7iW", "name": { "value": "Appo","synonyms": []}},
-{"id": "reccDCyTmFWlI6ghS", "name": { "value": "Arashell Sar","synonyms": []}},
-{"id": "recRmKDGT4olTKU5H", "name": { "value": "Arc Trooper Echo","synonyms": ["echo"]}},
-{"id": "recz8swGVX5Ua81GM", "name": { "value": "Arc Trooper Fives","synonyms": ["fives", "CT275555"]}},
-{"id": "rectYFMlNvMZYUlAD", "name": { "value": "Argus Six-Eyes Panox","synonyms": ["argus panox"]}},
-{"id": "recXPXm2S8FJO79jx", "name": { "value": "Asajj Ventress","synonyms": []}},
-{"id": "recPibKVyh3ICO6eQ", "name": { "value": "Ask Aak","synonyms": []}},
-{"id": "rechvAACbHKeMSGsH", "name": { "value": "Atai Molec","synonyms": []}},
-{"id": "rec6c2mXW5imQb7Sa", "name": { "value": "Athgar Heece","synonyms": []}},
-{"id": "recPHcUO2aMslGCcX", "name": { "value": "Aunt Z","synonyms": ["Z'Vk'Thkrkza"]}},
-{"id": "rec2xLtyJatHW01rB", "name": { "value": "Aurodia Ventafoli","synonyms": []}},
-{"id": "recotQHS6p5Z3RdbF", "name": { "value": "Aurra Sing","synonyms": []}},
-{"id": "rec4KvYeYZZhR9ERh", "name": { "value": "Azmorigan","synonyms": []}},
-{"id": "recMDtSnKydaO5PNZ", "name": { "value": "Bail Organa","synonyms": []}},
-{"id": "rec4uL7OnPa4BSYRm", "name": { "value": "Bala-Tik","synonyms": []}},
-{"id": "recQNGTV2UA5oBy0M", "name": { "value": "Barada","synonyms": []}},
-{"id": "recCC0q3zYw3FIOH3", "name": { "value": "Bargwill Tomder","synonyms": []}},
-{"id": "recwsN9wsrdFtWFON", "name": { "value": "Baron Attsmun","synonyms": ["baron yasto attsmun", "yasto attsmun"]}},
-{"id": "recfoXnHe0xJXs8Yl", "name": { "value": "Baze Malbus","synonyms": ["baze"]}},
-{"id": "rec8ObQVtC4TUvvH8", "name": { "value": "Beru Lars","synonyms": ["aunt beru", "beru", "beru whitesun"]}},
-{"id": "recMZSGfi6HpN6uVi", "name": { "value": "Bib Fortuna","synonyms": []}},
-{"id": "recSN5s2YWXBWR25S", "name": { "value": "Boba Fett","synonyms": []}},
-{"id": "reco68DH1D1tEUbV4", "name": { "value": "Bodhi Rook","synonyms": []}},
-{"id": "recnQIT4hNtC8KCrt", "name": { "value": "Boss Nass","synonyms": []}},
-{"id": "reca2NxG2VoHR3Ot3", "name": { "value": "Captain Cassian Andor","synonyms": ["cassian", "cassian andor", "captain andor"]}},
-{"id": "recqHFLkveIoEGbr3", "name": { "value": "Chewbacca","synonyms": ["chewie"]}},
-{"id": "reclXeh1C8nsTQ2HG", "name": { "value": "Chirrut Îmwe","synonyms": ["chirrut imway", "chirrut"]}},
-{"id": "rectCT0UsI2u74aAY", "name": { "value": "Cliegg Lars","synonyms": ["lars"]}},
-{"id": "rec2lRrbAanYRHs5P", "name": { "value": "Clone Commander Bly","synonyms": ["bly", "commander bly"]}},
-{"id": "reczOw4EzL2dSMPhI", "name": { "value": "Count Dooku","synonyms": ["dooku"]}},
-{"id": "recXdpAvxShipJsZQ", "name": { "value": "Darth Maul","synonyms": ["maul"]}},
-{"id": "reconNcFfdOp4Y8s9", "name": { "value": "Darth Vader","synonyms": ["vader"]}},
-{"id": "recKZnPE0NltHMfss", "name": { "value": "Director Orson Krennic","synonyms": ["orson krennic", "krennic", "director krennic"]}},
-{"id": "recsNM3SQImxEksAp", "name": { "value": "Droopy McCool","synonyms": []}},
-{"id": "reckXmqWRV2H4a5WD", "name": { "value": "Dryden Vos","synonyms": []}},
-{"id": "recexI83JtbG2Ytbw", "name": { "value": "Emporer Palpatine","synonyms": ["the emporer", "senator palpatine", "palpatine", "darth sidious"]}},
-{"id": "recfwP8qSiUIrs9D8", "name": { "value": "Enfys Nest","synonyms": []}},
-{"id": "rec8FQg9flOb7d7d4", "name": { "value": "Finn","synonyms": ["FN 2187"]}},
-{"id": "recjcI3oUpCQTTz26", "name": { "value": "General Grievous","synonyms": ["grievous"]}},
-{"id": "recqUYjEqd9Dwjpf8", "name": { "value": "General Hux","synonyms": ["hux"]}},
-{"id": "recLjut1cYy72GMPr", "name": { "value": "General Veers","synonyms": ["veers"]}},
-{"id": "recw315ENdgpUFY2N", "name": { "value": "Grand Moff Tarkin","synonyms": ["tarkin", "grand moff"]}},
-{"id": "recOHjnnxIjAW88CH", "name": { "value": "Greedo","synonyms": []}},
-{"id": "recSZNMS62cfaztqM", "name": { "value": "Han Solo","synonyms": ["han", "solo"]}},
-{"id": "recbFKJGtMUlOP7Xr", "name": { "value": "Hondo Ohnaka","synonyms": []}},
-{"id": "rec1ArdBg83YXv0ev", "name": { "value": "Jabba the Hutt","synonyms": ["jabba"]}},
-{"id": "reca8cEaiEOBjiWXE", "name": { "value": "Jango Fett","synonyms": ["jango", "fett"]}},
-{"id": "recQ0J2HG8NUTpZj0", "name": { "value": "Jar Jar Binks","synonyms": ["jar jar"]}},
-{"id": "recTxiVWaoIOXQAgV", "name": { "value": "Joh Yowza","synonyms": []}},
-{"id": "rec225NS0tB4mAqxP", "name": { "value": "Jyn Erso","synonyms": ["gin"]}},
-{"id": "rec0q63tFkUPEOd3n", "name": { "value": "Kedpin Shoklop","synonyms": ["ked"]}},
-{"id": "recBIu7vwPANAUPeM", "name": { "value": "King Prana","synonyms": []}},
-{"id": "recNoewT5mlpkADwe", "name": { "value": "Kylo Ren","synonyms": ["kylo"]}},
-{"id": "recyPSF8dDAvnx5vq", "name": { "value": "Lady Proxima","synonyms": []}},
-{"id": "rec21FPwJ8UlHMTQE", "name": { "value": "Lando Calrissian","synonyms": ["lando"]}},
-{"id": "recomn3Ch2oj9MDMi", "name": { "value": "Leia Organa","synonyms": ["leia", "princess leia"]}},
-{"id": "recymOcRsTPszUfu8", "name": { "value": "Luke Skywalker","synonyms": ["luke"]}},
-{"id": "recFLmeXQorOUP6Jt", "name": { "value": "Mace Windu","synonyms": []}},
-{"id": "reccmk0vIWf2w5iBH", "name": { "value": "Max Rebo","synonyms": []}},
-{"id": "recMQyK6GJVpofFrA", "name": { "value": "Neepers Panpick","synonyms": []}},
-{"id": "recCRKoz5uJt6jk4L", "name": { "value": "Nien Nunb","synonyms": []}},
-{"id": "rec7mCQD0sPueBQEx", "name": { "value": "Nute Gunray","synonyms": []}},
-{"id": "recs0pQAaE1CNI9DG", "name": { "value": "Obi-Wan Kenobi","synonyms": ["obi wan"]}},
-{"id": "recMYPjQNaFejiJaX", "name": { "value": "Owen Lars","synonyms": ["uncle owen"]}},
-{"id": "recbYStoNAFKB93O9", "name": { "value": "Padmé Amidala","synonyms": ["Padmé", "queen amidala", "senator amidala"]}},
-{"id": "recj94cA64MCptOjD", "name": { "value": "Plo Koon","synonyms": []}},
-{"id": "rec4DmLhZiZqHd4b3", "name": { "value": "Po Nudo","synonyms": []}},
-{"id": "recUgVw43OmqEE1YB", "name": { "value": "Poe Dameron","synonyms": ["poe"]}},
-{"id": "recvz4rPZI4CANM7E", "name": { "value": "Qi'Ra","synonyms": ["kyra"]}},
-{"id": "recRx8EQ67roqqxtJ", "name": { "value": "Qui-Gon Jinn","synonyms": ["qui gonn"]}},
-{"id": "recWGS9p7GyL946vM", "name": { "value": "Ratts Tyerell","synonyms": ["ratts"]}},
-{"id": "recGpTsKpp6Jy9Nib", "name": { "value": "Rey","synonyms": []}},
-{"id": "recmJ5ZIzmDJrPcMC", "name": { "value": "Salacious B. Crumb","synonyms": []}},
-{"id": "recfT2cWuJobNlFni", "name": { "value": "Saw Gerrera","synonyms": []}},
-{"id": "recEyEr1sHlVuqFVZ", "name": { "value": "Shmi Skywalker Lars","synonyms": ["shmi", "skywalker", "lars"]}},
-{"id": "rec6domfX39fjThrx", "name": { "value": "Sy Snootles","synonyms": []}},
-{"id": "recHYWQAaSu7zXTDk", "name": { "value": "Tasu Leech","synonyms": []}},
-{"id": "recrjRxADGkJF3jfe", "name": { "value": "Tobias Beckett","synonyms": []}},
-{"id": "recQnj1QG7m3rwQlw", "name": { "value": "Watto","synonyms": []}},
-{"id": "recKO1t96oBmiEh5Z", "name": { "value": "Wedge Antilles","synonyms": ["wedge"]}}
-                    ]
-                },
-                {
-                    "name": "Droid",
-                    "values": [
-                        {"id": "recfOAAulOIu87n7e", "name": { "value": "2-1B","synonyms": []}},
-{"id": "rec2f062O1QTaSpRf", "name": { "value": "4-LOM","synonyms": []}},
-{"id": "recFd3Xet3wOhiEys", "name": { "value": "4D-M1N","synonyms": ["four dee em one n", "4DM1N"]}},
-{"id": "rec6MKPuVTd4iKJ8C", "name": { "value": "8D8","synonyms": []}},
-{"id": "recqUH7iA0Wlcpxqx", "name": { "value": "AP-5","synonyms": []}},
-{"id": "recvxtE3cbBAi9fTv", "name": { "value": "AZI-3","synonyms": []}},
-{"id": "recDTgb7iPy8l5gaf", "name": { "value": "B-U4D","synonyms": ["buford"]}},
-{"id": "reczwkC5AI8GTcEcT", "name": { "value": "BB-8","synonyms": []}},
-{"id": "recAETZzmYLMyinQH", "name": { "value": "BB-9E","synonyms": []}},
-{"id": "recQ5ZxTdDYizdgC1", "name": { "value": "C-3PO","synonyms": ["threepio", "C3PO"]}},
-{"id": "recYSgO8EhOFfdgVQ", "name": { "value": "G2-1B7","synonyms": []}},
-{"id": "recI11sSBalg2FPDj", "name": { "value": "IG-88","synonyms": []}},
-{"id": "recfrO9CRP8AeBzo7", "name": { "value": "K-2S0","synonyms": []}},
-{"id": "recrRhyNP43NUJpmI", "name": { "value": "L3-37","synonyms": []}},
-{"id": "rec7ba6pBTmCusyPv", "name": { "value": "R2-D2","synonyms": ["artoo"]}},
-{"id": "rechY6YADkRWDSDa8", "name": { "value": "R5-D4","synonyms": []}}
-                    ]
-                },
-                {
-                    "name": "Creature",
-                    "values": [
-                        {"id": "recF1wyTYt2h9eH3Q", "name": { "value": "Acklay","synonyms": []}},
-{"id": "rec8dUGG452Od0Tti", "name": { "value": "Aiwha","synonyms": []}},
-{"id": "reczssfmuuZJOyKCn", "name": { "value": "Aleena","synonyms": []}},
-{"id": "recxLiJ6hdkNiLb8Y", "name": { "value": "Fathier","synonyms": []}},
-{"id": "rechNSXiwWMZSlgm7", "name": { "value": "Bantha","synonyms": []}},
-{"id": "recdupgPv3yhhMPCk", "name": { "value": "Dianoga","synonyms": []}},
-{"id": "rec5Kn5p1zBbYfRA1", "name": { "value": "Wampa","synonyms": []}},
-{"id": "recwrgvsrLZepAXg7", "name": { "value": "Tauntaun","synonyms": []}},
-{"id": "recp8Zl7deE0Fs9od", "name": { "value": "Rancor","synonyms": []}},
-{"id": "recd82eV0taitC0Ho", "name": { "value": "Rathtar","synonyms": []}},
-{"id": "reci6070MnHzJPS9s", "name": { "value": "Space Slug","synonyms": []}},
-{"id": "recH7n7Jiinjtfpyx", "name": { "value": "Mynock","synonyms": []}}
-                    ]
-                },
-                {
-                    "name": "Vehicle",
-                    "values": [
-                        {"id": "recumj8CGZV4i4SwQ", "name": { "value": "A-Wing Fighter","synonyms": []}},
-                        {"id": "rec4BHr1AC6UCvoBw", "name": { "value": "A-Wing Trainer ","synonyms": []}},
-                        {"id": "rec2D9yvrK5F4xEfH", "name": { "value": "AA-9 Coruscant Freighter","synonyms": []}},
-                        {"id": "recpT9oju4sTSKHd2", "name": { "value": "AAT Battle Tank","synonyms": []}},
-                        {"id": "recU6tGuO4hJO559f", "name": { "value": "Alderaan Cruiser","synonyms": []}},
-                        {"id": "recVQUElkvGBugh23", "name": { "value": "Anakin Skywalker's Podracer","synonyms": ["anakin's podracer"]}},
-                        {"id": "recBqN1AJRQaY2MFV", "name": { "value": "ARC-170 Starfighter","synonyms": ["arc 170"]}},
-                        {"id": "recYQllxLsV9cnvha", "name": { "value": "AT-ACT Walker","synonyms": []}},
-                        {"id": "rec3SiVTrQn0SX4Gr", "name": { "value": "AT-AT Walker","synonyms": ["all terrain armored transport", "at at"]}},
-                        {"id": "recIwQuQSVzS5w3fd", "name": { "value": "AT-DP Walker","synonyms": ["all terrain defense pod", "AT DP"]}},
-                        {"id": "reciFAv33YaIfafIE", "name": { "value": "AT-DT Walker","synonyms": ["all terrain defense turret", "AT DT"]}},
-                        {"id": "receplCWJcsBFHU0R", "name": { "value": "AT-Hauler","synonyms": ["AT hauler"]}},
-                        {"id": "recLiJhHmGpOmtGfc", "name": { "value": "AT-M6 Walker","synonyms": ["AT M6"]}},
-                        {"id": "recOvl3ut1WCDWuZ8", "name": { "value": "AT-RT Walker","synonyms": ["AT RT"]}},
-                        {"id": "recW0mcI5j2p0t9tg", "name": { "value": "AT-ST Walker","synonyms": ["AT ST"]}},
-                        {"id": "recq5P3BWLDoizyAm", "name": { "value": "AT-TE Walker","synonyms": ["AT TE"]}},
-                        {"id": "recQJqnE2kFVUB8ku", "name": { "value": "Conveyex","synonyms": []}},
-                        {"id": "rec3eZ5gKt63CPaMh", "name": { "value": "Finalizer","synonyms": ["first order star destroyer"]}},
-                        {"id": "recCeNJCS0INAmsZH", "name": { "value": "First Light","synonyms": ["kalevalan yacht"]}},
-                        {"id": "rechNPDPLdnnkTp19", "name": { "value": "Millennium Falcon","synonyms": ["falcon"]}},
-                        {"id": "rect2zePvYPVb8efB", "name": { "value": "Sandcrawler","synonyms": []}},
-                        {"id": "recLJLsDqIFN2UsXY", "name": { "value": "Ski Speeder","synonyms": []}},
-                        {"id": "rec2YM5PGY8s1W1xB", "name": { "value": "Slave I","synonyms": []}},
-                        {"id": "rec7SSAsgec82BSUw", "name": { "value": "Snowspeeder","synonyms": []}},
-                        {"id": "recoP68jaUTNpcDKM", "name": { "value": "Speeder Bike","synonyms": []}},
-                        {"id": "rec4C27SjGG4DOsll", "name": { "value": "Swoop","synonyms": []}},
-                        {"id": "recR8d1gmAOgPmxFz", "name": { "value": "T-16 Skyhopper","synonyms": ["skyhopper"]}},
-                        {"id": "recKWgLrdkDv660wI", "name": { "value": "Tantive IV","synonyms": []}},
-                        {"id": "recInNVwC2HdBOjhV", "name": { "value": "Tie Fighter","synonyms": []}},
-                        {"id": "rechNp1KabSFyYTAq", "name": { "value": "U-Wing Starfighter","synonyms": ["u wing"]}},
-                        {"id": "recCQSxyJzVoYTnjn", "name": { "value": "Weequay Saucer Ship","synonyms": []}},
-                        {"id": "recfhmBpKc1Gsskce", "name": { "value": "X-Wing Starfighter","synonyms": ["x wing"]}},
-                        {"id": "rechAYQgStLAS2j6Q", "name": { "value": "Y-Wing Starfighter","synonyms": ["y wing"]}}
-                    ]
-                },
-                {
-                    "name": "Weapon",
-                    "values": [
-                        {"id": "recU7FWm2tXFhiaOM", "name": { "value": "A280 Blaster Rifle","synonyms": []}},
-{"id": "recUlJZ2AXxAeWFyq", "name": { "value": "Blaster Pistol","synonyms": []}},
-{"id": "recU8L53Td9qqiNGH", "name": { "value": "Blaster Rifle","synonyms": []}},
-{"id": "recazYoyM2AmAYrYP", "name": { "value": "Bowcaster","synonyms": []}},
-{"id": "recsbvZhK9b8oKn67", "name": { "value": "Electro-Chain Whip","synonyms": []}},
-{"id": "recnRB95QcONGmPWD", "name": { "value": "Force Lightning","synonyms": []}},
-{"id": "recNrei6xRmmJEEyl", "name": { "value": "Ion Cannon","synonyms": []}},
-{"id": "recohOABVGErKgU6G", "name": { "value": "Kylo Ren's Lightsaber","synonyms": []}},
-{"id": "recPjQq0zxDzs7yLT", "name": { "value": "Lightsaber","synonyms": []}},
-{"id": "recnToDlijThfZS3A", "name": { "value": "Thermal Detonator","synonyms": []}},
-{"id": "rec34cKfQabBDYQ1W", "name": { "value": "Z6 Riot Control Baton","synonyms": []}},
-{"id": "rec1863F1Ct4KGzis", "name": { "value": "Ahsoka's Lightsabers","synonyms": []}},
-{"id": "recJqgV6nFkGXNhzF", "name": { "value": "AV-7 Anti-Vehicle Artillery Cannon","synonyms": ["AV7"]}},
-{"id": "recmNlXHwWJrFYTmD", "name": { "value": "Electroripper Staff","synonyms": []}}
-                    ]
-                },
-                {
-                    "name": "Technology",
-                    "values": [
-                        {"id": "recnky5Cph47E5HOl", "name": { "value": "Bacta Suit","synonyms": []}},
-{"id": "recQiPMuHmpqYnxjM", "name": { "value": "Moisture Vaporator","synonyms": []}},
-{"id": "recHC31byynjoJfje", "name": { "value": "Coaxium","synonyms": []}}
-                    ]
-                },
-                {
-                    "name": "Thing",
-                    "values": [
-                        {"id": "recrOrdZvkivihCnv", "name": { "value": "Sabacc","synonyms": []}},
-{"id": "recqNDkqbQmqRhU1C", "name": { "value": "Han Solo's Dice","synonyms": []}},
-{"id": "recE68MpeIxUsCj8S", "name": { "value": "Boonta Eve Classic","synonyms": []}}
-                    ]
-                },
-                {
-                    "name": "Location",
-                    "values": [
-                        {"id": "receR1mbeJeLD3fR2", "name": { "value": "79’s","synonyms": []}},
-{"id": "recUKl6nhgOMBRJpQ", "name": { "value": "Abafar","synonyms": []}},
-{"id": "recuISpz5v5vowXsk", "name": { "value": "Ahch-To","synonyms": []}},
-{"id": "recLo2BQyQNiaNh3u", "name": { "value": "Ahch-To Jedi Temple","synonyms": []}},
-{"id": "reccU0BhqCqnhXbmv", "name": { "value": "Ahch-To Library","synonyms": []}},
-{"id": "recQHhSajzd00Ga75", "name": { "value": "Ahch-To Mirror Cave","synonyms": []}},
-{"id": "recbSeosKtoOwdekL", "name": { "value": "Alderaan","synonyms": []}},
-{"id": "recoRYjcHjfntYNdV", "name": { "value": "Aleen","synonyms": []}},
-{"id": "recBV9P09T8YUC3Ar", "name": { "value": "Ando","synonyms": []}},
-{"id": "recBlwmistFlNnqma", "name": { "value": "Archeon Nebula","synonyms": []}},
-{"id": "reczYTxshYryIqcbg", "name": { "value": "Asteroid Belt Gas Refinery","synonyms": []}},
-{"id": "recLTcTi3j8MarLEp", "name": { "value": "Asteroid Field","synonyms": []}},
-{"id": "recN89EDbrLrjnn9W", "name": { "value": "Atollon","synonyms": []}},
-{"id": "recqFqZAe5761QRC5", "name": { "value": "Aunt Z's Tavern","synonyms": []}},
-{"id": "recMSXeaQF7tBenWJ", "name": { "value": "Bahryn","synonyms": []}},
-{"id": "recXsOmWFWFy2yIp5", "name": { "value": "Balnab","synonyms": []}},
-{"id": "recZlA7Nra3rAMD99", "name": { "value": "Bardotta","synonyms": []}},
-{"id": "recozuY0sp1tcY1vA", "name": { "value": "Base One","synonyms": []}},
-{"id": "recIW9YMcasOAM9ig", "name": { "value": "Batuu","synonyms": []}},
-{"id": "recCrLvwHPzEB0TR7", "name": { "value": "Bespin","synonyms": []}},
-{"id": "recE0Y8pZRyMHSV8C", "name": { "value": "Black Spire Outpost","synonyms": []}},
-{"id": "rec6iCwfk3cjXegDq", "name": { "value": "Bracca","synonyms": []}},
-{"id": "recGSmtUeq2Zaqf2e", "name": { "value": "Bright Tree Village","synonyms": []}},
-{"id": "recmMRqYU0NFuvfRo", "name": { "value": "Canto Bight","synonyms": []}},
-{"id": "recGEPkvASp7vqTud", "name": { "value": "Canto Bight Jail","synonyms": []}},
-{"id": "recBPYP9v0usM6uaA", "name": { "value": "Canto Casino","synonyms": []}},
-{"id": "recw5QGPT3LcCGjTU", "name": { "value": "Cantonica","synonyms": []}},
-{"id": "recsWoV9QlePVfcY9", "name": { "value": "Carlac","synonyms": []}},
-{"id": "recKgx7LIS0yuvBeO", "name": { "value": "Castilon","synonyms": []}},
-{"id": "reclLBPKOzMfrS3YF", "name": { "value": "Catacombs of Cadera","synonyms": []}},
-{"id": "recDjPicl63vujsM5", "name": { "value": "Cato Neimoidia","synonyms": []}},
-{"id": "recaOHafn777UnluB", "name": { "value": "Cave of Evil","synonyms": []}},
-{"id": "rec0K0eIoUsbU5pCs", "name": { "value": "Central Detention Center","synonyms": []}},
-{"id": "recW2XlxTSn2q2ry3", "name": { "value": "Chandrila","synonyms": []}},
-{"id": "rec5jtoCevBHqVzT3", "name": { "value": "Christophsis","synonyms": []}},
-{"id": "receCyOYs7IRTD82V", "name": { "value": "Cloud City","synonyms": []}},
-{"id": "rec2j6owNXdNo4Qnl", "name": { "value": "Colossus","synonyms": []}},
-{"id": "reccvIKZtFNYHlTAR", "name": { "value": "Concord Dawn","synonyms": []}},
-{"id": "recDbYY5Sa74HXcan", "name": { "value": "Concordia","synonyms": []}},
-{"id": "recr9KvUKJ7IU7EpK", "name": { "value": "Corellia","synonyms": []}},
-{"id": "recE0EpdZmldFPsWl", "name": { "value": "Coronet City","synonyms": []}},
-{"id": "reccQGYZpDg3xNPRi", "name": { "value": "Coronet Spaceport","synonyms": []}},
-{"id": "recKG2ZUZDTaNOEh1", "name": { "value": "Coruscant","synonyms": []}},
-{"id": "recIGUNBRntZ2RO09", "name": { "value": "Coruscant Senate Building","synonyms": []}},
-{"id": "recN8nAVA3tV65s1W", "name": { "value": "Crait","synonyms": []}},
-{"id": "rec8Jt3scf92ErYeh", "name": { "value": "Crait Rebel Base","synonyms": []}},
-{"id": "recjz8GtNSEAuVedo", "name": { "value": "D'Qar","synonyms": []}},
-{"id": "recF3DvpxtrkMTh4e", "name": { "value": "Dagobah","synonyms": []}},
-{"id": "rec8n4FPKZioU7BT3", "name": { "value": "Dandoran","synonyms": []}},
-{"id": "recDobsNtj9hvHEAD", "name": { "value": "Dantooine","synonyms": []}},
-{"id": "recly4vFoaTa51FAd", "name": { "value": "Dassal System","synonyms": []}},
-{"id": "recMIg8spBd9GKN0p", "name": { "value": "Dathomir","synonyms": []}},
-{"id": "recbhjvOVPWYUdeCI", "name": { "value": "Death Star","synonyms": []}},
-{"id": "recOgK3oocqhvYsmt", "name": { "value": "Death Star II","synonyms": []}},
-{"id": "recnL0doJk9cAoqkv", "name": { "value": "Devaron","synonyms": []}},
-{"id": "rec2xBsRZLa351qpU", "name": { "value": "Dex's Diner","synonyms": []}},
-{"id": "recFgL0A5KByezQ8r", "name": { "value": "Dok-Ondar's Den of Antiquities","synonyms": []}},
-{"id": "recz1oAKwtn8LKzeG", "name": { "value": "Dorin","synonyms": []}},
-{"id": "recJLrjWFLHJnnUzY", "name": { "value": "Doza Tower","synonyms": []}},
-{"id": "recMOpuGaAlZC3X7K", "name": { "value": "Eadu","synonyms": []}},
-{"id": "rechi9S32NJS49Usm", "name": { "value": "Echo Base","synonyms": []}},
-{"id": "recVdqbBzZf4DHoXY", "name": { "value": "Endor","synonyms": []}},
-{"id": "recyis9vUf3d1VHHj", "name": { "value": "Er'Kit","synonyms": []}},
-{"id": "reclax7VyrZzADeOv", "name": { "value": "Felucia","synonyms": []}},
-{"id": "recNJn5ywJYOQkNM7", "name": { "value": "First Order Mining Operation","synonyms": []}},
-{"id": "recSGfma7Jopz8UEl", "name": { "value": "Florrum","synonyms": []}},
-{"id": "recLtoSbFPCrcItOJ", "name": { "value": "Fondor","synonyms": []}},
-{"id": "recdFNfwWmAqL30hT", "name": { "value": "Force Planet","synonyms": []}},
-{"id": "recehuZpabHlZNLEu", "name": { "value": "Fort Anaxes","synonyms": []}},
-{"id": "reco9T0j6INjjY73w", "name": { "value": "Fort Ypso","synonyms": []}},
-{"id": "recgdmdPnGue3chgC", "name": { "value": "Galaxies Opera House","synonyms": []}},
-{"id": "recCZEvnd6o8caYdj", "name": { "value": "Garel","synonyms": []}},
-{"id": "recaINDJ0c5OcMylw", "name": { "value": "Geonosis","synonyms": []}},
-{"id": "recoqqnM9kGPenHe5", "name": { "value": "Geonosis Droid Factory","synonyms": []}},
-{"id": "recohZ3F9ntifcgdD", "name": { "value": "Glee Anselm","synonyms": []}},
-{"id": "rechZiBEtbQcUuPxv", "name": { "value": "Goazon Badlands","synonyms": []}},
-{"id": "rec5VyB37OiO4I1Hy", "name": { "value": "Haruun Kal","synonyms": []}},
-{"id": "recPqk8K9F5Hha3Zt", "name": { "value": "Havoc Outpost","synonyms": []}},
-{"id": "recvmgEGkgrepHKcB", "name": { "value": "Holy City of Jedha","synonyms": ["jedha"]}},
-{"id": "recfuqNUwPXW2qLt7", "name": { "value": "Horizon Base","synonyms": []}},
-{"id": "recbpeZIaOxXalxX9", "name": { "value": "Hosnian Prime","synonyms": []}},
-{"id": "rec5b4uobjFl9UnAd", "name": { "value": "Hoth","synonyms": []}},
-{"id": "recuxAYhlcBj2cyVv", "name": { "value": "Ibaar","synonyms": []}},
-{"id": "recyLM1lBDzuuzB29", "name": { "value": "Iego","synonyms": []}},
-{"id": "recj08Ji6z1GMDtlK", "name": { "value": "Ilum","synonyms": []}},
-{"id": "recKZRq2dPz8woZhj", "name": { "value": "Imperial Academy","synonyms": []}},
-{"id": "recUupJt0P2OoWZXk", "name": { "value": "Jabba's Palace","synonyms": []}},
-{"id": "recDt1ND7vYuVqp5P", "name": { "value": "Jakku","synonyms": []}},
-{"id": "recUNKpZuxOzpxLAg", "name": { "value": "Jalath","synonyms": []}},
-{"id": "recdu6OFphzeCICaH", "name": { "value": "Jalindi","synonyms": []}},
-{"id": "reco7L0hzctV3N8mc", "name": { "value": "Jedha","synonyms": []}},
-{"id": "recEKXhX3S6qQutoL", "name": { "value": "Jedi Temple","synonyms": []}},
-{"id": "recPzTqTBrgIRZCIw", "name": { "value": "Jundland Wastes","synonyms": []}},
-{"id": "recCmvEKrccIHk1V5", "name": { "value": "Kaleesh","synonyms": []}},
-{"id": "rec9hsGkzX9k29JTd", "name": { "value": "Kamino","synonyms": []}},
-{"id": "recsdeabt4zhwxHYY", "name": { "value": "Kashyyyk","synonyms": []}},
-{"id": "recDyIgqGFtuPjqbc", "name": { "value": "Kessel","synonyms": []}},
-{"id": "rec2EmWSBfQGUP5XD", "name": { "value": "Kintan","synonyms": []}},
-{"id": "recnbs3qYWxMIfB8k", "name": { "value": "Kiros","synonyms": []}},
-{"id": "recGSAaH9au3iNC85", "name": { "value": "Kowak","synonyms": []}},
-{"id": "recrUAHWYCbqM8GId", "name": { "value": "Lah'mu","synonyms": []}},
-{"id": "rec2i9GrbY01H3ed3", "name": { "value": "Lars Moisture Farm","synonyms": ["lars farm"]}},
-{"id": "recjg8ryxRSrD99Ob", "name": { "value": "Lothal","synonyms": []}},
-{"id": "rec7OlHDemrfM0Gbi", "name": { "value": "Malastare","synonyms": []}},
-{"id": "recLKszdDM2pQykGU", "name": { "value": "Mandalore","synonyms": []}},
-{"id": "reczAVUi7RkdKqmyk", "name": { "value": "Mon Cala","synonyms": []}},
-{"id": "recm9Q2SRSPVRuJGc", "name": { "value": "Mos Eisley Spaceport","synonyms": ["mos eisley"]}},
-{"id": "recpaf3m3Y1Pn2MCL", "name": { "value": "Mustafar","synonyms": []}},
-{"id": "recQv1oCQIhexh1xN", "name": { "value": "Naboo","synonyms": []}},
-{"id": "rec6E1LKmZwWKItqY", "name": { "value": "Nar Kanji","synonyms": []}},
-{"id": "rectqfIq2N3FMhFSU", "name": { "value": "Nar Shaddaa","synonyms": []}},
-{"id": "recJKr79OdM1M2Nrc", "name": { "value": "Neepers Panpick","synonyms": []}},
-{"id": "recUhRdnxGvruoyTA", "name": { "value": "Niima Outpost","synonyms": []}},
-{"id": "rec89Y7YCknCVs33s", "name": { "value": "Onderon","synonyms": []}},
-{"id": "recUfVh6vhZ8w1Rjt", "name": { "value": "Orto","synonyms": []}},
-{"id": "recIkljhRk2Mpmc9b", "name": { "value": "Rodia","synonyms": []}},
-{"id": "rec3fRK1cqnNB0eIZ", "name": { "value": "Ryloth","synonyms": []}},
-{"id": "recVWx5mCfjjysdTU", "name": { "value": "Savareen","synonyms": []}},
-{"id": "recJEeuIfwoQtBzYD", "name": { "value": "Scarif","synonyms": []}},
-{"id": "rec7v191zWEsOWogG", "name": { "value": "Serenno","synonyms": []}},
-{"id": "recINDyTC3HzYKA06", "name": { "value": "Socorro","synonyms": []}},
-{"id": "recV86Cd8mZAQMpQO", "name": { "value": "Starkiller Base","synonyms": ["starkiller"]}},
-{"id": "recYH1Op0n7wDCch9", "name": { "value": "Stewjon","synonyms": []}},
-{"id": "recHUoJRKBQU6JrTa", "name": { "value": "Sullust","synonyms": []}},
-{"id": "recenxXLDzpdPkUj7", "name": { "value": "Takodana","synonyms": []}},
-{"id": "reccsvhueXBjUSJ57", "name": { "value": "Tatooine","synonyms": []}},
-{"id": "recYt5GOCGbEaAqh1", "name": { "value": "Teth","synonyms": []}},
-{"id": "recjEMBgeMa7qouRX", "name": { "value": "The Great Pit of Carkoon","synonyms": []}},
-{"id": "rec5WO7CvwWpSt9OR", "name": { "value": "The Lodge","synonyms": []}},
-{"id": "recWUGliMCHe3qQ8h", "name": { "value": "Tholoth","synonyms": []}},
-{"id": "recXeRqY1ii9jpHKh", "name": { "value": "Toydaria","synonyms": []}},
-{"id": "recK7yrFzIQVVa3wZ", "name": { "value": "Twon Ketee","synonyms": []}},
-{"id": "recNjoiUOBoaMPDMh", "name": { "value": "Utapau","synonyms": []}},
-{"id": "rec5y3xUHm3xFJDwe", "name": { "value": "Vandor","synonyms": []}},
-{"id": "recmVxUcQRopINJqj", "name": { "value": "Yavin 4","synonyms": ["yavin"]}},
-{"id": "recsu89jsS655NGB8", "name": { "value": "Zygerria","synonyms": []}}
-                    ]
-                },
-                {
-                    "name": "Species",
-                    "values": [
-                        {"id": "reccPquLSG0tOg6ID", "name": { "value": "Abednedo","synonyms": []}},
-{"id": "recnahKvF6iDG1z9z", "name": { "value": "Aiwha","synonyms": []}},
-{"id": "recHgiVUWQEC9v9aW", "name": { "value": "Aleena","synonyms": []}},
-{"id": "recTln3vpo0dyIAjD", "name": { "value": "Amani","synonyms": []}},
-{"id": "rechIWBEk7zwezTTP", "name": { "value": "Anacondan","synonyms": []}},
-{"id": "recCvhxSflHvAawmc", "name": { "value": "Angel","synonyms": []}},
-{"id": "recP0b68Ml0a2Z0I0", "name": { "value": "Aqualish","synonyms": []}},
-{"id": "recjysR88mBcldngl", "name": { "value": "Azumel","synonyms": []}},
-{"id": "recLcnNZjBIRUKTSF", "name": { "value": "Balosar","synonyms": []}},
-{"id": "rec3tx6ksIWYvsJ3C", "name": { "value": "Belugan","synonyms": []}},
-{"id": "recduOn3B7Id0OAhE", "name": { "value": "Besalisk","synonyms": []}},
-{"id": "recvNbwMzwD8TwWjM", "name": { "value": "Bith","synonyms": []}},
-{"id": "recFE340yVjRXA2f5", "name": { "value": "Bivall","synonyms": []}},
-{"id": "recMxMTIMIFU26KZO", "name": { "value": "Bonzami","synonyms": []}},
-{"id": "recS2OCn7kPosx32z", "name": { "value": "Cerean","synonyms": []}},
-{"id": "recdBRiUYlgl2V3In", "name": { "value": "Chadra-Fan","synonyms": []}},
-{"id": "reclgoz6LCMXUk7i7", "name": { "value": "Chagrian","synonyms": []}},
-{"id": "recGxVDprDno72dyE", "name": { "value": "Cloddogran","synonyms": []}},
-{"id": "recU0AXtSrxCd8JwP", "name": { "value": "Cosian","synonyms": []}},
-{"id": "rec5ANZJlrm9pUt7h", "name": { "value": "Dactillion","synonyms": []}},
-{"id": "rec07S5Hu55izYdOF", "name": { "value": "Dalgo","synonyms": []}},
-{"id": "recPfZHtU2i7ikQDo", "name": { "value": "Dathomirian","synonyms": []}},
-{"id": "recLRkFD2IyfeyoCD", "name": { "value": "Devaronian","synonyms": []}},
-{"id": "rec4quXAjK0guZzYV", "name": { "value": "Dug","synonyms": []}},
-{"id": "recfyWmmSfECQCBbo", "name": { "value": "Duros","synonyms": []}},
-{"id": "rec4yTj9Rs9ANTWr6", "name": { "value": "Dybrinthe","synonyms": []}},
-{"id": "recrKsjpAG8DIYRHG", "name": { "value": "Ewok","synonyms": []}},
-{"id": "recfKQHMq5xuzMJWs", "name": { "value": "Falleen","synonyms": []}},
-{"id": "recKeCc8iDvhZj3P1", "name": { "value": "Falumpaset","synonyms": []}},
-{"id": "rec6HRSr3TVxDWfxD", "name": { "value": "Gamorrean","synonyms": []}},
-{"id": "recufJBo6YxxIf0KA", "name": { "value": "Geonosian","synonyms": []}},
-{"id": "recopGn2Jve6gFUjB", "name": { "value": "Gilliand","synonyms": []}},
-{"id": "recB4jDIRHfSUDqhu", "name": { "value": "Givin","synonyms": []}},
-{"id": "reccOboYKBimSM73x", "name": { "value": "Gotal","synonyms": []}},
-{"id": "recPcbu4DLZPxCOfK", "name": { "value": "Gran","synonyms": []}},
-{"id": "recqlggFSMU0o267K", "name": { "value": "Green Nikto","synonyms": ["nikto"]}},
-{"id": "recuBDFowtI9beNmF", "name": { "value": "Grindalid","synonyms": []}},
-{"id": "rec4d3nY9toJ6LJOV", "name": { "value": "Gungan","synonyms": []}},
-{"id": "recCWF9UH0PoX3iTd", "name": { "value": "Harch","synonyms": []}},
-{"id": "recLhhawlSBcWlgZU", "name": { "value": "Human","synonyms": []}},
-{"id": "recTRh0W5TJMtAnd7", "name": { "value": "Hutt","synonyms": []}},
-{"id": "recu8c8B521jBSsUQ", "name": { "value": "Hylobon","synonyms": []}},
-{"id": "recdg7TjCkez2JLnh", "name": { "value": "Ithorian","synonyms": []}},
-{"id": "recBP55x79rikZvQT", "name": { "value": "Jablogian","synonyms": []}},
-{"id": "recorgmGKr5wYH4Pa", "name": { "value": "Jawa","synonyms": []}},
-{"id": "recPeXgjCb5XNCWQo", "name": { "value": "Junker","synonyms": []}},
-{"id": "rec6phrrXGTzPRIOO", "name": { "value": "Kaadu","synonyms": []}},
-{"id": "recH6HYPdvpuet60S", "name": { "value": "Kalee","synonyms": []}},
-{"id": "recjOgxL11r2mqEiU", "name": { "value": "Kallidahin","synonyms": []}},
-{"id": "rectmaQ7kMNAAPi1K", "name": { "value": "Kaminoan","synonyms": []}},
-{"id": "recxuGOKgK6yFRsGQ", "name": { "value": "Kel Dor","synonyms": []}},
-{"id": "recle7iCXok7D8TJO", "name": { "value": "Kindalo","synonyms": []}},
-{"id": "recRSCfbnKG2o67ta", "name": { "value": "Kitonak","synonyms": []}},
-{"id": "recOxOXebvfHMyoEh", "name": { "value": "Klatooinian","synonyms": []}},
-{"id": "rec195TguKcDZOdTE", "name": { "value": "Klatoonian","synonyms": []}},
-{"id": "recg0OL9MOLAcMbcX", "name": { "value": "Kowakian Monkey-Lizard","synonyms": []}},
-{"id": "recRoPXky5VAIr4ag", "name": { "value": "Kubaz","synonyms": []}},
-{"id": "recSGXzEydWZw7TFQ", "name": { "value": "Lanai","synonyms": []}},
-{"id": "rec0nSHRs5CEjcp6b", "name": { "value": "Lasat","synonyms": []}},
-{"id": "recX6I8VhXZ9dUJoF", "name": { "value": "Lurmen","synonyms": []}},
-{"id": "receqEN6OuwtHhkYX", "name": { "value": "Mikkian","synonyms": []}},
-{"id": "recyZW1o6h9RnZIkr", "name": { "value": "Mimbanese","synonyms": []}},
-{"id": "receTMznZWvQBWx8g", "name": { "value": "Mirialan","synonyms": []}},
-{"id": "rec4R3g9e3U6dUUY0", "name": { "value": "Mon Calamari","synonyms": []}},
-{"id": "recDrwIQcedKsLlTd", "name": { "value": "Nautolan","synonyms": []}},
-{"id": "recEV1lPFPScxCXmt", "name": { "value": "Neimoidian","synonyms": []}},
-{"id": "recJCQrchQkkWZamr", "name": { "value": "Nightsister Zombie","synonyms": []}},
-{"id": "recGX1iUaAHrFtA6I", "name": { "value": "Noghri","synonyms": []}},
-{"id": "recQ8YbiiGMRaCPca", "name": { "value": "Ortolan","synonyms": []}},
-{"id": "recdw7ypg8QyD8zkE", "name": { "value": "Pa'lowick","synonyms": []}},
-{"id": "recnFobJxcZNnLNfm", "name": { "value": "Palliduvan","synonyms": []}},
-{"id": "rec51tsbfhY5f1mll", "name": { "value": "Pantoran","synonyms": []}},
-{"id": "recPqbQHKecKm6LUT", "name": { "value": "Patitite","synonyms": []}},
-{"id": "recMH15eti5hMJobD", "name": { "value": "Patrolian","synonyms": []}},
-{"id": "recN4HEWVItUQnKbJ", "name": { "value": "Pau'an","synonyms": []}},
-{"id": "rec9BgqTuwk1dQx3l", "name": { "value": "Poletec","synonyms": []}},
-{"id": "recelHP6aP3fchUkN", "name": { "value": "Quarren","synonyms": []}},
-{"id": "recWyEfvIqdcO2YLj", "name": { "value": "Red Nikto","synonyms": ["nikto"]}},
-{"id": "recU5Oo51Hg8yJr3f", "name": { "value": "Rodian","synonyms": []}},
-{"id": "recCdDK7WW0j6Ccda", "name": { "value": "Rokkna","synonyms": []}},
-{"id": "recv5oHukw6Ih6Mtz", "name": { "value": "Saurin","synonyms": []}},
-{"id": "recOFSwcRMJxKaPQ1", "name": { "value": "Snarlfish","synonyms": []}},
-{"id": "rec96kfij2xJCIF9U", "name": { "value": "Sugi","synonyms": []}},
-{"id": "reczfesQ8YIxwFtWP", "name": { "value": "Sullustan","synonyms": []}},
-{"id": "recah9IusCAcuoWxL", "name": { "value": "Summa-Verminoth","synonyms": []}},
-{"id": "recDK73ZtCw19Zlxi", "name": { "value": "Talz","synonyms": []}},
-{"id": "recu4Rp6gHh2w2vRl", "name": { "value": "Tee-Muss","synonyms": []}},
-{"id": "recLdy36VzmymFtU9", "name": { "value": "Tholothian","synonyms": []}},
-{"id": "recdNdLbZXlAg39Uy", "name": { "value": "Togruta","synonyms": []}},
-{"id": "rec63FgGhCPXy6PVJ", "name": { "value": "Toydarian","synonyms": []}},
-{"id": "recZrGcMjxb1pgfYc", "name": { "value": "Trandoshan","synonyms": []}},
-{"id": "recSsv1YSgFRfu5Rs", "name": { "value": "Tusken Raider","synonyms": ["sand people"]}},
-{"id": "recwcIlw5QTpzjB7e", "name": { "value": "Twi'lek","synonyms": []}},
-{"id": "reczbVUrS37sz6Lxl", "name": { "value": "Ugnaught","synonyms": []}},
-{"id": "reczTrLCWb3qKiEE7", "name": { "value": "Umbaran","synonyms": []}},
-{"id": "rec72TriR8l24mCOJ", "name": { "value": "Utai","synonyms": []}},
-{"id": "recq1Xr1xCbu27t1A", "name": { "value": "Weequay","synonyms": []}},
-{"id": "rec2oDsAn4sTMnwDe", "name": { "value": "Wermal","synonyms": []}},
-{"id": "recWECm6ibRRzaUGc", "name": { "value": "Wookiee","synonyms": []}},
-{"id": "recBWArR7b9Z7y1ul", "name": { "value": "Yuzzum","synonyms": []}},
-{"id": "reclQyvgRyyMS6WsM", "name": { "value": "Zabrak","synonyms": []}},
-{"id": "recDxGb74FyMHUsB2", "name": { "value": "Zygerrian","synonyms": []}}
-                    ]
-                },
-                {
-                    "name": "Organization",
-                    "values": [
-                        {"id": "rec4AffsUJJRpz7us", "name": { "value": "Alderaan Royal Family","synonyms": []}},
-{"id": "recTWF7L2fNYtIi81", "name": { "value": "Alliance High Command","synonyms": []}},
-{"id": "rectpIIejNEaGUtvz", "name": { "value": "Bear Clan","synonyms": []}},
-{"id": "recJxuZyFNDMry0Hn", "name": { "value": "Black Sun","synonyms": []}},
-{"id": "reciW37qOPrX7KSzl", "name": { "value": "Blue Squadron","synonyms": []}},
-{"id": "recSrCI8gfkmlzV2q", "name": { "value": "Canto Bight Police","synonyms": []}},
-{"id": "rec70mP309AWQc324", "name": { "value": "Caretakers","synonyms": []}},
-{"id": "rec5mVKG7NjFYecnV", "name": { "value": "Clan Kryze","synonyms": []}},
-{"id": "recxteqC2gadq9XDg", "name": { "value": "Clan Saxon","synonyms": []}},
-{"id": "recXeg9F8kaPkn9oQ", "name": { "value": "Clan Wren","synonyms": []}},
-{"id": "recCRcR51Rng5pIdy", "name": { "value": "Clone Force 99","synonyms": ["Bad Batch"]}},
-{"id": "recHJ79fUl73Okx8p", "name": { "value": "Clone Troopers","synonyms": []}},
-{"id": "recv1yVFu9cFBfRZf", "name": { "value": "Cloud Riders","synonyms": []}},
-{"id": "recqspXC8a89LWB95", "name": { "value": "Cobalt Squadron","synonyms": []}},
-{"id": "recnAa9t5aNXpIENz", "name": { "value": "Confederacy of Independent Systems","synonyms": []}},
-{"id": "recxwVd33JIB48SZt", "name": { "value": "Corporate Alliance","synonyms": []}},
-{"id": "recN2A5r6tw3ew86t", "name": { "value": "Coruscant Guard","synonyms": []}},
-{"id": "recHk0olPrCfNIIkJ", "name": { "value": "Coruscant Underworld Police","synonyms": []}},
-{"id": "rec3jFIG8IPELygzy", "name": { "value": "Crimson Dawn","synonyms": []}},
-{"id": "rec6YPLS1uomjz9yJ", "name": { "value": "Crimson Squadron","synonyms": []}},
-{"id": "recX5vJVFCcthjzeC", "name": { "value": "D-Squad","synonyms": []}},
-{"id": "recRdbJP8qBbqchrq", "name": { "value": "Death Star Gunners","synonyms": []}},
-{"id": "recngLl1LeiPjxuzE", "name": { "value": "Death Star Scientists","synonyms": []}},
-{"id": "recFKszDDBHsvkl4V", "name": { "value": "Death Star Troopers","synonyms": []}},
-{"id": "reccxfwztwKtEw4Mn", "name": { "value": "Death Watch","synonyms": []}},
-{"id": "recOjAYGgFTKRrWle", "name": { "value": "Elite Praetorian Guard","synonyms": []}},
-{"id": "recsHRAPcS6Vz9i5f", "name": { "value": "Emigration Officers","synonyms": []}},
-{"id": "recrpVXQzwfmclrms", "name": { "value": "Executioner Troops","synonyms": []}},
-{"id": "recK0giMg4ktOQNWC", "name": { "value": "Fathier Jockeys","synonyms": []}},
-{"id": "recMjYb0W7YKSHr4K", "name": { "value": "Figrin D'An and the Modal Nodes","synonyms": []}},
-{"id": "recYc0g5HJQrnT1a9", "name": { "value": "First Order Flametrooper","synonyms": []}},
-{"id": "recqbQBqca3cV7piC", "name": { "value": "First Order Riot Control Stormtroopers","synonyms": []}},
-{"id": "recwlbYC86MckO4q0", "name": { "value": "First Order Scuba Troopers","synonyms": []}},
-{"id": "recD2amCNqBOaPSFz", "name": { "value": "First Order Snowtroopers","synonyms": []}},
-{"id": "recW0Ayc9EpvC1hH2", "name": { "value": "First Order Stormtroopers","synonyms": []}},
-{"id": "rec3QFUJazZNzvnQz", "name": { "value": "First Order Tie Fighter Pilots","synonyms": []}},
-{"id": "recLC2atRwGJl4rqV", "name": { "value": "Force Priestesses","synonyms": []}},
-{"id": "recILmNCcaU1AxX1n", "name": { "value": "Free Ryloth Movement","synonyms": []}},
-{"id": "recMRfN238aAwNFAf", "name": { "value": "Galactic Empire","synonyms": []}},
-{"id": "recURwSvdZEwg55XP", "name": { "value": "Galactic Republic","synonyms": []}},
-{"id": "recp39JoQsg7gCq7j", "name": { "value": "Galactic Senate","synonyms": []}},
-{"id": "recJz4y0WxLw3jZp0", "name": { "value": "Guavian Death Gang","synonyms": []}},
-{"id": "recp9h2cfpHmFPvjb", "name": { "value": "Gungan Grand Army","synonyms": []}},
-{"id": "recnLArIiuPko4ocA", "name": { "value": "Gungan High Council","synonyms": []}},
-{"id": "recwRbMtWWPZZDLNy", "name": { "value": "Hutt Clan","synonyms": []}},
-{"id": "recRgn0Tc00iZ9koz", "name": { "value": "Imperial Combat Assault Tank Commanders","synonyms": []}},
-{"id": "recLqUHqJqp6kUcKX", "name": { "value": "Imperial Combat Assault Tank Pilots","synonyms": []}},
-{"id": "recDfs2EN6mhov4bh", "name": { "value": "Imperial Death Troopers","synonyms": []}},
-{"id": "rechibgqKRlsM7xiE", "name": { "value": "Imperial Ground Crew","synonyms": []}},
-{"id": "recud3BQ8SnhblxGf", "name": { "value": "Imperial Medics","synonyms": []}},
-{"id": "reckIzKG75ge83R9L", "name": { "value": "Imperial Mobile Surgical Unit","synonyms": []}},
-{"id": "recOgk5F937NGbGEJ", "name": { "value": "Imperial Pilots","synonyms": []}},
-{"id": "recmKmsKccZG7LzPz", "name": { "value": "Imperial Royal Guard","synonyms": ["imperial guard"]}},
-{"id": "recqAdBJc4ugRvjtQ", "name": { "value": "Imperial Security Bureau","synonyms": []}},
-{"id": "reconDa7hKzFEt6ll", "name": { "value": "Imperial Security Bureau","synonyms": []}},
-{"id": "recXYS0qb9JDOAGCw", "name": { "value": "Imperial Supercommandos","synonyms": []}},
-{"id": "recygKr05vhLYMNrG", "name": { "value": "Inferno Squad","synonyms": []}},
-{"id": "rec77xvYUrgdSuIUs", "name": { "value": "Intergalactic Banking Clan","synonyms": []}},
-{"id": "reciaCUcewRbQ3LJa", "name": { "value": "Jedi Order","synonyms": []}},
-{"id": "recQRjEFrLj4vO4ZT", "name": { "value": "Jedi Temple Guard","synonyms": []}},
-{"id": "recMFy2yAo7vYX6qt", "name": { "value": "Jedi Youngling","synonyms": []}},
-{"id": "rec6Z7nIP3tREZGDu", "name": { "value": "Jumptroopers","synonyms": []}},
-{"id": "recDlBRxWpPIiqf0e", "name": { "value": "Kage Warriors","synonyms": []}},
-{"id": "recdEua1L15rhkrbc", "name": { "value": "Kanjiklub","synonyms": []}},
-{"id": "recosRZgnafmprL59", "name": { "value": "Kessel Miners","synonyms": []}},
-{"id": "recyBq1tiQjiU95Ze", "name": { "value": "Life Day","synonyms": []}},
-{"id": "rec9EaZNcJb08KHy3", "name": { "value": "Mandalore Royal Academy of Government","synonyms": []}},
-{"id": "reci8vAwm0XV4SRwe", "name": { "value": "Mandalorian Guard","synonyms": []}},
-{"id": "rec7oKQ0HBO1RFIxR", "name": { "value": "Mandalorian Super Commandos","synonyms": []}},
-{"id": "recnP49gsdBh7Nojr", "name": { "value": "Mining Guild","synonyms": []}},
-{"id": "rectkIuIzOI8TkDKR", "name": { "value": "Mudtroopers","synonyms": []}},
-{"id": "recuf3YBIyyJscBUb", "name": { "value": "Naboo Royal Guards","synonyms": []}},
-{"id": "recg8bzYo965Mtpme", "name": { "value": "Naboo Royal Handmaidens","synonyms": []}},
-{"id": "rec41P6UQswS0GrGu", "name": { "value": "New Mandalorians","synonyms": []}},
-{"id": "rec61BgrdSHc0jLlT", "name": { "value": "Nightbrothers","synonyms": []}},
-{"id": "recwcEhNFIHZ5u4Dt", "name": { "value": "Nightsisters","synonyms": []}},
-{"id": "rec8TCQB8VM6xxl2J", "name": { "value": "Onderon Rebels","synonyms": []}},
-{"id": "recSKugKYt0JqN49f", "name": { "value": "Patrol Troopers","synonyms": []}},
-{"id": "recYrU7IZQGYnxq0F", "name": { "value": "Phoenix Squadron","synonyms": []}},
-{"id": "rec9X7mXHESjaMYsx", "name": { "value": "Purge Troopers","synonyms": []}},
-{"id": "reclsCXJDjS0j8QUX", "name": { "value": "Pyke Sentinels","synonyms": []}},
-{"id": "rec7Rvw2Ms6ijsggz", "name": { "value": "Pyke Syndicate","synonyms": []}},
-{"id": "recBzzEHcGDs1pwVD", "name": { "value": "Range Troopers","synonyms": []}},
-{"id": "recjLGqVtFuomdGRT", "name": { "value": "Rebel Alliance","synonyms": []}},
-{"id": "recuMuoFIsLJUDZKU", "name": { "value": "Rebel Pathfinders Spec Ops","synonyms": []}},
-{"id": "recempO5QQ9ArWmsM", "name": { "value": "Rebel Pilots","synonyms": []}},
-{"id": "recknZgrF4gjXF73v", "name": { "value": "Rebel Troopers","synonyms": []}},
-{"id": "recAc65Qggri9vPpk", "name": { "value": "Resistance Pilots","synonyms": []}},
-{"id": "recgcZX8bx2OKVdkm", "name": { "value": "Resistance Troopers","synonyms": []}},
-{"id": "recyewBLpPjw5BtZF", "name": { "value": "Sandtroopers","synonyms": []}},
-{"id": "rec1s3wTk8hhAPdih", "name": { "value": "Scout Troopers","synonyms": []}},
-{"id": "recK3Uqa1MOQguPFF", "name": { "value": "Scrumrats","synonyms": []}},
-{"id": "rec5HFqzAMQLTVDE6", "name": { "value": "Senate Guard","synonyms": []}},
-{"id": "recLLbTBqYzD2fxeV", "name": { "value": "Separatist Council","synonyms": []}},
-{"id": "recMjyssZGEo7vN1u", "name": { "value": "Shadow Collective","synonyms": []}},
-{"id": "recMMXtVZbVxXgxfZ", "name": { "value": "Shoretroopers","synonyms": []}},
-{"id": "recJxYWXaBQn2pJH9", "name": { "value": "Sienar Fleet Systems","synonyms": []}},
-{"id": "recOocelo8jdEpCX8", "name": { "value": "Sith","synonyms": []}},
-{"id": "rec4vKAm5ZUsu6HKq", "name": { "value": "Snowtroopers","synonyms": []}},
-{"id": "recRaiYwrYU0zQR0R", "name": { "value": "Stormtroopers","synonyms": []}},
-{"id": "recvjyaoj1ADFFjaF", "name": { "value": "Techno Union","synonyms": []}},
-{"id": "rec2GWW4B3ax4B6OM", "name": { "value": "The First Order","synonyms": ["first order"]}},
-{"id": "recOZsuGbehODBtjY", "name": { "value": "The Max Rebo Band","synonyms": []}},
-{"id": "recfJAWLYL6W7I7M3", "name": { "value": "The New Republic","synonyms": []}},
-{"id": "recQgEEEmPKjmg24C", "name": { "value": "The Protectors","synonyms": []}},
-{"id": "recx5jrCySiZLejJj", "name": { "value": "The Resistance","synonyms": []}},
-{"id": "recONTb0afYqow3uf", "name": { "value": "Trade Federation","synonyms": []}},
-{"id": "recmbnJHd12A9YIds", "name": { "value": "Unkar's Thugs","synonyms": []}},
-{"id": "recD5zFfzSfxuVaBa", "name": { "value": "Weequay Pirates","synonyms": []}},
-{"id": "recXke0Mgc779dlz7", "name": { "value": "White Worms","synonyms": []}}
-                    ]
-                },
-                {
-                    "name": "Media",
-                    "values": [
-                        {"id": "recZnBQuRRK1qWahT", "name": { "value": "Battlefront 2","synonyms": ["battlefront 2", "battlefront"]}},
-{"id": "rec9333XgYFmwODDb", "name": { "value": "Clone Wars","synonyms": ["the clone wars"]}},
-{"id": "recGe9VDUGTYKvXzs", "name": { "value": "Episode 1","synonyms": ["the phantom menace"]}},
-{"id": "rec5AWqrwtf5AJyFS", "name": { "value": "Episode 2","synonyms": ["attack of the clones"]}},
-{"id": "recpmrDtdGp6bpuj4", "name": { "value": "Episode 3","synonyms": ["revenge of the sith"]}},
-{"id": "recJcxtIxF9UQKhQW", "name": { "value": "Episode 4","synonyms": ["a new hope", "new hope"]}},
-{"id": "rechxOmIQ7Ut0zrsu", "name": { "value": "Episode 5","synonyms": ["empire", "the empire strikes back", "empire strikes back"]}},
-{"id": "rec7aLgv5x0I6M5Mb", "name": { "value": "Episode 6","synonyms": ["return of the jedi", "jedi"]}},
-{"id": "recyCTLDkE82D9P8Q", "name": { "value": "Episode 7","synonyms": ["the force awakens", "force awakens"]}},
-{"id": "rec0vm8Incm7e4om1", "name": { "value": "Episode 8","synonyms": ["the last jedi", "last jedi"]}},
-{"id": "recWgQE4gZhJHy6Gu", "name": { "value": "Episode 9","synonyms": ["rise of skywalker", "the rise of skywalker"]}},
-{"id": "receVgdltqwt1Hw0d", "name": { "value": "Mandalorian","synonyms": ["the mandalorian"]}},
-{"id": "recJk9oPTn467iczc", "name": { "value": "Rebels","synonyms": ["star wars rebels"]}},
-{"id": "recarEMefml8DXkDW", "name": { "value": "Resistance","synonyms": ["star wars resistance"]}},
-{"id": "recdRvWTd9XSp0g85", "name": { "value": "Rogue One","synonyms": ["rogue one a star wars story"]}},
-{"id": "recQ45QfJup4jOO6d", "name": { "value": "Solo","synonyms": ["han solo movie", "solo a star wars story"]}}
-                    ]
-                }
-            ]
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "star wars databank",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "CharacterIntent",
+          "slots": [
+            {
+              "name": "character",
+              "type": "Character"
+            }
+          ],
+          "samples": [
+            "{character}",
+            "who is {character}",
+            "give me information about {character}",
+            "tell me about {character}"
+          ]
+        },
+        {
+          "name": "DroidIntent",
+          "slots": [
+            {
+              "name": "droid",
+              "type": "Droid"
+            }
+          ],
+          "samples": [
+            "{droid}",
+            "who is {droid}",
+            "what is {droid}",
+            "give me information about {droid}",
+            "tell me about {droid}"
+          ]
+        },
+        {
+          "name": "CreatureIntent",
+          "slots": [
+            {
+              "name": "creature",
+              "type": "Creature"
+            }
+          ],
+          "samples": [
+            "{creature}",
+            "who is {creature}",
+            "what is {creature}",
+            "give me information about {creature}",
+            "tell me about {creature}"
+          ]
+        },
+        {
+          "name": "VehicleIntent",
+          "slots": [
+            {
+              "name": "vehicle",
+              "type": "Vehicle"
+            }
+          ],
+          "samples": [
+            "{vehicle}",
+            "who is {vehicle}",
+            "what is {vehicle}",
+            "give me information about {vehicle}",
+            "tell me about {vehicle}"
+          ]
+        },
+        {
+          "name": "WeaponIntent",
+          "slots": [
+            {
+              "name": "weapon",
+              "type": "Weapon"
+            }
+          ],
+          "samples": [
+            "{weapon}",
+            "who is {weapon}",
+            "what is {weapon}",
+            "give me information about {weapon}",
+            "tell me about {weapon}"
+          ]
+        },
+        {
+          "name": "TechnologyIntent",
+          "slots": [
+            {
+              "name": "technology",
+              "type": "Technology"
+            }
+          ],
+          "samples": [
+            "{technology}",
+            "who is {technology}",
+            "what is {technology}",
+            "give me information about {technology}",
+            "tell me about {technology}"
+          ]
+        },
+        {
+          "name": "ThingIntent",
+          "slots": [
+            {
+              "name": "thing",
+              "type": "Thing"
+            }
+          ],
+          "samples": [
+            "{thing}",
+            "who is {thing}",
+            "what is {thing}",
+            "give me information about {thing}",
+            "tell me about {thing}"
+          ]
+        },
+        {
+          "name": "LocationIntent",
+          "slots": [
+            {
+              "name": "location",
+              "type": "Location"
+            }
+          ],
+          "samples": [
+            "{location}",
+            "who is {location}",
+            "what is {location}",
+            "give me information about {location}",
+            "tell me about {location}"
+          ]
+        },
+        {
+          "name": "SpeciesIntent",
+          "slots": [
+            {
+              "name": "species",
+              "type": "Species"
+            }
+          ],
+          "samples": [
+            "{species}",
+            "who is {species}",
+            "what is {species}",
+            "give me information about {species}",
+            "tell me about {species}"
+          ]
+        },
+        {
+          "name": "OrganizationIntent",
+          "slots": [
+            {
+              "name": "organization",
+              "type": "Organization"
+            }
+          ],
+          "samples": [
+            "{organization}",
+            "who is {organization}",
+            "what is {organization}",
+            "give me information about {organization}",
+            "tell me about {organization}"
+          ]
+        },
+        {
+          "name": "MediaIntent",
+          "slots": [
+            {
+              "name": "media",
+              "type": "Media"
+            }
+          ],
+          "samples": [
+            "{media}",
+            "who is {media}",
+            "what is {media}",
+            "give me information about {media}",
+            "tell me about {media}"
+          ]
+        },
+        {
+          "name": "TrailerIntent",
+          "slots": [
+            {
+              "name": "media",
+              "type": "Media"
+            }
+          ],
+          "samples": [
+            "show me the {media} trailer",
+            "{media} trailer",
+            "can I see the {media} trailer",
+            "show the trailer for {media}",
+            "for the {media} trailer",
+            "to show the trailer for {media}"
+          ]
+        },
+        {
+          "name": "CrawlIntent",
+          "slots": [
+            {
+              "name": "media",
+              "type": "Media"
+            }
+          ],
+          "samples": [
+            "show me the {media} crawl",
+            "{media} crawl",
+            "can I see the {media} crawl",
+            "show the crawl for {media}",
+            "for the {media} crawl",
+            "to show the crawl for {media}",
+            "show me the {media} opening crawl",
+            "{media} opening crawl",
+            "can I see the {media} opening crawl",
+            "show the opening crawl for {media}",
+            "for the {media} opening crawl",
+            "to show the opening crawl for {media}",
+            "play the {media} opening crawl",
+            "play the {media} crawl"
+          ]
         }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "id": "reckZIgK7rYUXmFUS",
+              "name": {
+                "value": "Aayla Secura",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recYU0ccW00w7CTLu",
+              "name": {
+                "value": "Adi Gallia",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recZdWSzSwoX38gF2",
+              "name": {
+                "value": "Admiral Ackbar",
+                "synonyms": [
+                  "ackbar"
+                ]
+              }
+            },
+            {
+              "id": "recXaTJTWBehhHM5D",
+              "name": {
+                "value": "Admiral Coburn",
+                "synonyms": [
+                  "coburn"
+                ]
+              }
+            },
+            {
+              "id": "recBDZBamBJBuMs0i",
+              "name": {
+                "value": "Admiral Garrick Versio",
+                "synonyms": [
+                  "garrick versio"
+                ]
+              }
+            },
+            {
+              "id": "recmPAgloDcoSsRXU",
+              "name": {
+                "value": "Admiral Kassius Konstantine",
+                "synonyms": [
+                  "kassius constantine"
+                ]
+              }
+            },
+            {
+              "id": "recOtWb0giTcPvqIz",
+              "name": {
+                "value": "Admiral Kilian",
+                "synonyms": [
+                  "killian"
+                ]
+              }
+            },
+            {
+              "id": "recgH6LbmXSDQ6Eqi",
+              "name": {
+                "value": "Admiral Motti",
+                "synonyms": [
+                  "motti",
+                  "motty"
+                ]
+              }
+            },
+            {
+              "id": "recvAlSD2xUfuVm5G",
+              "name": {
+                "value": "Admiral Ozzel",
+                "synonyms": [
+                  "ozzel"
+                ]
+              }
+            },
+            {
+              "id": "recV2jPvats7rwMBd",
+              "name": {
+                "value": "Admiral Piett",
+                "synonyms": [
+                  "piett"
+                ]
+              }
+            },
+            {
+              "id": "rec1xpsl0L7qZpcMB",
+              "name": {
+                "value": "Admiral Raddus",
+                "synonyms": [
+                  "raddus"
+                ]
+              }
+            },
+            {
+              "id": "recgyo8TYBfbw6yAK",
+              "name": {
+                "value": "Admiral Statura",
+                "synonyms": [
+                  "stratura"
+                ]
+              }
+            },
+            {
+              "id": "recqIQBqS0Q2av83C",
+              "name": {
+                "value": "Admiral Trench",
+                "synonyms": [
+                  "trench"
+                ]
+              }
+            },
+            {
+              "id": "recrZR7h0as3v2tOx",
+              "name": {
+                "value": "Aemon Gremm",
+                "synonyms": [
+                  "gremm"
+                ]
+              }
+            },
+            {
+              "id": "rec1nTAAFY54eQe0I",
+              "name": {
+                "value": "Agen Kolar",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recbxJcF7ZkER0OO3",
+              "name": {
+                "value": "Agent Del Meeko",
+                "synonyms": [
+                  "del meeko"
+                ]
+              }
+            },
+            {
+              "id": "recGe6ECrnIZlOvWV",
+              "name": {
+                "value": "Agent Gideon Hask",
+                "synonyms": [
+                  "gideon hask"
+                ]
+              }
+            },
+            {
+              "id": "recXXkseQavvsGDYi",
+              "name": {
+                "value": "Ahsoka Tano",
+                "synonyms": [
+                  "ahsoka"
+                ]
+              }
+            },
+            {
+              "id": "rec68pG47kO5f00t0",
+              "name": {
+                "value": "Alcida-Auka",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "receyYJDAj9dftDqr",
+              "name": {
+                "value": "Aleksandr Kallus",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recEYDTfN9jlwHrld",
+              "name": {
+                "value": "Alora",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recLjiP7UdWlB4WbK",
+              "name": {
+                "value": "Alrich Wren",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recIAT170u3tXTTOI",
+              "name": {
+                "value": "Alton Kastle",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recasvPu8JnC0yenh",
+              "name": {
+                "value": "Amda Wabo",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rectrygLNjELfq2Wd",
+              "name": {
+                "value": "Amilyn Holdo",
+                "synonyms": [
+                  "holdo",
+                  "admiral holdo",
+                  "vice admiral holdo"
+                ]
+              }
+            },
+            {
+              "id": "reckPpRopHyfedgYi",
+              "name": {
+                "value": "Amis",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recv0oLShR9MxnJxi",
+              "name": {
+                "value": "Anakin Skywalker",
+                "synonyms": [
+                  "anakin"
+                ]
+              }
+            },
+            {
+              "id": "recS3I7pWtHlEo7iW",
+              "name": {
+                "value": "Appo",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "reccDCyTmFWlI6ghS",
+              "name": {
+                "value": "Arashell Sar",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recRmKDGT4olTKU5H",
+              "name": {
+                "value": "Arc Trooper Echo",
+                "synonyms": [
+                  "echo"
+                ]
+              }
+            },
+            {
+              "id": "recz8swGVX5Ua81GM",
+              "name": {
+                "value": "Arc Trooper Fives",
+                "synonyms": [
+                  "fives",
+                  "CT275555"
+                ]
+              }
+            },
+            {
+              "id": "rectYFMlNvMZYUlAD",
+              "name": {
+                "value": "Argus Six-Eyes Panox",
+                "synonyms": [
+                  "argus panox"
+                ]
+              }
+            },
+            {
+              "id": "recXPXm2S8FJO79jx",
+              "name": {
+                "value": "Asajj Ventress",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recPibKVyh3ICO6eQ",
+              "name": {
+                "value": "Ask Aak",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rechvAACbHKeMSGsH",
+              "name": {
+                "value": "Atai Molec",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec6c2mXW5imQb7Sa",
+              "name": {
+                "value": "Athgar Heece",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recPHcUO2aMslGCcX",
+              "name": {
+                "value": "Aunt Z",
+                "synonyms": [
+                  "Z'Vk'Thkrkza"
+                ]
+              }
+            },
+            {
+              "id": "rec2xLtyJatHW01rB",
+              "name": {
+                "value": "Aurodia Ventafoli",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recotQHS6p5Z3RdbF",
+              "name": {
+                "value": "Aurra Sing",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec4KvYeYZZhR9ERh",
+              "name": {
+                "value": "Azmorigan",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recMDtSnKydaO5PNZ",
+              "name": {
+                "value": "Bail Organa",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec4uL7OnPa4BSYRm",
+              "name": {
+                "value": "Bala-Tik",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recQNGTV2UA5oBy0M",
+              "name": {
+                "value": "Barada",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recCC0q3zYw3FIOH3",
+              "name": {
+                "value": "Bargwill Tomder",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recwsN9wsrdFtWFON",
+              "name": {
+                "value": "Baron Attsmun",
+                "synonyms": [
+                  "baron yasto attsmun",
+                  "yasto attsmun"
+                ]
+              }
+            },
+            {
+              "id": "recfoXnHe0xJXs8Yl",
+              "name": {
+                "value": "Baze Malbus",
+                "synonyms": [
+                  "baze"
+                ]
+              }
+            },
+            {
+              "id": "rec8ObQVtC4TUvvH8",
+              "name": {
+                "value": "Beru Lars",
+                "synonyms": [
+                  "aunt beru",
+                  "beru",
+                  "beru whitesun"
+                ]
+              }
+            },
+            {
+              "id": "recMZSGfi6HpN6uVi",
+              "name": {
+                "value": "Bib Fortuna",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recSN5s2YWXBWR25S",
+              "name": {
+                "value": "Boba Fett",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "reco68DH1D1tEUbV4",
+              "name": {
+                "value": "Bodhi Rook",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recnQIT4hNtC8KCrt",
+              "name": {
+                "value": "Boss Nass",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "reca2NxG2VoHR3Ot3",
+              "name": {
+                "value": "Captain Cassian Andor",
+                "synonyms": [
+                  "cassian",
+                  "cassian andor",
+                  "captain andor"
+                ]
+              }
+            },
+            {
+              "id": "recqHFLkveIoEGbr3",
+              "name": {
+                "value": "Chewbacca",
+                "synonyms": [
+                  "chewie"
+                ]
+              }
+            },
+            {
+              "id": "reclXeh1C8nsTQ2HG",
+              "name": {
+                "value": "Chirrut Îmwe",
+                "synonyms": [
+                  "chirrut imway",
+                  "chirrut"
+                ]
+              }
+            },
+            {
+              "id": "rectCT0UsI2u74aAY",
+              "name": {
+                "value": "Cliegg Lars",
+                "synonyms": [
+                  "lars"
+                ]
+              }
+            },
+            {
+              "id": "rec2lRrbAanYRHs5P",
+              "name": {
+                "value": "Clone Commander Bly",
+                "synonyms": [
+                  "bly",
+                  "commander bly"
+                ]
+              }
+            },
+            {
+              "id": "reczOw4EzL2dSMPhI",
+              "name": {
+                "value": "Count Dooku",
+                "synonyms": [
+                  "dooku"
+                ]
+              }
+            },
+            {
+              "id": "recXdpAvxShipJsZQ",
+              "name": {
+                "value": "Darth Maul",
+                "synonyms": [
+                  "maul"
+                ]
+              }
+            },
+            {
+              "id": "reconNcFfdOp4Y8s9",
+              "name": {
+                "value": "Darth Vader",
+                "synonyms": [
+                  "vader"
+                ]
+              }
+            },
+            {
+              "id": "recKZnPE0NltHMfss",
+              "name": {
+                "value": "Director Orson Krennic",
+                "synonyms": [
+                  "orson krennic",
+                  "krennic",
+                  "director krennic"
+                ]
+              }
+            },
+            {
+              "id": "recsNM3SQImxEksAp",
+              "name": {
+                "value": "Droopy McCool",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "reckXmqWRV2H4a5WD",
+              "name": {
+                "value": "Dryden Vos",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recexI83JtbG2Ytbw",
+              "name": {
+                "value": "Emporer Palpatine",
+                "synonyms": [
+                  "the emporer",
+                  "senator palpatine",
+                  "palpatine",
+                  "darth sidious"
+                ]
+              }
+            },
+            {
+              "id": "recfwP8qSiUIrs9D8",
+              "name": {
+                "value": "Enfys Nest",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec8FQg9flOb7d7d4",
+              "name": {
+                "value": "Finn",
+                "synonyms": [
+                  "FN 2187"
+                ]
+              }
+            },
+            {
+              "id": "recjcI3oUpCQTTz26",
+              "name": {
+                "value": "General Grievous",
+                "synonyms": [
+                  "grievous"
+                ]
+              }
+            },
+            {
+              "id": "recqUYjEqd9Dwjpf8",
+              "name": {
+                "value": "General Hux",
+                "synonyms": [
+                  "hux"
+                ]
+              }
+            },
+            {
+              "id": "recLjut1cYy72GMPr",
+              "name": {
+                "value": "General Veers",
+                "synonyms": [
+                  "veers"
+                ]
+              }
+            },
+            {
+              "id": "recw315ENdgpUFY2N",
+              "name": {
+                "value": "Grand Moff Tarkin",
+                "synonyms": [
+                  "tarkin",
+                  "grand moff"
+                ]
+              }
+            },
+            {
+              "id": "recOHjnnxIjAW88CH",
+              "name": {
+                "value": "Greedo",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recSZNMS62cfaztqM",
+              "name": {
+                "value": "Han Solo",
+                "synonyms": [
+                  "han"
+                ]
+              }
+            },
+            {
+              "id": "recbFKJGtMUlOP7Xr",
+              "name": {
+                "value": "Hondo Ohnaka",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec1ArdBg83YXv0ev",
+              "name": {
+                "value": "Jabba the Hutt",
+                "synonyms": [
+                  "jabba"
+                ]
+              }
+            },
+            {
+              "id": "reca8cEaiEOBjiWXE",
+              "name": {
+                "value": "Jango Fett",
+                "synonyms": [
+                  "jango",
+                  "fett"
+                ]
+              }
+            },
+            {
+              "id": "recQ0J2HG8NUTpZj0",
+              "name": {
+                "value": "Jar Jar Binks",
+                "synonyms": [
+                  "jar jar"
+                ]
+              }
+            },
+            {
+              "id": "recTxiVWaoIOXQAgV",
+              "name": {
+                "value": "Joh Yowza",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec225NS0tB4mAqxP",
+              "name": {
+                "value": "Jyn Erso",
+                "synonyms": [
+                  "gin"
+                ]
+              }
+            },
+            {
+              "id": "rec0q63tFkUPEOd3n",
+              "name": {
+                "value": "Kedpin Shoklop",
+                "synonyms": [
+                  "ked"
+                ]
+              }
+            },
+            {
+              "id": "recBIu7vwPANAUPeM",
+              "name": {
+                "value": "King Prana",
+                "synonyms": [
+                  "grevoth prana",
+                  "grevoth prana 9"
+                ]
+              }
+            },
+            {
+              "id": "recNoewT5mlpkADwe",
+              "name": {
+                "value": "Kylo Ren",
+                "synonyms": [
+                  "kylo",
+                  "ben solo"
+                ]
+              }
+            },
+            {
+              "id": "recyPSF8dDAvnx5vq",
+              "name": {
+                "value": "Lady Proxima",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec21FPwJ8UlHMTQE",
+              "name": {
+                "value": "Lando Calrissian",
+                "synonyms": [
+                  "lando"
+                ]
+              }
+            },
+            {
+              "id": "recomn3Ch2oj9MDMi",
+              "name": {
+                "value": "Leia Organa",
+                "synonyms": [
+                  "leia",
+                  "princess leia"
+                ]
+              }
+            },
+            {
+              "id": "recymOcRsTPszUfu8",
+              "name": {
+                "value": "Luke Skywalker",
+                "synonyms": [
+                  "luke"
+                ]
+              }
+            },
+            {
+              "id": "recFLmeXQorOUP6Jt",
+              "name": {
+                "value": "Mace Windu",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "reccmk0vIWf2w5iBH",
+              "name": {
+                "value": "Max Rebo",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recMQyK6GJVpofFrA",
+              "name": {
+                "value": "Neepers Panpick",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recCRKoz5uJt6jk4L",
+              "name": {
+                "value": "Nien Nunb",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec7mCQD0sPueBQEx",
+              "name": {
+                "value": "Nute Gunray",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recs0pQAaE1CNI9DG",
+              "name": {
+                "value": "Obi-Wan Kenobi",
+                "synonyms": [
+                  "obi wan"
+                ]
+              }
+            },
+            {
+              "id": "recMYPjQNaFejiJaX",
+              "name": {
+                "value": "Owen Lars",
+                "synonyms": [
+                  "uncle owen"
+                ]
+              }
+            },
+            {
+              "id": "recbYStoNAFKB93O9",
+              "name": {
+                "value": "Padmé Amidala",
+                "synonyms": [
+                  "Padmé",
+                  "queen amidala",
+                  "senator amidala"
+                ]
+              }
+            },
+            {
+              "id": "recj94cA64MCptOjD",
+              "name": {
+                "value": "Plo Koon",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec4DmLhZiZqHd4b3",
+              "name": {
+                "value": "Po Nudo",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recUgVw43OmqEE1YB",
+              "name": {
+                "value": "Poe Dameron",
+                "synonyms": [
+                  "poe"
+                ]
+              }
+            },
+            {
+              "id": "recvz4rPZI4CANM7E",
+              "name": {
+                "value": "Qi'Ra",
+                "synonyms": [
+                  "kyra"
+                ]
+              }
+            },
+            {
+              "id": "recRx8EQ67roqqxtJ",
+              "name": {
+                "value": "Qui-Gon Jinn",
+                "synonyms": [
+                  "qui gonn"
+                ]
+              }
+            },
+            {
+              "id": "recWGS9p7GyL946vM",
+              "name": {
+                "value": "Ratts Tyerell",
+                "synonyms": [
+                  "ratts"
+                ]
+              }
+            },
+            {
+              "id": "recGpTsKpp6Jy9Nib",
+              "name": {
+                "value": "Rey",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recmJ5ZIzmDJrPcMC",
+              "name": {
+                "value": "Salacious B. Crumb",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recfT2cWuJobNlFni",
+              "name": {
+                "value": "Saw Gerrera",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recEyEr1sHlVuqFVZ",
+              "name": {
+                "value": "Shmi Skywalker Lars",
+                "synonyms": [
+                  "shmi",
+                  "skywalker",
+                  "lars"
+                ]
+              }
+            },
+            {
+              "id": "rec6domfX39fjThrx",
+              "name": {
+                "value": "Sy Snootles",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recHYWQAaSu7zXTDk",
+              "name": {
+                "value": "Tasu Leech",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recrjRxADGkJF3jfe",
+              "name": {
+                "value": "Tobias Beckett",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recQnj1QG7m3rwQlw",
+              "name": {
+                "value": "Watto",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recKO1t96oBmiEh5Z",
+              "name": {
+                "value": "Wedge Antilles",
+                "synonyms": [
+                  "wedge"
+                ]
+              }
+            }
+          ],
+          "name": "Character"
+        },
+        {
+          "values": [
+            {
+              "id": "recfOAAulOIu87n7e",
+              "name": {
+                "value": "2-1B",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec2f062O1QTaSpRf",
+              "name": {
+                "value": "4-LOM",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recFd3Xet3wOhiEys",
+              "name": {
+                "value": "4D-M1N",
+                "synonyms": [
+                  "four dee em one n",
+                  "4DM1N"
+                ]
+              }
+            },
+            {
+              "id": "rec6MKPuVTd4iKJ8C",
+              "name": {
+                "value": "8D8",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recqUH7iA0Wlcpxqx",
+              "name": {
+                "value": "AP-5",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recvxtE3cbBAi9fTv",
+              "name": {
+                "value": "AZI-3",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recDTgb7iPy8l5gaf",
+              "name": {
+                "value": "B-U4D",
+                "synonyms": [
+                  "buford"
+                ]
+              }
+            },
+            {
+              "id": "reczwkC5AI8GTcEcT",
+              "name": {
+                "value": "BB-8",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recAETZzmYLMyinQH",
+              "name": {
+                "value": "BB-9E",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recQ5ZxTdDYizdgC1",
+              "name": {
+                "value": "C-3PO",
+                "synonyms": [
+                  "threepio",
+                  "C3PO"
+                ]
+              }
+            },
+            {
+              "id": "recYSgO8EhOFfdgVQ",
+              "name": {
+                "value": "G2-1B7",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recI11sSBalg2FPDj",
+              "name": {
+                "value": "IG-88",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recfrO9CRP8AeBzo7",
+              "name": {
+                "value": "K-2S0",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recrRhyNP43NUJpmI",
+              "name": {
+                "value": "L3-37",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec7ba6pBTmCusyPv",
+              "name": {
+                "value": "R2-D2",
+                "synonyms": [
+                  "artoo"
+                ]
+              }
+            },
+            {
+              "id": "rechY6YADkRWDSDa8",
+              "name": {
+                "value": "R5-D4",
+                "synonyms": []
+              }
+            }
+          ],
+          "name": "Droid"
+        },
+        {
+          "values": [
+            {
+              "id": "recF1wyTYt2h9eH3Q",
+              "name": {
+                "value": "Acklay",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec8dUGG452Od0Tti",
+              "name": {
+                "value": "Aiwha",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recxLiJ6hdkNiLb8Y",
+              "name": {
+                "value": "Fathier",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rechNSXiwWMZSlgm7",
+              "name": {
+                "value": "Bantha",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recdupgPv3yhhMPCk",
+              "name": {
+                "value": "Dianoga",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec5Kn5p1zBbYfRA1",
+              "name": {
+                "value": "Wampa",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recwrgvsrLZepAXg7",
+              "name": {
+                "value": "Tauntaun",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recp8Zl7deE0Fs9od",
+              "name": {
+                "value": "Rancor",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recd82eV0taitC0Ho",
+              "name": {
+                "value": "Rathtar",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "reci6070MnHzJPS9s",
+              "name": {
+                "value": "Space Slug",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recH7n7Jiinjtfpyx",
+              "name": {
+                "value": "Mynock",
+                "synonyms": []
+              }
+            }
+          ],
+          "name": "Creature"
+        },
+        {
+          "values": [
+            {
+              "id": "recumj8CGZV4i4SwQ",
+              "name": {
+                "value": "A-Wing Fighter",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec4BHr1AC6UCvoBw",
+              "name": {
+                "value": "A-Wing Trainer ",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec2D9yvrK5F4xEfH",
+              "name": {
+                "value": "AA-9 Coruscant Freighter",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recpT9oju4sTSKHd2",
+              "name": {
+                "value": "AAT Battle Tank",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recU6tGuO4hJO559f",
+              "name": {
+                "value": "Alderaan Cruiser",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recVQUElkvGBugh23",
+              "name": {
+                "value": "Anakin Skywalker's Podracer",
+                "synonyms": [
+                  "anakin's podracer"
+                ]
+              }
+            },
+            {
+              "id": "recBqN1AJRQaY2MFV",
+              "name": {
+                "value": "ARC-170 Starfighter",
+                "synonyms": [
+                  "arc 170"
+                ]
+              }
+            },
+            {
+              "id": "recYQllxLsV9cnvha",
+              "name": {
+                "value": "AT-ACT Walker",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec3SiVTrQn0SX4Gr",
+              "name": {
+                "value": "AT-AT Walker",
+                "synonyms": [
+                  "all terrain armored transport",
+                  "at at"
+                ]
+              }
+            },
+            {
+              "id": "recIwQuQSVzS5w3fd",
+              "name": {
+                "value": "AT-DP Walker",
+                "synonyms": [
+                  "all terrain defense pod",
+                  "AT DP"
+                ]
+              }
+            },
+            {
+              "id": "reciFAv33YaIfafIE",
+              "name": {
+                "value": "AT-DT Walker",
+                "synonyms": [
+                  "all terrain defense turret",
+                  "AT DT"
+                ]
+              }
+            },
+            {
+              "id": "receplCWJcsBFHU0R",
+              "name": {
+                "value": "AT-Hauler",
+                "synonyms": [
+                  "AT hauler"
+                ]
+              }
+            },
+            {
+              "id": "recLiJhHmGpOmtGfc",
+              "name": {
+                "value": "AT-M6 Walker",
+                "synonyms": [
+                  "AT M6"
+                ]
+              }
+            },
+            {
+              "id": "recOvl3ut1WCDWuZ8",
+              "name": {
+                "value": "AT-RT Walker",
+                "synonyms": [
+                  "AT RT"
+                ]
+              }
+            },
+            {
+              "id": "recW0mcI5j2p0t9tg",
+              "name": {
+                "value": "AT-ST Walker",
+                "synonyms": [
+                  "AT ST"
+                ]
+              }
+            },
+            {
+              "id": "recq5P3BWLDoizyAm",
+              "name": {
+                "value": "AT-TE Walker",
+                "synonyms": [
+                  "AT TE"
+                ]
+              }
+            },
+            {
+              "id": "recQJqnE2kFVUB8ku",
+              "name": {
+                "value": "Conveyex",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec3eZ5gKt63CPaMh",
+              "name": {
+                "value": "Finalizer",
+                "synonyms": [
+                  "first order star destroyer"
+                ]
+              }
+            },
+            {
+              "id": "recCeNJCS0INAmsZH",
+              "name": {
+                "value": "First Light",
+                "synonyms": [
+                  "kalevalan yacht"
+                ]
+              }
+            },
+            {
+              "id": "rechNPDPLdnnkTp19",
+              "name": {
+                "value": "Millennium Falcon",
+                "synonyms": [
+                  "falcon"
+                ]
+              }
+            },
+            {
+              "id": "rect2zePvYPVb8efB",
+              "name": {
+                "value": "Sandcrawler",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recLJLsDqIFN2UsXY",
+              "name": {
+                "value": "Ski Speeder",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec2YM5PGY8s1W1xB",
+              "name": {
+                "value": "Slave I",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec7SSAsgec82BSUw",
+              "name": {
+                "value": "Snowspeeder",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recoP68jaUTNpcDKM",
+              "name": {
+                "value": "Speeder Bike",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec4C27SjGG4DOsll",
+              "name": {
+                "value": "Swoop",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recR8d1gmAOgPmxFz",
+              "name": {
+                "value": "T-16 Skyhopper",
+                "synonyms": [
+                  "skyhopper"
+                ]
+              }
+            },
+            {
+              "id": "recKWgLrdkDv660wI",
+              "name": {
+                "value": "Tantive IV",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recInNVwC2HdBOjhV",
+              "name": {
+                "value": "Tie Fighter",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rechNp1KabSFyYTAq",
+              "name": {
+                "value": "U-Wing Starfighter",
+                "synonyms": [
+                  "u wing"
+                ]
+              }
+            },
+            {
+              "id": "recCQSxyJzVoYTnjn",
+              "name": {
+                "value": "Weequay Saucer Ship",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recfhmBpKc1Gsskce",
+              "name": {
+                "value": "X-Wing Starfighter",
+                "synonyms": [
+                  "x wing"
+                ]
+              }
+            },
+            {
+              "id": "rechAYQgStLAS2j6Q",
+              "name": {
+                "value": "Y-Wing Starfighter",
+                "synonyms": [
+                  "y wing"
+                ]
+              }
+            }
+          ],
+          "name": "Vehicle"
+        },
+        {
+          "values": [
+            {
+              "id": "recU7FWm2tXFhiaOM",
+              "name": {
+                "value": "A280 Blaster Rifle",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recUlJZ2AXxAeWFyq",
+              "name": {
+                "value": "Blaster Pistol",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recU8L53Td9qqiNGH",
+              "name": {
+                "value": "Blaster Rifle",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recazYoyM2AmAYrYP",
+              "name": {
+                "value": "Bowcaster",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recsbvZhK9b8oKn67",
+              "name": {
+                "value": "Electro-Chain Whip",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recnRB95QcONGmPWD",
+              "name": {
+                "value": "Force Lightning",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recNrei6xRmmJEEyl",
+              "name": {
+                "value": "Ion Cannon",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recohOABVGErKgU6G",
+              "name": {
+                "value": "Kylo Ren's Lightsaber",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recPjQq0zxDzs7yLT",
+              "name": {
+                "value": "Lightsaber",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recnToDlijThfZS3A",
+              "name": {
+                "value": "Thermal Detonator",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec34cKfQabBDYQ1W",
+              "name": {
+                "value": "Z6 Riot Control Baton",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec1863F1Ct4KGzis",
+              "name": {
+                "value": "Ahsoka's Lightsabers",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recJqgV6nFkGXNhzF",
+              "name": {
+                "value": "AV-7 Anti-Vehicle Artillery Cannon",
+                "synonyms": [
+                  "AV7"
+                ]
+              }
+            },
+            {
+              "id": "recmNlXHwWJrFYTmD",
+              "name": {
+                "value": "Electroripper Staff",
+                "synonyms": []
+              }
+            }
+          ],
+          "name": "Weapon"
+        },
+        {
+          "values": [
+            {
+              "id": "recnky5Cph47E5HOl",
+              "name": {
+                "value": "Bacta Suit",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recQiPMuHmpqYnxjM",
+              "name": {
+                "value": "Moisture Vaporator",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recHC31byynjoJfje",
+              "name": {
+                "value": "Coaxium",
+                "synonyms": []
+              }
+            }
+          ],
+          "name": "Technology"
+        },
+        {
+          "values": [
+            {
+              "id": "recrOrdZvkivihCnv",
+              "name": {
+                "value": "Sabacc",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recqNDkqbQmqRhU1C",
+              "name": {
+                "value": "Han Solo's Dice",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recE68MpeIxUsCj8S",
+              "name": {
+                "value": "Boonta Eve Classic",
+                "synonyms": []
+              }
+            }
+          ],
+          "name": "Thing"
+        },
+        {
+          "values": [
+            {
+              "id": "receR1mbeJeLD3fR2",
+              "name": {
+                "value": "79’s",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recUKl6nhgOMBRJpQ",
+              "name": {
+                "value": "Abafar",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recuISpz5v5vowXsk",
+              "name": {
+                "value": "Ahch-To",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recLo2BQyQNiaNh3u",
+              "name": {
+                "value": "Ahch-To Jedi Temple",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "reccU0BhqCqnhXbmv",
+              "name": {
+                "value": "Ahch-To Library",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recQHhSajzd00Ga75",
+              "name": {
+                "value": "Ahch-To Mirror Cave",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recbSeosKtoOwdekL",
+              "name": {
+                "value": "Alderaan",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recoRYjcHjfntYNdV",
+              "name": {
+                "value": "Aleen",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recBV9P09T8YUC3Ar",
+              "name": {
+                "value": "Ando",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recBlwmistFlNnqma",
+              "name": {
+                "value": "Archeon Nebula",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "reczYTxshYryIqcbg",
+              "name": {
+                "value": "Asteroid Belt Gas Refinery",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recLTcTi3j8MarLEp",
+              "name": {
+                "value": "Asteroid Field",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recN89EDbrLrjnn9W",
+              "name": {
+                "value": "Atollon",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recqFqZAe5761QRC5",
+              "name": {
+                "value": "Aunt Z's Tavern",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recMSXeaQF7tBenWJ",
+              "name": {
+                "value": "Bahryn",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recXsOmWFWFy2yIp5",
+              "name": {
+                "value": "Balnab",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recZlA7Nra3rAMD99",
+              "name": {
+                "value": "Bardotta",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recozuY0sp1tcY1vA",
+              "name": {
+                "value": "Base One",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recIW9YMcasOAM9ig",
+              "name": {
+                "value": "Batuu",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recCrLvwHPzEB0TR7",
+              "name": {
+                "value": "Bespin",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recE0Y8pZRyMHSV8C",
+              "name": {
+                "value": "Black Spire Outpost",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec6iCwfk3cjXegDq",
+              "name": {
+                "value": "Bracca",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recGSmtUeq2Zaqf2e",
+              "name": {
+                "value": "Bright Tree Village",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recmMRqYU0NFuvfRo",
+              "name": {
+                "value": "Canto Bight",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recGEPkvASp7vqTud",
+              "name": {
+                "value": "Canto Bight Jail",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recBPYP9v0usM6uaA",
+              "name": {
+                "value": "Canto Casino",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recw5QGPT3LcCGjTU",
+              "name": {
+                "value": "Cantonica",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recsWoV9QlePVfcY9",
+              "name": {
+                "value": "Carlac",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recKgx7LIS0yuvBeO",
+              "name": {
+                "value": "Castilon",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "reclLBPKOzMfrS3YF",
+              "name": {
+                "value": "Catacombs of Cadera",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recDjPicl63vujsM5",
+              "name": {
+                "value": "Cato Neimoidia",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recaOHafn777UnluB",
+              "name": {
+                "value": "Cave of Evil",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec0K0eIoUsbU5pCs",
+              "name": {
+                "value": "Central Detention Center",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recW2XlxTSn2q2ry3",
+              "name": {
+                "value": "Chandrila",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec5jtoCevBHqVzT3",
+              "name": {
+                "value": "Christophsis",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "receCyOYs7IRTD82V",
+              "name": {
+                "value": "Cloud City",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec2j6owNXdNo4Qnl",
+              "name": {
+                "value": "Colossus",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "reccvIKZtFNYHlTAR",
+              "name": {
+                "value": "Concord Dawn",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recDbYY5Sa74HXcan",
+              "name": {
+                "value": "Concordia",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recr9KvUKJ7IU7EpK",
+              "name": {
+                "value": "Corellia",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recE0EpdZmldFPsWl",
+              "name": {
+                "value": "Coronet City",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "reccQGYZpDg3xNPRi",
+              "name": {
+                "value": "Coronet Spaceport",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recKG2ZUZDTaNOEh1",
+              "name": {
+                "value": "Coruscant",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recIGUNBRntZ2RO09",
+              "name": {
+                "value": "Coruscant Senate Building",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recN8nAVA3tV65s1W",
+              "name": {
+                "value": "Crait",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec8Jt3scf92ErYeh",
+              "name": {
+                "value": "Crait Rebel Base",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recjz8GtNSEAuVedo",
+              "name": {
+                "value": "D'Qar",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recF3DvpxtrkMTh4e",
+              "name": {
+                "value": "Dagobah",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec8n4FPKZioU7BT3",
+              "name": {
+                "value": "Dandoran",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recDobsNtj9hvHEAD",
+              "name": {
+                "value": "Dantooine",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recly4vFoaTa51FAd",
+              "name": {
+                "value": "Dassal System",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recMIg8spBd9GKN0p",
+              "name": {
+                "value": "Dathomir",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recbhjvOVPWYUdeCI",
+              "name": {
+                "value": "Death Star",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recOgK3oocqhvYsmt",
+              "name": {
+                "value": "Death Star II",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recnL0doJk9cAoqkv",
+              "name": {
+                "value": "Devaron",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec2xBsRZLa351qpU",
+              "name": {
+                "value": "Dex's Diner",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recFgL0A5KByezQ8r",
+              "name": {
+                "value": "Dok-Ondar's Den of Antiquities",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recz1oAKwtn8LKzeG",
+              "name": {
+                "value": "Dorin",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recJLrjWFLHJnnUzY",
+              "name": {
+                "value": "Doza Tower",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recMOpuGaAlZC3X7K",
+              "name": {
+                "value": "Eadu",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rechi9S32NJS49Usm",
+              "name": {
+                "value": "Echo Base",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recVdqbBzZf4DHoXY",
+              "name": {
+                "value": "Endor",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recyis9vUf3d1VHHj",
+              "name": {
+                "value": "Er'Kit",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "reclax7VyrZzADeOv",
+              "name": {
+                "value": "Felucia",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recNJn5ywJYOQkNM7",
+              "name": {
+                "value": "First Order Mining Operation",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recSGfma7Jopz8UEl",
+              "name": {
+                "value": "Florrum",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recLtoSbFPCrcItOJ",
+              "name": {
+                "value": "Fondor",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recdFNfwWmAqL30hT",
+              "name": {
+                "value": "Force Planet",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recehuZpabHlZNLEu",
+              "name": {
+                "value": "Fort Anaxes",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "reco9T0j6INjjY73w",
+              "name": {
+                "value": "Fort Ypso",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recgdmdPnGue3chgC",
+              "name": {
+                "value": "Galaxies Opera House",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recCZEvnd6o8caYdj",
+              "name": {
+                "value": "Garel",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recaINDJ0c5OcMylw",
+              "name": {
+                "value": "Geonosis",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recoqqnM9kGPenHe5",
+              "name": {
+                "value": "Geonosis Droid Factory",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recohZ3F9ntifcgdD",
+              "name": {
+                "value": "Glee Anselm",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rechZiBEtbQcUuPxv",
+              "name": {
+                "value": "Goazon Badlands",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec5VyB37OiO4I1Hy",
+              "name": {
+                "value": "Haruun Kal",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recPqk8K9F5Hha3Zt",
+              "name": {
+                "value": "Havoc Outpost",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recvmgEGkgrepHKcB",
+              "name": {
+                "value": "Holy City of Jedha",
+                "synonyms": [
+                  "jedha"
+                ]
+              }
+            },
+            {
+              "id": "recfuqNUwPXW2qLt7",
+              "name": {
+                "value": "Horizon Base",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recbpeZIaOxXalxX9",
+              "name": {
+                "value": "Hosnian Prime",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec5b4uobjFl9UnAd",
+              "name": {
+                "value": "Hoth",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recuxAYhlcBj2cyVv",
+              "name": {
+                "value": "Ibaar",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recyLM1lBDzuuzB29",
+              "name": {
+                "value": "Iego",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recj08Ji6z1GMDtlK",
+              "name": {
+                "value": "Ilum",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recKZRq2dPz8woZhj",
+              "name": {
+                "value": "Imperial Academy",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recUupJt0P2OoWZXk",
+              "name": {
+                "value": "Jabba's Palace",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recDt1ND7vYuVqp5P",
+              "name": {
+                "value": "Jakku",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recUNKpZuxOzpxLAg",
+              "name": {
+                "value": "Jalath",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recdu6OFphzeCICaH",
+              "name": {
+                "value": "Jalindi",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "reco7L0hzctV3N8mc",
+              "name": {
+                "value": "Jedha",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recEKXhX3S6qQutoL",
+              "name": {
+                "value": "Jedi Temple",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recPzTqTBrgIRZCIw",
+              "name": {
+                "value": "Jundland Wastes",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recCmvEKrccIHk1V5",
+              "name": {
+                "value": "Kaleesh",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec9hsGkzX9k29JTd",
+              "name": {
+                "value": "Kamino",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recsdeabt4zhwxHYY",
+              "name": {
+                "value": "Kashyyyk",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recDyIgqGFtuPjqbc",
+              "name": {
+                "value": "Kessel",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec2EmWSBfQGUP5XD",
+              "name": {
+                "value": "Kintan",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recnbs3qYWxMIfB8k",
+              "name": {
+                "value": "Kiros",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recGSAaH9au3iNC85",
+              "name": {
+                "value": "Kowak",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recrUAHWYCbqM8GId",
+              "name": {
+                "value": "Lah'mu",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec2i9GrbY01H3ed3",
+              "name": {
+                "value": "Lars Moisture Farm",
+                "synonyms": [
+                  "lars farm"
+                ]
+              }
+            },
+            {
+              "id": "recjg8ryxRSrD99Ob",
+              "name": {
+                "value": "Lothal",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec7OlHDemrfM0Gbi",
+              "name": {
+                "value": "Malastare",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recLKszdDM2pQykGU",
+              "name": {
+                "value": "Mandalore",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "reczAVUi7RkdKqmyk",
+              "name": {
+                "value": "Mon Cala",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recm9Q2SRSPVRuJGc",
+              "name": {
+                "value": "Mos Eisley Spaceport",
+                "synonyms": [
+                  "mos eisley"
+                ]
+              }
+            },
+            {
+              "id": "recpaf3m3Y1Pn2MCL",
+              "name": {
+                "value": "Mustafar",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recQv1oCQIhexh1xN",
+              "name": {
+                "value": "Naboo",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec6E1LKmZwWKItqY",
+              "name": {
+                "value": "Nar Kanji",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rectqfIq2N3FMhFSU",
+              "name": {
+                "value": "Nar Shaddaa",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recUhRdnxGvruoyTA",
+              "name": {
+                "value": "Niima Outpost",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec89Y7YCknCVs33s",
+              "name": {
+                "value": "Onderon",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recUfVh6vhZ8w1Rjt",
+              "name": {
+                "value": "Orto",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recIkljhRk2Mpmc9b",
+              "name": {
+                "value": "Rodia",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec3fRK1cqnNB0eIZ",
+              "name": {
+                "value": "Ryloth",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recVWx5mCfjjysdTU",
+              "name": {
+                "value": "Savareen",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recJEeuIfwoQtBzYD",
+              "name": {
+                "value": "Scarif",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec7v191zWEsOWogG",
+              "name": {
+                "value": "Serenno",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recINDyTC3HzYKA06",
+              "name": {
+                "value": "Socorro",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recV86Cd8mZAQMpQO",
+              "name": {
+                "value": "Starkiller Base",
+                "synonyms": [
+                  "starkiller"
+                ]
+              }
+            },
+            {
+              "id": "recYH1Op0n7wDCch9",
+              "name": {
+                "value": "Stewjon",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recHUoJRKBQU6JrTa",
+              "name": {
+                "value": "Sullust",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recenxXLDzpdPkUj7",
+              "name": {
+                "value": "Takodana",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "reccsvhueXBjUSJ57",
+              "name": {
+                "value": "Tatooine",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recYt5GOCGbEaAqh1",
+              "name": {
+                "value": "Teth",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recjEMBgeMa7qouRX",
+              "name": {
+                "value": "The Great Pit of Carkoon",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec5WO7CvwWpSt9OR",
+              "name": {
+                "value": "The Lodge",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recWUGliMCHe3qQ8h",
+              "name": {
+                "value": "Tholoth",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recXeRqY1ii9jpHKh",
+              "name": {
+                "value": "Toydaria",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recK7yrFzIQVVa3wZ",
+              "name": {
+                "value": "Twon Ketee",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recNjoiUOBoaMPDMh",
+              "name": {
+                "value": "Utapau",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec5y3xUHm3xFJDwe",
+              "name": {
+                "value": "Vandor",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recmVxUcQRopINJqj",
+              "name": {
+                "value": "Yavin 4",
+                "synonyms": [
+                  "yavin"
+                ]
+              }
+            },
+            {
+              "id": "recsu89jsS655NGB8",
+              "name": {
+                "value": "Zygerria",
+                "synonyms": []
+              }
+            }
+          ],
+          "name": "Location"
+        },
+        {
+          "values": [
+            {
+              "id": "reccPquLSG0tOg6ID",
+              "name": {
+                "value": "Abednedo",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recHgiVUWQEC9v9aW",
+              "name": {
+                "value": "Aleena",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recTln3vpo0dyIAjD",
+              "name": {
+                "value": "Amani",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rechIWBEk7zwezTTP",
+              "name": {
+                "value": "Anacondan",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recCvhxSflHvAawmc",
+              "name": {
+                "value": "Angel",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recP0b68Ml0a2Z0I0",
+              "name": {
+                "value": "Aqualish",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recjysR88mBcldngl",
+              "name": {
+                "value": "Azumel",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recLcnNZjBIRUKTSF",
+              "name": {
+                "value": "Balosar",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec3tx6ksIWYvsJ3C",
+              "name": {
+                "value": "Belugan",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recduOn3B7Id0OAhE",
+              "name": {
+                "value": "Besalisk",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recvNbwMzwD8TwWjM",
+              "name": {
+                "value": "Bith",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recFE340yVjRXA2f5",
+              "name": {
+                "value": "Bivall",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recMxMTIMIFU26KZO",
+              "name": {
+                "value": "Bonzami",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recS2OCn7kPosx32z",
+              "name": {
+                "value": "Cerean",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recdBRiUYlgl2V3In",
+              "name": {
+                "value": "Chadra-Fan",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "reclgoz6LCMXUk7i7",
+              "name": {
+                "value": "Chagrian",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recGxVDprDno72dyE",
+              "name": {
+                "value": "Cloddogran",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recU0AXtSrxCd8JwP",
+              "name": {
+                "value": "Cosian",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec5ANZJlrm9pUt7h",
+              "name": {
+                "value": "Dactillion",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec07S5Hu55izYdOF",
+              "name": {
+                "value": "Dalgo",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recPfZHtU2i7ikQDo",
+              "name": {
+                "value": "Dathomirian",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recLRkFD2IyfeyoCD",
+              "name": {
+                "value": "Devaronian",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec4quXAjK0guZzYV",
+              "name": {
+                "value": "Dug",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recfyWmmSfECQCBbo",
+              "name": {
+                "value": "Duros",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec4yTj9Rs9ANTWr6",
+              "name": {
+                "value": "Dybrinthe",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recrKsjpAG8DIYRHG",
+              "name": {
+                "value": "Ewok",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recfKQHMq5xuzMJWs",
+              "name": {
+                "value": "Falleen",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recKeCc8iDvhZj3P1",
+              "name": {
+                "value": "Falumpaset",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec6HRSr3TVxDWfxD",
+              "name": {
+                "value": "Gamorrean",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recufJBo6YxxIf0KA",
+              "name": {
+                "value": "Geonosian",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recopGn2Jve6gFUjB",
+              "name": {
+                "value": "Gilliand",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recB4jDIRHfSUDqhu",
+              "name": {
+                "value": "Givin",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "reccOboYKBimSM73x",
+              "name": {
+                "value": "Gotal",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recPcbu4DLZPxCOfK",
+              "name": {
+                "value": "Gran",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recqlggFSMU0o267K",
+              "name": {
+                "value": "Green Nikto",
+                "synonyms": [
+                  "nikto"
+                ]
+              }
+            },
+            {
+              "id": "recuBDFowtI9beNmF",
+              "name": {
+                "value": "Grindalid",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec4d3nY9toJ6LJOV",
+              "name": {
+                "value": "Gungan",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recCWF9UH0PoX3iTd",
+              "name": {
+                "value": "Harch",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recLhhawlSBcWlgZU",
+              "name": {
+                "value": "Human",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recTRh0W5TJMtAnd7",
+              "name": {
+                "value": "Hutt",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recu8c8B521jBSsUQ",
+              "name": {
+                "value": "Hylobon",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recdg7TjCkez2JLnh",
+              "name": {
+                "value": "Ithorian",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recBP55x79rikZvQT",
+              "name": {
+                "value": "Jablogian",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recorgmGKr5wYH4Pa",
+              "name": {
+                "value": "Jawa",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recPeXgjCb5XNCWQo",
+              "name": {
+                "value": "Junker",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec6phrrXGTzPRIOO",
+              "name": {
+                "value": "Kaadu",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recH6HYPdvpuet60S",
+              "name": {
+                "value": "Kalee",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recjOgxL11r2mqEiU",
+              "name": {
+                "value": "Kallidahin",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rectmaQ7kMNAAPi1K",
+              "name": {
+                "value": "Kaminoan",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recxuGOKgK6yFRsGQ",
+              "name": {
+                "value": "Kel Dor",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recle7iCXok7D8TJO",
+              "name": {
+                "value": "Kindalo",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recRSCfbnKG2o67ta",
+              "name": {
+                "value": "Kitonak",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recOxOXebvfHMyoEh",
+              "name": {
+                "value": "Klatooinian",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec195TguKcDZOdTE",
+              "name": {
+                "value": "Klatoonian",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recg0OL9MOLAcMbcX",
+              "name": {
+                "value": "Kowakian Monkey-Lizard",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recRoPXky5VAIr4ag",
+              "name": {
+                "value": "Kubaz",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recSGXzEydWZw7TFQ",
+              "name": {
+                "value": "Lanai",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec0nSHRs5CEjcp6b",
+              "name": {
+                "value": "Lasat",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recX6I8VhXZ9dUJoF",
+              "name": {
+                "value": "Lurmen",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "receqEN6OuwtHhkYX",
+              "name": {
+                "value": "Mikkian",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recyZW1o6h9RnZIkr",
+              "name": {
+                "value": "Mimbanese",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "receTMznZWvQBWx8g",
+              "name": {
+                "value": "Mirialan",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec4R3g9e3U6dUUY0",
+              "name": {
+                "value": "Mon Calamari",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recDrwIQcedKsLlTd",
+              "name": {
+                "value": "Nautolan",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recEV1lPFPScxCXmt",
+              "name": {
+                "value": "Neimoidian",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recJCQrchQkkWZamr",
+              "name": {
+                "value": "Nightsister Zombie",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recGX1iUaAHrFtA6I",
+              "name": {
+                "value": "Noghri",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recQ8YbiiGMRaCPca",
+              "name": {
+                "value": "Ortolan",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recdw7ypg8QyD8zkE",
+              "name": {
+                "value": "Pa'lowick",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recnFobJxcZNnLNfm",
+              "name": {
+                "value": "Palliduvan",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec51tsbfhY5f1mll",
+              "name": {
+                "value": "Pantoran",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recPqbQHKecKm6LUT",
+              "name": {
+                "value": "Patitite",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recMH15eti5hMJobD",
+              "name": {
+                "value": "Patrolian",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recN4HEWVItUQnKbJ",
+              "name": {
+                "value": "Pau'an",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec9BgqTuwk1dQx3l",
+              "name": {
+                "value": "Poletec",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recelHP6aP3fchUkN",
+              "name": {
+                "value": "Quarren",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recWyEfvIqdcO2YLj",
+              "name": {
+                "value": "Red Nikto",
+                "synonyms": [
+                  "nikto"
+                ]
+              }
+            },
+            {
+              "id": "recU5Oo51Hg8yJr3f",
+              "name": {
+                "value": "Rodian",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recCdDK7WW0j6Ccda",
+              "name": {
+                "value": "Rokkna",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recv5oHukw6Ih6Mtz",
+              "name": {
+                "value": "Saurin",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recOFSwcRMJxKaPQ1",
+              "name": {
+                "value": "Snarlfish",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec96kfij2xJCIF9U",
+              "name": {
+                "value": "Sugi",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "reczfesQ8YIxwFtWP",
+              "name": {
+                "value": "Sullustan",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recah9IusCAcuoWxL",
+              "name": {
+                "value": "Summa-Verminoth",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recDK73ZtCw19Zlxi",
+              "name": {
+                "value": "Talz",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recu4Rp6gHh2w2vRl",
+              "name": {
+                "value": "Tee-Muss",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recLdy36VzmymFtU9",
+              "name": {
+                "value": "Tholothian",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recdNdLbZXlAg39Uy",
+              "name": {
+                "value": "Togruta",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec63FgGhCPXy6PVJ",
+              "name": {
+                "value": "Toydarian",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recZrGcMjxb1pgfYc",
+              "name": {
+                "value": "Trandoshan",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recSsv1YSgFRfu5Rs",
+              "name": {
+                "value": "Tusken Raider",
+                "synonyms": [
+                  "sand people"
+                ]
+              }
+            },
+            {
+              "id": "recwcIlw5QTpzjB7e",
+              "name": {
+                "value": "Twi'lek",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "reczbVUrS37sz6Lxl",
+              "name": {
+                "value": "Ugnaught",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "reczTrLCWb3qKiEE7",
+              "name": {
+                "value": "Umbaran",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec72TriR8l24mCOJ",
+              "name": {
+                "value": "Utai",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recq1Xr1xCbu27t1A",
+              "name": {
+                "value": "Weequay",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec2oDsAn4sTMnwDe",
+              "name": {
+                "value": "Wermal",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recWECm6ibRRzaUGc",
+              "name": {
+                "value": "Wookiee",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recBWArR7b9Z7y1ul",
+              "name": {
+                "value": "Yuzzum",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "reclQyvgRyyMS6WsM",
+              "name": {
+                "value": "Zabrak",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recDxGb74FyMHUsB2",
+              "name": {
+                "value": "Zygerrian",
+                "synonyms": []
+              }
+            }
+          ],
+          "name": "Species"
+        },
+        {
+          "values": [
+            {
+              "id": "rec4AffsUJJRpz7us",
+              "name": {
+                "value": "Alderaan Royal Family",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recTWF7L2fNYtIi81",
+              "name": {
+                "value": "Alliance High Command",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rectpIIejNEaGUtvz",
+              "name": {
+                "value": "Bear Clan",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recJxuZyFNDMry0Hn",
+              "name": {
+                "value": "Black Sun",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "reciW37qOPrX7KSzl",
+              "name": {
+                "value": "Blue Squadron",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recSrCI8gfkmlzV2q",
+              "name": {
+                "value": "Canto Bight Police",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec70mP309AWQc324",
+              "name": {
+                "value": "Caretakers",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec5mVKG7NjFYecnV",
+              "name": {
+                "value": "Clan Kryze",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recxteqC2gadq9XDg",
+              "name": {
+                "value": "Clan Saxon",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recXeg9F8kaPkn9oQ",
+              "name": {
+                "value": "Clan Wren",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recCRcR51Rng5pIdy",
+              "name": {
+                "value": "Clone Force 99",
+                "synonyms": [
+                  "Bad Batch"
+                ]
+              }
+            },
+            {
+              "id": "recHJ79fUl73Okx8p",
+              "name": {
+                "value": "Clone Troopers",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recv1yVFu9cFBfRZf",
+              "name": {
+                "value": "Cloud Riders",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recqspXC8a89LWB95",
+              "name": {
+                "value": "Cobalt Squadron",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recnAa9t5aNXpIENz",
+              "name": {
+                "value": "Confederacy of Independent Systems",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recxwVd33JIB48SZt",
+              "name": {
+                "value": "Corporate Alliance",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recN2A5r6tw3ew86t",
+              "name": {
+                "value": "Coruscant Guard",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recHk0olPrCfNIIkJ",
+              "name": {
+                "value": "Coruscant Underworld Police",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec3jFIG8IPELygzy",
+              "name": {
+                "value": "Crimson Dawn",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec6YPLS1uomjz9yJ",
+              "name": {
+                "value": "Crimson Squadron",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recX5vJVFCcthjzeC",
+              "name": {
+                "value": "D-Squad",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recRdbJP8qBbqchrq",
+              "name": {
+                "value": "Death Star Gunners",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recngLl1LeiPjxuzE",
+              "name": {
+                "value": "Death Star Scientists",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recFKszDDBHsvkl4V",
+              "name": {
+                "value": "Death Star Troopers",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "reccxfwztwKtEw4Mn",
+              "name": {
+                "value": "Death Watch",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recOjAYGgFTKRrWle",
+              "name": {
+                "value": "Elite Praetorian Guard",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recsHRAPcS6Vz9i5f",
+              "name": {
+                "value": "Emigration Officers",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recrpVXQzwfmclrms",
+              "name": {
+                "value": "Executioner Troops",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recK0giMg4ktOQNWC",
+              "name": {
+                "value": "Fathier Jockeys",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recMjYb0W7YKSHr4K",
+              "name": {
+                "value": "Figrin D'An and the Modal Nodes",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recYc0g5HJQrnT1a9",
+              "name": {
+                "value": "First Order Flametrooper",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recqbQBqca3cV7piC",
+              "name": {
+                "value": "First Order Riot Control Stormtroopers",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recwlbYC86MckO4q0",
+              "name": {
+                "value": "First Order Scuba Troopers",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recD2amCNqBOaPSFz",
+              "name": {
+                "value": "First Order Snowtroopers",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recW0Ayc9EpvC1hH2",
+              "name": {
+                "value": "First Order Stormtroopers",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec3QFUJazZNzvnQz",
+              "name": {
+                "value": "First Order Tie Fighter Pilots",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recLC2atRwGJl4rqV",
+              "name": {
+                "value": "Force Priestesses",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recILmNCcaU1AxX1n",
+              "name": {
+                "value": "Free Ryloth Movement",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recMRfN238aAwNFAf",
+              "name": {
+                "value": "Galactic Empire",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recURwSvdZEwg55XP",
+              "name": {
+                "value": "Galactic Republic",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recp39JoQsg7gCq7j",
+              "name": {
+                "value": "Galactic Senate",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recJz4y0WxLw3jZp0",
+              "name": {
+                "value": "Guavian Death Gang",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recp9h2cfpHmFPvjb",
+              "name": {
+                "value": "Gungan Grand Army",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recnLArIiuPko4ocA",
+              "name": {
+                "value": "Gungan High Council",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recwRbMtWWPZZDLNy",
+              "name": {
+                "value": "Hutt Clan",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recRgn0Tc00iZ9koz",
+              "name": {
+                "value": "Imperial Combat Assault Tank Commanders",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recLqUHqJqp6kUcKX",
+              "name": {
+                "value": "Imperial Combat Assault Tank Pilots",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recDfs2EN6mhov4bh",
+              "name": {
+                "value": "Imperial Death Troopers",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rechibgqKRlsM7xiE",
+              "name": {
+                "value": "Imperial Ground Crew",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recud3BQ8SnhblxGf",
+              "name": {
+                "value": "Imperial Medics",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "reckIzKG75ge83R9L",
+              "name": {
+                "value": "Imperial Mobile Surgical Unit",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recOgk5F937NGbGEJ",
+              "name": {
+                "value": "Imperial Pilots",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recmKmsKccZG7LzPz",
+              "name": {
+                "value": "Imperial Royal Guard",
+                "synonyms": [
+                  "imperial guard"
+                ]
+              }
+            },
+            {
+              "id": "recqAdBJc4ugRvjtQ",
+              "name": {
+                "value": "Imperial Security Bureau",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "reconDa7hKzFEt6ll",
+              "name": {
+                "value": "Imperial Security Bureau",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recXYS0qb9JDOAGCw",
+              "name": {
+                "value": "Imperial Supercommandos",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recygKr05vhLYMNrG",
+              "name": {
+                "value": "Inferno Squad",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec77xvYUrgdSuIUs",
+              "name": {
+                "value": "Intergalactic Banking Clan",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "reciaCUcewRbQ3LJa",
+              "name": {
+                "value": "Jedi Order",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recQRjEFrLj4vO4ZT",
+              "name": {
+                "value": "Jedi Temple Guard",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recMFy2yAo7vYX6qt",
+              "name": {
+                "value": "Jedi Youngling",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec6Z7nIP3tREZGDu",
+              "name": {
+                "value": "Jumptroopers",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recDlBRxWpPIiqf0e",
+              "name": {
+                "value": "Kage Warriors",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recdEua1L15rhkrbc",
+              "name": {
+                "value": "Kanjiklub",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recosRZgnafmprL59",
+              "name": {
+                "value": "Kessel Miners",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recyBq1tiQjiU95Ze",
+              "name": {
+                "value": "Life Day",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec9EaZNcJb08KHy3",
+              "name": {
+                "value": "Mandalore Royal Academy of Government",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "reci8vAwm0XV4SRwe",
+              "name": {
+                "value": "Mandalorian Guard",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec7oKQ0HBO1RFIxR",
+              "name": {
+                "value": "Mandalorian Super Commandos",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recnP49gsdBh7Nojr",
+              "name": {
+                "value": "Mining Guild",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rectkIuIzOI8TkDKR",
+              "name": {
+                "value": "Mudtroopers",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recuf3YBIyyJscBUb",
+              "name": {
+                "value": "Naboo Royal Guards",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recg8bzYo965Mtpme",
+              "name": {
+                "value": "Naboo Royal Handmaidens",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec41P6UQswS0GrGu",
+              "name": {
+                "value": "New Mandalorians",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec61BgrdSHc0jLlT",
+              "name": {
+                "value": "Nightbrothers",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recwcEhNFIHZ5u4Dt",
+              "name": {
+                "value": "Nightsisters",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec8TCQB8VM6xxl2J",
+              "name": {
+                "value": "Onderon Rebels",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recSKugKYt0JqN49f",
+              "name": {
+                "value": "Patrol Troopers",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recYrU7IZQGYnxq0F",
+              "name": {
+                "value": "Phoenix Squadron",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec9X7mXHESjaMYsx",
+              "name": {
+                "value": "Purge Troopers",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "reclsCXJDjS0j8QUX",
+              "name": {
+                "value": "Pyke Sentinels",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec7Rvw2Ms6ijsggz",
+              "name": {
+                "value": "Pyke Syndicate",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recBzzEHcGDs1pwVD",
+              "name": {
+                "value": "Range Troopers",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recjLGqVtFuomdGRT",
+              "name": {
+                "value": "Rebel Alliance",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recuMuoFIsLJUDZKU",
+              "name": {
+                "value": "Rebel Pathfinders Spec Ops",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recempO5QQ9ArWmsM",
+              "name": {
+                "value": "Rebel Pilots",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recknZgrF4gjXF73v",
+              "name": {
+                "value": "Rebel Troopers",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recAc65Qggri9vPpk",
+              "name": {
+                "value": "Resistance Pilots",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recgcZX8bx2OKVdkm",
+              "name": {
+                "value": "Resistance Troopers",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recyewBLpPjw5BtZF",
+              "name": {
+                "value": "Sandtroopers",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec1s3wTk8hhAPdih",
+              "name": {
+                "value": "Scout Troopers",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recK3Uqa1MOQguPFF",
+              "name": {
+                "value": "Scrumrats",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec5HFqzAMQLTVDE6",
+              "name": {
+                "value": "Senate Guard",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recLLbTBqYzD2fxeV",
+              "name": {
+                "value": "Separatist Council",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recMjyssZGEo7vN1u",
+              "name": {
+                "value": "Shadow Collective",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recMMXtVZbVxXgxfZ",
+              "name": {
+                "value": "Shoretroopers",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recJxYWXaBQn2pJH9",
+              "name": {
+                "value": "Sienar Fleet Systems",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recOocelo8jdEpCX8",
+              "name": {
+                "value": "Sith",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec4vKAm5ZUsu6HKq",
+              "name": {
+                "value": "Snowtroopers",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recRaiYwrYU0zQR0R",
+              "name": {
+                "value": "Stormtroopers",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recvjyaoj1ADFFjaF",
+              "name": {
+                "value": "Techno Union",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "rec2GWW4B3ax4B6OM",
+              "name": {
+                "value": "The First Order",
+                "synonyms": [
+                  "first order"
+                ]
+              }
+            },
+            {
+              "id": "recOZsuGbehODBtjY",
+              "name": {
+                "value": "The Max Rebo Band",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recfJAWLYL6W7I7M3",
+              "name": {
+                "value": "The New Republic",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recQgEEEmPKjmg24C",
+              "name": {
+                "value": "The Protectors",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recx5jrCySiZLejJj",
+              "name": {
+                "value": "The Resistance",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recONTb0afYqow3uf",
+              "name": {
+                "value": "Trade Federation",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recmbnJHd12A9YIds",
+              "name": {
+                "value": "Unkar's Thugs",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recD5zFfzSfxuVaBa",
+              "name": {
+                "value": "Weequay Pirates",
+                "synonyms": []
+              }
+            },
+            {
+              "id": "recXke0Mgc779dlz7",
+              "name": {
+                "value": "White Worms",
+                "synonyms": []
+              }
+            }
+          ],
+          "name": "Organization"
+        },
+        {
+          "values": [
+            {
+              "id": "recZnBQuRRK1qWahT",
+              "name": {
+                "value": "Battlefront 2",
+                "synonyms": [
+                  "battlefront 2",
+                  "battlefront"
+                ]
+              }
+            },
+            {
+              "id": "rec9333XgYFmwODDb",
+              "name": {
+                "value": "Clone Wars",
+                "synonyms": [
+                  "the clone wars"
+                ]
+              }
+            },
+            {
+              "id": "recGe9VDUGTYKvXzs",
+              "name": {
+                "value": "Episode 1",
+                "synonyms": [
+                  "the phantom menace"
+                ]
+              }
+            },
+            {
+              "id": "rec5AWqrwtf5AJyFS",
+              "name": {
+                "value": "Episode 2",
+                "synonyms": [
+                  "attack of the clones"
+                ]
+              }
+            },
+            {
+              "id": "recpmrDtdGp6bpuj4",
+              "name": {
+                "value": "Episode 3",
+                "synonyms": [
+                  "revenge of the sith"
+                ]
+              }
+            },
+            {
+              "id": "recJcxtIxF9UQKhQW",
+              "name": {
+                "value": "Episode 4",
+                "synonyms": [
+                  "a new hope",
+                  "new hope"
+                ]
+              }
+            },
+            {
+              "id": "rechxOmIQ7Ut0zrsu",
+              "name": {
+                "value": "Episode 5",
+                "synonyms": [
+                  "empire",
+                  "the empire strikes back",
+                  "empire strikes back"
+                ]
+              }
+            },
+            {
+              "id": "rec7aLgv5x0I6M5Mb",
+              "name": {
+                "value": "Episode 6",
+                "synonyms": [
+                  "return of the jedi",
+                  "jedi"
+                ]
+              }
+            },
+            {
+              "id": "recyCTLDkE82D9P8Q",
+              "name": {
+                "value": "Episode 7",
+                "synonyms": [
+                  "the force awakens",
+                  "force awakens"
+                ]
+              }
+            },
+            {
+              "id": "rec0vm8Incm7e4om1",
+              "name": {
+                "value": "Episode 8",
+                "synonyms": [
+                  "the last jedi",
+                  "last jedi"
+                ]
+              }
+            },
+            {
+              "id": "recWgQE4gZhJHy6Gu",
+              "name": {
+                "value": "Episode 9",
+                "synonyms": [
+                  "rise of skywalker",
+                  "the rise of skywalker"
+                ]
+              }
+            },
+            {
+              "id": "receVgdltqwt1Hw0d",
+              "name": {
+                "value": "Mandalorian",
+                "synonyms": [
+                  "the mandalorian"
+                ]
+              }
+            },
+            {
+              "id": "recJk9oPTn467iczc",
+              "name": {
+                "value": "Rebels",
+                "synonyms": [
+                  "star wars rebels"
+                ]
+              }
+            },
+            {
+              "id": "recarEMefml8DXkDW",
+              "name": {
+                "value": "Resistance",
+                "synonyms": [
+                  "star wars resistance"
+                ]
+              }
+            },
+            {
+              "id": "recdRvWTd9XSp0g85",
+              "name": {
+                "value": "Rogue One",
+                "synonyms": [
+                  "rogue one a star wars story"
+                ]
+              }
+            },
+            {
+              "id": "recQ45QfJup4jOO6d",
+              "name": {
+                "value": "Solo",
+                "synonyms": [
+                  "han solo movie",
+                  "solo a star wars story"
+                ]
+              }
+            }
+          ],
+          "name": "Media"
+        }
+      ]
     }
+  },
+  "version": "16"
 }

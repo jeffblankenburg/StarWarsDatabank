@@ -6,11 +6,11 @@
       "merge": {},
       "resources": {
         "manifest": {
-          "eTag": "168ca1d5454d7ae87f1e9a4a51c2550d"
+          "eTag": "1fd22eda90a751bd83f3fd506677d117"
         },
         "interactionModel": {
           "en-US": {
-            "eTag": "b5472cf4785ad5739833486701f13d6a"
+            "eTag": "e6ce689f71cb53cd07a8b957a603c305"
           }
         },
         "lambda": [
@@ -23,7 +23,7 @@
             "codeUri": "lambda/custom",
             "functionName": "StarWarsDatabank",
             "handler": "index.handler",
-            "revisionId": "b7cc4722-be58-4252-9280-2d2d8fc7a831",
+            "revisionId": "833047ff-5be8-4915-94e3-2a6c3783f7cd",
             "runtime": "nodejs8.10"
           }
         ]

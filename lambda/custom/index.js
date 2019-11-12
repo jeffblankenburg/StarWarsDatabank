@@ -47,168 +47,6 @@ const ItemDescriptionHandler = {
     }
 }
 
-const CharacterIntentHandler = {
-    canHandle(handlerInput) {
-        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
-            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'CharacterIntent';
-    },
-    async handle(handlerInput) {
-        console.log(Alexa.getIntentName(handlerInput.requestEnvelope));
-        var speakOutput = await getItemSpeech(handlerInput, "Character");
-        const actionQuery = await getRandomSpeech("ActionQuery");
-
-        return handlerInput.responseBuilder
-            .speak(speakOutput)
-            .reprompt(actionQuery)
-            .getResponse();
-    }
-};
-
-const DroidIntentHandler = {
-    canHandle(handlerInput) {
-        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
-            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'DroidIntent';
-    },
-    async handle(handlerInput) {
-        console.log(Alexa.getIntentName(handlerInput.requestEnvelope));
-        var speakOutput = await getItemSpeech(handlerInput, "Droid");
-        const actionQuery = await getRandomSpeech("ActionQuery");
-
-        return handlerInput.responseBuilder
-            .speak(speakOutput)
-            .reprompt(actionQuery)
-            .getResponse();
-    }
-};
-
-const CreatureIntentHandler = {
-    canHandle(handlerInput) {
-        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
-            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'CreatureIntent';
-    },
-    handle(handlerInput) {
-        console.log(Alexa.getIntentName(handlerInput.requestEnvelope));
-        const speakOutput = "You asked me for a creature.";
-
-        return handlerInput.responseBuilder
-            .speak(speakOutput)
-            .reprompt(speakOutput)
-            .getResponse();
-    }
-};
-
-const VehicleIntentHandler = {
-    canHandle(handlerInput) {
-        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
-            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'VehicleIntent';
-    },
-    handle(handlerInput) {
-        console.log(Alexa.getIntentName(handlerInput.requestEnvelope));
-        const speakOutput = "You asked me for a vehicle.";
-
-        return handlerInput.responseBuilder
-            .speak(speakOutput)
-            .reprompt(speakOutput)
-            .getResponse();
-    }
-};
-
-const WeaponIntentHandler = {
-    canHandle(handlerInput) {
-        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
-            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'WeaponIntent';
-    },
-    handle(handlerInput) {
-        console.log(Alexa.getIntentName(handlerInput.requestEnvelope));
-        const speakOutput = "You asked me for a weapon.";
-
-        return handlerInput.responseBuilder
-            .speak(speakOutput)
-            .reprompt(speakOutput)
-            .getResponse();
-    }
-};
-
-const TechnologyIntentHandler = {
-    canHandle(handlerInput) {
-        console.log(Alexa.getIntentName(handlerInput.requestEnvelope));
-        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
-            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'TechnologyIntent';
-    },
-    handle(handlerInput) {
-        const speakOutput = "You asked me for a technology.";
-
-        return handlerInput.responseBuilder
-            .speak(speakOutput)
-            .reprompt(speakOutput)
-            .getResponse();
-    }
-};
-
-const ThingIntentHandler = {
-    canHandle(handlerInput) {
-        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
-            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'ThingIntent';
-    },
-    handle(handlerInput) {
-        console.log(Alexa.getIntentName(handlerInput.requestEnvelope));
-        const speakOutput = "You asked me for a thing.";
-
-        return handlerInput.responseBuilder
-            .speak(speakOutput)
-            .reprompt(speakOutput)
-            .getResponse();
-    }
-};
-
-const LocationIntentHandler = {
-    canHandle(handlerInput) {
-        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
-            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'LocationIntent';
-    },
-    handle(handlerInput) {
-        console.log(Alexa.getIntentName(handlerInput.requestEnvelope));
-        const speakOutput = "You asked me for a location.";
-
-        return handlerInput.responseBuilder
-            .speak(speakOutput)
-            .reprompt(speakOutput)
-            .getResponse();
-    }
-};
-
-const SpeciesIntentHandler = {
-    canHandle(handlerInput) {
-        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
-            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'SpeciesIntent';
-    },
-    handle(handlerInput) {
-        console.log(Alexa.getIntentName(handlerInput.requestEnvelope));
-        const speakOutput = "You asked me for a species.";
-
-        return handlerInput.responseBuilder
-            .speak(speakOutput)
-            .reprompt(speakOutput)
-            .getResponse();
-    }
-};
-
-const OrganizationIntentHandler = {
-    canHandle(handlerInput) {
-        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
-            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'OrganizationIntent';
-    },
-    handle(handlerInput) {
-        console.log(Alexa.getIntentName(handlerInput.requestEnvelope));
-        const speakOutput = "You asked me for an organization.";
-
-        return handlerInput.responseBuilder
-            .speak(speakOutput)
-            .reprompt(speakOutput)
-            .getResponse();
-    }
-};
-
 const MediaIntentHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
@@ -222,6 +60,122 @@ const MediaIntentHandler = {
             .speak(speakOutput)
             .reprompt(speakOutput)
             .getResponse();
+    }
+};
+
+const TrailerIntentHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'TrailerIntent';
+    },
+    async handle(handlerInput) {
+        console.log(Alexa.getIntentName(handlerInput.requestEnvelope));
+        var speakOutput = "";
+        var spokenWords = getSpokenWords(handlerInput, "media");
+        var resolvedWords = getResolvedWords(handlerInput, "media");
+        const actionQuery = await getRandomSpeech("ActionQuery");
+        var rb = handlerInput.responseBuilder;
+        
+        if (resolvedWords != undefined) {
+            var media = await getSpecificDataById("Media", resolvedWords[0].value.id);
+
+            if (supportsVideo(handlerInput)) {
+                var apl = require("apl/videoplayer.json");
+                apl.document.mainTemplate.items[0].items[0].source = media.fields.Trailer;
+                rb.addDirective({
+                    type: 'Alexa.Presentation.APL.RenderDocument',
+                    token: '[SkillProvidedToken]',
+                    version: '1.0',
+                    document: apl.document,
+                    datasources: apl.datasources
+                })
+            }
+            else {
+                speakOutput = "Your device doesn't support video, so I can't show you the trailer. " + " " + actionQuery;
+            }
+        }
+        else {
+            speakOutput = "You asked me for the trailer to " + spokenWords + ", but I don't think that's the name of a movie or television show from the Star Wars Universe. " + actionQuery;
+        }
+
+        return rb
+            .speak(speakOutput)
+            .reprompt(actionQuery)
+            .getResponse();
+
+    }
+};
+
+const CrawlIntentHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'CrawlIntent';
+    },
+    async handle(handlerInput) {
+        console.log(Alexa.getIntentName(handlerInput.requestEnvelope));
+        console.log("SHOWING OPENING CRAWL");
+        var speakOutput = "";
+        var spokenWords = getSpokenWords(handlerInput, "media");
+        var resolvedWords = getResolvedWords(handlerInput, "media");
+        const actionQuery = await getRandomSpeech("ActionQuery");
+        var rb = handlerInput.responseBuilder;
+        
+        if (resolvedWords != undefined) {
+            var media = await getSpecificDataById("Media", resolvedWords[0].value.id);
+
+            if (supportsVideo(handlerInput)) {
+
+                if (media.fields.Crawl != undefined) {
+                    var apl = require("apl/videoplayer.json");
+                    apl.document.mainTemplate.items[0].items[0].source = media.fields.Crawl;
+                    rb.addDirective({
+                        type: 'Alexa.Presentation.APL.RenderDocument',
+                        token: '[SkillProvidedToken]',
+                        version: '1.0',
+                        document: apl.document,
+                        datasources: apl.datasources
+                    })
+                }
+                else {
+                    speakOutput = "Unfortunately, there are only opening crawls for the 9 movies in the Star Wars saga. " + resolvedWords.value.name +  " doesn't have one. " + actionQuery;
+                }
+            }
+            else if (supportsAPLT(handlerInput) != undefined) {
+                console.log("USING ECHO DOT WITH CLOCK");
+                rb.addDirective({
+                    "type": "Alexa.Presentation.APLT.RenderDocument",
+                    "document": {
+                        "type": "APLT",
+                        "version": "1.0",
+                        "mainTemplate": {
+                            "items": [
+                                {
+                                    "type": "Text",
+                                    "text" : "thIS IS yOUr APL",//media.fields.ClockCrawl,
+                                    "overflow": "marquee",
+                                    "msPerCharacter": 500
+                                }
+                            ]
+                        }
+                    },
+                    "datasources": {}
+                })
+                speakOutput = media.fields.VoiceCrawl + " " + actionQuery;
+            }
+            else {
+                console.log("NO DISPLAY CAPABILITIES.");
+                speakOutput = media.fields.VoiceCrawl + " " + actionQuery;
+            }
+        }
+        else {
+            speakOutput = "You asked me for the opening crawl for " + spokenWords + ", but I don't think that's the name of a movie from the Star Wars saga. " + actionQuery;
+        }
+
+        return rb
+            .speak(speakOutput)
+            .reprompt(actionQuery)
+            .getResponse();
+
     }
 };
 
@@ -397,6 +351,26 @@ function getResolvedValuesString(values)
     return string;
 }
 
+function supportsVideo(handlerInput) {
+    if (handlerInput
+        && handlerInput.requestEnvelope
+        && handlerInput.requestEnvelope.context
+        && handlerInput.requestEnvelope.context.Viewport
+        && handlerInput.requestEnvelope.context.Viewport.video) return true;
+    return false;
+}
+
+function supportsAPLT(handlerInput) {
+    if (handlerInput
+        && handlerInput.requestEnvelope
+        && handlerInput.requestEnvelope.context
+        && handlerInput.requestEnvelope.context.system
+        && handlerInput.requestEnvelope.context.system.device
+        && handlerInput.requestEnvelope.context.system.device.supportedInterfaces
+        && handlerInput.requestEnvelope.context.system.device.supportedInterfaces["Alexa.Presentation.APLT"]) return true;
+    return false;
+}
+
 function httpGet(base, filter, table = "Data"){
     //console.log("IN HTTP GET");
     //console.log("BASE = " + base);
@@ -460,16 +434,8 @@ exports.handler = Alexa.SkillBuilders.custom()
     .addRequestHandlers(
         LaunchRequestHandler,
         ItemDescriptionHandler,
-        CharacterIntentHandler,
-        DroidIntentHandler,
-        CreatureIntentHandler,
-        VehicleIntentHandler,
-        WeaponIntentHandler,
-        TechnologyIntentHandler,
-        ThingIntentHandler,
-        LocationIntentHandler,
-        SpeciesIntentHandler,
-        OrganizationIntentHandler,
+        TrailerIntentHandler,
+        CrawlIntentHandler,
         MediaIntentHandler,
         HelpIntentHandler,
         CancelAndStopIntentHandler,
