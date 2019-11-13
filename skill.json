@@ -4,7 +4,7 @@
       "custom": {
         "endpoint": {
           "uri": "StarWarsDatabank",
-          "sourceDir": "lambda/custom/"
+          "sourceDir": "lambda/custom"
         },
         "interfaces": [
           {

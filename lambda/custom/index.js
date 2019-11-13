@@ -37,11 +37,47 @@ const ItemDescriptionHandler = {
     },
     async handle(handlerInput) {
         console.log(Alexa.getIntentName(handlerInput.requestEnvelope));
-        var speakOutput = await getItemSpeech(handlerInput, Alexa.getIntentName(handlerInput.requestEnvelope).replace("Intent", ""));
+        var table = Alexa.getIntentName(handlerInput.requestEnvelope).replace("Intent", "").toLowerCase();
+        var spokenWords = getSpokenWords(handlerInput, table);
+        var resolvedWords = getResolvedWords(handlerInput, table);
         const actionQuery = await getRandomSpeech("ActionQuery");
-
-        return handlerInput.responseBuilder
-            .speak(speakOutput)
+        var rb = handlerInput.responseBuilder;
+        if (resolvedWords != undefined) {
+            if (resolvedWords.length > 1) {
+                speech = "I found " + resolvedWords.length + " possible matches for " + spokenWords + ". Did you mean " + getResolvedValuesString(resolvedWords) + "?";
+            }
+            else {
+                item = await getSpecificDataById(table, resolvedWords[0].value.id);
+                var description = item.fields.VoiceDescription;
+                if (description === undefined) description = "I don't have any information about this " + table + " yet.  My data is still being completed.  My apologies. ";
+                speech = "You asked me about " + resolvedWords[0].value.name + ". " + description + " " + actionQuery;
+                if (item.fields.Image != undefined) {
+                    var imageURL = item.fields.Image[0].url;
+                    if (supportsAPL(handlerInput)) {
+                        var apl = require("apl/primary_image.json");
+                        apl.document.mainTemplate.items[0].items[1].headerTitle = item.fields.Name;
+                        apl.document.mainTemplate.items[0].items[2].items[0].source = imageURL;
+                        rb.addDirective({
+                            type: 'Alexa.Presentation.APL.RenderDocument',
+                            token: '[SkillProvidedToken]',
+                            version: '1.0',
+                            document: apl.document,
+                            datasources: apl.datasources
+                        })
+                    }
+                    else {
+                        rb.withStandardCard(item.fields.Name, item.fields.CardDescription, imageURL, imageURL);
+                    }
+                }
+            }
+        }
+        else {
+            //TODO: LOG THIS ENTRY TO REVIEW SPOKEN WORDS THAT DON'T SEEM TO MATCH ANYTHING.
+            speech = "I didn't find a match for " + spokenWords + ", but you can ask about a character, or a species, or a vehicle, for example. " + actionQuery;
+        }
+    
+        return rb
+            .speak(speech)
             .reprompt(actionQuery)
             .getResponse();
     }
@@ -63,6 +99,7 @@ const MediaIntentHandler = {
     }
 };
 
+//TODO: Respond to the user after the trailer has completed.
 const TrailerIntentHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
@@ -80,6 +117,7 @@ const TrailerIntentHandler = {
             var media = await getSpecificDataById("Media", resolvedWords[0].value.id);
 
             if (supportsVideo(handlerInput)) {
+                actionQuery = "";
                 var apl = require("apl/videoplayer.json");
                 apl.document.mainTemplate.items[0].items[0].source = media.fields.Trailer;
                 rb.addDirective({
@@ -126,6 +164,7 @@ const CrawlIntentHandler = {
             if (supportsVideo(handlerInput)) {
 
                 if (media.fields.Crawl != undefined) {
+                    actionQuery = "";
                     var apl = require("apl/videoplayer.json");
                     apl.document.mainTemplate.items[0].items[0].source = media.fields.Crawl;
                     rb.addDirective({
@@ -141,6 +180,7 @@ const CrawlIntentHandler = {
                 }
             }
             else if (supportsAPLT(handlerInput) != undefined) {
+                //TODO: THIS DOESN'T ACTUALLY WORK YET.  PLEASE FIX.
                 console.log("USING ECHO DOT WITH CLOCK");
                 rb.addDirective({
                     "type": "Alexa.Presentation.APLT.RenderDocument",
@@ -280,10 +320,9 @@ async function getSpecificDataById(table, id) {
     return data;
 }
 
-async function getItemSpeech(handlerInput, table){
-    var spokenWords = getSpokenWords(handlerInput, table.toLowerCase());
-    var resolvedWords = getResolvedWords(handlerInput, table.toLowerCase());
-    const actionQuery = await getRandomSpeech("ActionQuery");
+async function getItem(handlerInput, table){
+    
+    
     var item;
     var speech = "";
     if (resolvedWords != undefined) {
@@ -357,6 +396,17 @@ function supportsVideo(handlerInput) {
         && handlerInput.requestEnvelope.context
         && handlerInput.requestEnvelope.context.Viewport
         && handlerInput.requestEnvelope.context.Viewport.video) return true;
+    return false;
+}
+
+function supportsAPL(handlerInput) {
+    if (handlerInput
+        && handlerInput.requestEnvelope
+        && handlerInput.requestEnvelope.context
+        && handlerInput.requestEnvelope.context.System
+        && handlerInput.requestEnvelope.context.System.device
+        && handlerInput.requestEnvelope.context.System.device.supportedInterfaces
+        && handlerInput.requestEnvelope.context.System.device.supportedInterfaces["Alexa.Presentation.APL"]) return true;
     return false;
 }
 
