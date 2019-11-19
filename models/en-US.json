@@ -235,9 +235,47 @@
             "play the {media} opening crawl",
             "play the {media} crawl"
           ]
+        },
+        {
+          "name": "QuizIntent",
+          "slots": [
+            {
+              "name": "media",
+              "type": "Media"
+            },
+            {
+              "name": "type",
+              "type": "Type"
+            }
+          ],
+          "samples": [
+            "quiz me about {media}",
+            "quiz me",
+            "quiz me about {type}",
+            "quiz me about a {type}"
+          ]
         }
       ],
       "types": [
+        {
+          "values": [
+            {
+              "id": "Character",
+              "name": {
+                "value": "Character",
+                "synonyms": ["characters"]
+              }
+            },
+            {
+              "id": "Droid",
+              "name": {
+                "value": "Droid",
+                "synonyms": ["droids"]
+              }
+            }
+          ],
+          "name": "Type"
+        },
         {
           "values": [
             {

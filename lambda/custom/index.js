@@ -3,6 +3,8 @@ const https = require("https");
 const Airtable = require("airtable");
 //const Dashbot = require("dashbot")(process.env.dashbot_key).alexa;
 
+const types = ["Character", "Droid", "Creature", "Vehicle", "Weapon", "Technology", "Thing", "Location", "Species", "Organization"];
+
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest';
@@ -21,6 +23,8 @@ const LaunchRequestHandler = {
     }
 };
 
+//TODO: CHECK TO SEE IF THEY ANSWERED A QUIZ, AND IF THEY GOT IT CORRECT.
+//USE SOUND EFFECTS LIKE EXCITED R2-D2 or DISAPPONTED DARTH VADER.
 const ItemDescriptionHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
@@ -144,6 +148,7 @@ const TrailerIntentHandler = {
     }
 };
 
+//TODO: Respond to the user after the crawl has completed.
 const CrawlIntentHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
@@ -216,6 +221,44 @@ const CrawlIntentHandler = {
             .reprompt(actionQuery)
             .getResponse();
 
+    }
+};
+//TODO: Build an intent to let the user know what all of the categories are.
+//TODO: Build an intent for all of the media that we support.
+//TODO: Save the question we asked, so that we know they answered it correctly next time.
+const QuizIntentHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+        && Alexa.getIntentName(handlerInput.requestEnvelope) === 'QuizIntent';
+    },
+    async handle(handlerInput) {
+        console.log(Alexa.getIntentName(handlerInput.requestEnvelope));
+
+        var spokenMedia = getSpokenWords(handlerInput, "media");
+        var resolvedMedia = getResolvedWords(handlerInput, "media");
+
+        var spokenType = getSpokenWords(handlerInput, "type");
+        var resolvedType = getResolvedWords(handlerInput, "type");
+
+        var type = getRandomItem(types);
+        var item;
+
+        if ((spokenMedia != undefined)&&(resolvedMedia != undefined)) {
+            item = await getRandomItemByCategory(type, resolvedMedia[0].value.name);
+        }
+        else if ((spokenType != undefined)&&(resolvedType != undefined)) {
+            item = await getRandomItemByCategory(resolvedType[0].value.name);
+        }
+        else {
+            item = await getRandomItemByCategory(type);
+        }
+
+        const speakOutput = "I picked a " + type + ". " + item.fields.QuizDescription + " What am I thinking of?";
+
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .reprompt(speakOutput)
+            .getResponse();
     }
 };
 
@@ -317,6 +360,17 @@ async function getSpecificDataById(table, id) {
     const response = await httpGet(process.env.airtable_base_data, "&filterByFormula=AND(IsDisabled%3DFALSE(),RecordId%3D%22" + encodeURIComponent(id) + "%22)", table);
     const data = response.records[0];
     console.log("SPECIFIC ITEM = " + JSON.stringify(data));
+    return data;
+}
+
+async function getRandomItemByCategory(table, media) {
+    var mediaquery = "";
+    console.log("MEDIA = JJ" + media + "JJ");
+    if (media != undefined) mediaquery = ",FIND(%22" + encodeURIComponent(media) + "%22%2C+Appearances)"
+
+    const response = await httpGet(process.env.airtable_base_data, "&filterByFormula=AND(IsDisabled%3DFALSE()" + mediaquery + ")", table);
+    const data = getRandomItem(response.records);
+    console.log("RANDOM " + table.toUpperCase() + " = " + JSON.stringify(data));
     return data;
 }
 
@@ -433,7 +487,7 @@ function httpGet(base, filter, table = "Data"){
         method: "GET",
     };
 
-    //console.log("FULL PATH = http://" + options.host + options.path);
+    console.log("FULL PATH = http://" + options.host + options.path);
     
     return new Promise(((resolve, reject) => {
       const request = https.request(options, (response) => {
@@ -487,6 +541,7 @@ exports.handler = Alexa.SkillBuilders.custom()
         TrailerIntentHandler,
         CrawlIntentHandler,
         MediaIntentHandler,
+        QuizIntentHandler,
         HelpIntentHandler,
         CancelAndStopIntentHandler,
         SessionEndedRequestHandler,
