@@ -13,7 +13,6 @@
     "ask-sdk-core": "^2.7.0",
     "ask-sdk-model": "^1.19.0",
     "aws-sdk": "^2.326.0",
-    "dashbot": "^11.0.0",
     "https": "^1.0.0"
   }
 }

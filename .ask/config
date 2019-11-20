@@ -23,7 +23,7 @@
             "codeUri": "lambda/custom",
             "functionName": "StarWarsDatabank",
             "handler": "index.handler",
-            "revisionId": "402098db-d78e-4e66-b991-40543b316f51",
+            "revisionId": "cba524f5-df0c-451e-9e8e-65788cb789fe",
             "runtime": "nodejs8.10"
           }
         ]

@@ -41,20 +41,41 @@ const ItemDescriptionHandler = {
     },
     async handle(handlerInput) {
         console.log(Alexa.getIntentName(handlerInput.requestEnvelope));
+        var sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
         var table = Alexa.getIntentName(handlerInput.requestEnvelope).replace("Intent", "").toLowerCase();
         var spokenWords = getSpokenWords(handlerInput, table);
         var resolvedWords = getResolvedWords(handlerInput, table);
+        var speech = "";
+
+        //TODO: THIS IS WHERE WE CHECK TO SEE IF THIS WAS A QUIZ, AND CONGRATULATE THE USER FOR GETTING IT CORRECT OR INCORRECT.
+        //“Would you like another question, or know more about the last question”
+
+        if (sessionAttributes.quizItem != undefined) {
+            //TODO: CHECK THE ENTIRE SET OF VALUES IN RESOLVEDWORDS
+            if (sessionAttributes.quizItem.id === resolvedWords[0].value.id) {
+                //WOOHOO!
+                const correct = await getRandomSpeech("CorrectAnswer");
+                speech = "<audio src='https://starwarsdatabank.s3.amazonaws.com/sounds/R2D2VeryExcited.mp3'/> " + correct + " ";
+            }
+            else {
+                //DARN.
+                const wrong = await getRandomSpeech("WrongAnswer");
+                speech = "<audio src='https://starwarsdatabank.s3.amazonaws.com/sounds/R2D2Concerned.mp3'/> " + wrong + " ";
+            }
+        }
+
+
         const actionQuery = await getRandomSpeech("ActionQuery");
         var rb = handlerInput.responseBuilder;
         if (resolvedWords != undefined) {
             if (resolvedWords.length > 1) {
-                speech = "I found " + resolvedWords.length + " possible matches for " + spokenWords + ". Did you mean " + getResolvedValuesString(resolvedWords) + "?";
+                speech += "I found " + resolvedWords.length + " possible matches for " + spokenWords + ". Did you mean " + getResolvedValuesString(resolvedWords) + "?";
             }
             else {
                 item = await getSpecificDataById(table, resolvedWords[0].value.id);
                 var description = item.fields.VoiceDescription;
                 if (description === undefined) description = "I don't have any information about this " + table + " yet.  My data is still being completed.  My apologies. ";
-                speech = "You asked me about " + resolvedWords[0].value.name + ". " + description + " " + actionQuery;
+                speech += "You asked me about " + resolvedWords[0].value.name + ". " + description + " " + actionQuery;
                 if (item.fields.Image != undefined) {
                     var imageURL = item.fields.Image[0].url;
                     if (supportsAPL(handlerInput)) {
@@ -77,7 +98,7 @@ const ItemDescriptionHandler = {
         }
         else {
             //TODO: LOG THIS ENTRY TO REVIEW SPOKEN WORDS THAT DON'T SEEM TO MATCH ANYTHING.
-            speech = "I didn't find a match for " + spokenWords + ", but you can ask about a character, or a species, or a vehicle, for example. " + actionQuery;
+            speech += "I didn't find a match for " + spokenWords + ", but you can ask about a character, or a species, or a vehicle, for example. " + actionQuery;
         }
     
         return rb
@@ -233,6 +254,7 @@ const QuizIntentHandler = {
     },
     async handle(handlerInput) {
         console.log(Alexa.getIntentName(handlerInput.requestEnvelope));
+        var sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
 
         var spokenMedia = getSpokenWords(handlerInput, "media");
         var resolvedMedia = getResolvedWords(handlerInput, "media");
@@ -248,11 +270,16 @@ const QuizIntentHandler = {
         }
         else if ((spokenType != undefined)&&(resolvedType != undefined)) {
             item = await getRandomItemByCategory(resolvedType[0].value.name);
+            type = resolvedType[0].value.name;
         }
         else {
             item = await getRandomItemByCategory(type);
         }
+        
+        sessionAttributes.quizItem = item;
+        sessionAttributes.quizType = type;
 
+        //TODO: SHOW AN APL BUTTON THAT WILL REVEAL THE IMAGE AS A HINT ON DEVICES WITH SCREENS.
         const speakOutput = "I picked a " + type + ". " + item.fields.QuizDescription + " What am I thinking of?";
 
         return handlerInput.responseBuilder
@@ -487,7 +514,7 @@ function httpGet(base, filter, table = "Data"){
         method: "GET",
     };
 
-    console.log("FULL PATH = http://" + options.host + options.path);
+    //console.log("FULL PATH = http://" + options.host + options.path);
     
     return new Promise(((resolve, reject) => {
       const request = https.request(options, (response) => {
