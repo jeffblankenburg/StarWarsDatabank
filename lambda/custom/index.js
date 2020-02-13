@@ -53,12 +53,10 @@ const ItemDescriptionHandler = {
         if (sessionAttributes.quizItem != undefined) {
             //TODO: CHECK THE ENTIRE SET OF VALUES IN RESOLVEDWORDS
             if (sessionAttributes.quizItem.id === resolvedWords[0].value.id) {
-                //WOOHOO!
                 const correct = await getRandomSpeech("CorrectAnswer");
                 speech = "<audio src='https://starwarsdatabank.s3.amazonaws.com/sounds/R2D2VeryExcited.mp3'/> " + correct + " ";
             }
             else {
-                //DARN.
                 const wrong = await getRandomSpeech("WrongAnswer");
                 speech = "<audio src='https://starwarsdatabank.s3.amazonaws.com/sounds/R2D2Concerned.mp3'/> " + wrong + " ";
             }
@@ -68,13 +66,13 @@ const ItemDescriptionHandler = {
         const actionQuery = await getRandomSpeech("ActionQuery");
         var rb = handlerInput.responseBuilder;
         if (resolvedWords != undefined) {
-            if (resolvedWords.length > 1) {
-                speech += "I found " + resolvedWords.length + " possible matches for " + spokenWords + ". Did you mean " + getResolvedValuesString(resolvedWords) + "?";
-            }
-            else {
+            //if (resolvedWords.length > 1) {
+            //    speech += "I found " + resolvedWords.length + " possible matches for " + spokenWords + ". Did you mean " + getResolvedValuesString(resolvedWords) + "?";
+            //}
+            //else {
                 item = await getSpecificDataById(table, resolvedWords[0].value.id);
                 var description = item.fields.VoiceDescription;
-                if (description === undefined) description = "I don't have any information about this " + table + " yet.  My data is still being completed.  My apologies. ";
+                if (description === undefined) description = "Oh dear. I know " + resolvedWords[0].value.name + " is a " + table + ", but I don't seem to have any information yet.  My data is still being completed.  My apologies. ";
                 speech += "You asked me about " + resolvedWords[0].value.name + ". " + description + " " + actionQuery;
                 if (item.fields.Image != undefined) {
                     var imageURL = item.fields.Image[0].url;
@@ -94,7 +92,7 @@ const ItemDescriptionHandler = {
                         rb.withStandardCard(item.fields.Name, item.fields.CardDescription, imageURL, imageURL);
                     }
                 }
-            }
+            //}
         }
         else {
             //TODO: LOG THIS ENTRY TO REVIEW SPOKEN WORDS THAT DON'T SEEM TO MATCH ANYTHING.
