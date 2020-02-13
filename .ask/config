@@ -6,7 +6,7 @@
       "merge": {},
       "resources": {
         "manifest": {
-          "eTag": "990a2dc20e123745dff87749ea9f77e6"
+          "eTag": "f5c48f9450e436fad4bebb62f7aa876b"
         },
         "interactionModel": {
           "en-US": {
@@ -23,7 +23,7 @@
             "codeUri": "lambda/custom",
             "functionName": "StarWarsDatabank",
             "handler": "index.handler",
-            "revisionId": "1cfaf9be-5ce2-4337-8cea-c0e6042141e1",
+            "revisionId": "14f8c0bf-1694-4829-81af-bbdcbe66eb06",
             "runtime": "nodejs8.10"
           }
         ]

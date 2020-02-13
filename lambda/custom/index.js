@@ -122,6 +122,22 @@ const MediaIntentHandler = {
     }
 };
 
+const MediaItemIntentHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'MediaItemIntent';
+    },
+    handle(handlerInput) {
+        console.log(Alexa.getIntentName(handlerInput.requestEnvelope));
+        const speakOutput = "You asked me for a media item.";
+
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .reprompt(speakOutput)
+            .getResponse();
+    }
+};
+
 //TODO: Respond to the user after the trailer has completed.
 const TrailerIntentHandler = {
     canHandle(handlerInput) {
@@ -566,6 +582,7 @@ exports.handler = Alexa.SkillBuilders.custom()
         TrailerIntentHandler,
         CrawlIntentHandler,
         MediaIntentHandler,
+        MediaItemIntentHandler,
         QuizIntentHandler,
         HelpIntentHandler,
         CancelAndStopIntentHandler,

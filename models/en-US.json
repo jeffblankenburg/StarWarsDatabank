@@ -232,7 +232,24 @@
             "which actor plays {character}",
             "who plays {character}",
             "who is the actor playing {character}",
-            "what actor is {character}"
+            "what actor is {character}",
+            "who is the voice of {character}",
+            "who did {character} voice",
+            "who voices {character}"
+          ]
+        },
+        {
+          "name": "MediaItemIntent",
+          "slots": [
+            {
+              "name": "media",
+              "type": "Media"
+            }
+          ],
+          "samples": [
+            "give me something random from {media}",
+            "tell me something from {media}",
+            "give me something from {media}"
           ]
         }
       ],

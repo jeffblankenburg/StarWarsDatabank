@@ -73,13 +73,13 @@
         "en-US": {
           "smallIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/cf4d/61db1f4b40bd4350a146ef32ef42594c/APP_ICON?versionId=kwJF.mH6m2guJwNPSJTf89NcFpNCQQiE&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20191118T133852Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Credential=AKIAJFEYRBGIHK2BBYKA%2F20191118%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=48b7e485f21f7c4eab9918d7a5ae22e348079e681108ff30b4b3b0cc80f4c73c",
           "largeIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/1f96/9fe821135ef147dd879479238e524ede/APP_ICON_LARGE?versionId=a7aTjm8SNN7fNxmfcNjr3Uly2u_4ZlhG&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20191118T133852Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Credential=AKIAJFEYRBGIHK2BBYKA%2F20191118%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=3506bb0f85d56a94313a71d14a39df4de3ddad106c86b0cdc6c0954ef0c1b781",
-          "name": "Star Wars Databank",
+          "name": "Star Wars Databank (Unofficial)",
           "summary": "The ultimate power in the galaxy!  A full reference to everything in the Star Wars Universe.  Ask about anything!",
           "description": "The ultimate power in the galaxy!  A full reference to everything in the Star Wars Universe.  You can ask about any character, droid, creature, vehicle, weapon, technology, location, species, or organization.  Try things like:\n\n\"Tell me about Ahsoka Tano\"\n\"Who is Amilyn Holdo?\"\n\"What is IG-88?\"\n\"What is a rathtar?\"\n\"Give me information about the Millennium Falcon\"\n\"What is an ion cannon?\"\n\"Tell me about moisture vaporators\"\n\"What is sabacc?\"\n\"Tell me about Dagobah\"\n\"What is a kowakian monkey-lizard?\"\n\"Tell me about Crimson Dawn\"",
           "examplePhrases": [
             "Alexa, open Star Wars Databank",
             "tell me about Luke Skywalker",
-            "quiz me about Empire Strikes Back"
+            "show the opening crawl for Episode 5"
           ],
           "keywords": ["star", "wars", "skywalker", "darth", "vader", "battlefront", "empire", "alliance", "rebel", "hope", "strikes", "back", "jedi", "yoda", "clones", "stormtrooper", "leia", "han", "solo", "chewbacca", "force"]
         }
