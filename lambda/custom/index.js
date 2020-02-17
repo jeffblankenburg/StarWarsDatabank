@@ -1,6 +1,8 @@
 const Alexa = require('ask-sdk-core');
 const https = require("https");
 const Airtable = require("airtable");
+var voice = "";
+var rate = "medium"
 //const Dashbot = require("dashbot")(process.env.dashbot_key).alexa;
 
 const types = ["Character", "Droid", "Creature", "Vehicle", "Weapon", "Technology", "Thing", "Location", "Species", "Organization"];
@@ -17,8 +19,8 @@ const LaunchRequestHandler = {
         var speakOutput = welcome + " " + actionQuery;
 
         return handlerInput.responseBuilder
-            .speak(speakOutput)
-            .reprompt(actionQuery)
+            .speak(changeVoice(speakOutput))
+            .reprompt(changeVoice(actionQuery))
             .getResponse();
     }
 };
@@ -100,11 +102,45 @@ const ItemDescriptionHandler = {
         }
     
         return rb
-            .speak(speech)
-            .reprompt(actionQuery)
+            .speak(changeVoice(speech))
+            .reprompt(changeVoice(actionQuery))
             .getResponse();
     }
 }
+
+const ActorIntentHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'ActorIntent';
+    },
+    async handle(handlerInput) {
+        console.log(Alexa.getIntentName(handlerInput.requestEnvelope));
+        var spokenWords = getSpokenWords(handlerInput, "character");
+        var resolvedWords = getResolvedWords(handlerInput, "character");
+        const actionQuery = await getRandomSpeech("ActionQuery");
+        var speakOutput = "";
+        if (resolvedWords != undefined) {
+            item = await getSpecificDataById("Character", resolvedWords[0].value.id);
+            console.log("ITEM = " + JSON.stringify(item));
+            
+            if (item.fields.Actor != undefined) {
+                speakOutput = resolvedWords[0].value.name + " is played by " + item.fields.Actor + ". " + actionQuery;
+            }
+            else speakOutput = "I don't seem to know the actor for " + spokenWords + ".  I've asked my data manager to investigate. " + actionQuery;
+        }
+        else {
+            var airtable = await new Airtable({apiKey: process.env.airtable_key}).base(process.env.airtable_base_error);
+            await airtable("Character").create({"SpokenWords": spokenWords}, function(err, record) {if (err) {console.error(err);}});
+            speakOutput = "I don't think that " + spokenWords + " is a character in the Star Wars universe. I've asked my data manager to investigate. " + actionQuery;
+        }
+        
+
+        return handlerInput.responseBuilder
+            .speak(changeVoice(speakOutput))
+            .reprompt(changeVoice(actionQuery))
+            .getResponse();
+    }
+};
 
 const MediaIntentHandler = {
     canHandle(handlerInput) {
@@ -116,24 +152,63 @@ const MediaIntentHandler = {
         const speakOutput = "You asked me for a media.";
 
         return handlerInput.responseBuilder
-            .speak(speakOutput)
-            .reprompt(speakOutput)
+            .speak(changeVoice(speakOutput))
+            .reprompt(changeVoice(speakOutput))
             .getResponse();
     }
 };
 
-const MediaItemIntentHandler = {
+const RandomItemIntentHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
-            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'MediaItemIntent';
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'RandomItemIntent';
     },
-    handle(handlerInput) {
+    async handle(handlerInput) {
         console.log(Alexa.getIntentName(handlerInput.requestEnvelope));
-        const speakOutput = "You asked me for a media item.";
+        var spokenType = getSpokenWords(handlerInput, "type");
+        var resolvedType = getResolvedWords(handlerInput, "type");
+        var spokenMedia = getSpokenWords(handlerInput, "media");
+        var resolvedMedia = getResolvedWords(handlerInput, "media");
+        var actionQuery = await getRandomSpeech("ActionQuery");
+        var type;
+        var item;
+        var rb = handlerInput.responseBuilder;
 
-        return handlerInput.responseBuilder
-            .speak(speakOutput)
-            .reprompt(speakOutput)
+        if (resolvedType != undefined) type = resolvedType[0].value.name;
+        else type = getRandomItem(types);
+
+        if (resolvedMedia != undefined) {
+            item = await getRandomItemByCategory(type, resolvedMedia[0].value.name);
+        }
+        else {
+            item = await getRandomItemByCategory(type);
+        }
+        //TODO: THIS IS A CHEAP, TIMESAVING HACK.  PLEASE FIX.
+        if (item.fields.VoiceDescription === undefined) item.fields.VoiceDescription = item.fields.Name + ".  I don't have any information about this " + type + " yet.  My data is still being completed.  My apologies. " + actionQuery;
+
+        var speakOutput = "I have chosen a " + type + " for you. " + item.fields.VoiceDescription + " " + actionQuery;
+        if (item.fields.Image != undefined) {
+            var imageURL = item.fields.Image[0].url;
+            if (supportsAPL(handlerInput)) {
+                var apl = require("apl/primary_image.json");
+                apl.document.mainTemplate.items[0].items[1].headerTitle = item.fields.Name;
+                apl.document.mainTemplate.items[0].items[2].items[0].source = imageURL;
+                rb.addDirective({
+                    type: 'Alexa.Presentation.APL.RenderDocument',
+                    token: '[SkillProvidedToken]',
+                    version: '1.0',
+                    document: apl.document,
+                    datasources: apl.datasources
+                })
+            }
+            else {
+                rb.withStandardCard(item.fields.Name, item.fields.CardDescription, imageURL, imageURL);
+            }
+        }
+
+        return rb
+            .speak(changeVoice(speakOutput))
+            .reprompt(changeVoice(speakOutput))
             .getResponse();
     }
 };
@@ -149,7 +224,7 @@ const TrailerIntentHandler = {
         var speakOutput = "";
         var spokenWords = getSpokenWords(handlerInput, "media");
         var resolvedWords = getResolvedWords(handlerInput, "media");
-        const actionQuery = await getRandomSpeech("ActionQuery");
+        var actionQuery = await getRandomSpeech("ActionQuery");
         var rb = handlerInput.responseBuilder;
         
         if (resolvedWords != undefined) {
@@ -157,6 +232,7 @@ const TrailerIntentHandler = {
 
             if (supportsVideo(handlerInput)) {
                 actionQuery = "";
+                //TODO: ADD TRIGGER TO SPEAK ACTIONQUERY AFTER VIDEO FINISHES.
                 var apl = require("apl/videoplayer.json");
                 apl.document.mainTemplate.items[0].items[0].source = media.fields.Trailer;
                 rb.addDirective({
@@ -176,8 +252,8 @@ const TrailerIntentHandler = {
         }
 
         return rb
-            .speak(speakOutput)
-            .reprompt(actionQuery)
+            .speak(changeVoice(speakOutput))
+            .reprompt(changeVoice(actionQuery))
             .getResponse();
 
     }
@@ -195,7 +271,7 @@ const CrawlIntentHandler = {
         var speakOutput = "";
         var spokenWords = getSpokenWords(handlerInput, "media");
         var resolvedWords = getResolvedWords(handlerInput, "media");
-        const actionQuery = await getRandomSpeech("ActionQuery");
+        var actionQuery = await getRandomSpeech("ActionQuery");
         var rb = handlerInput.responseBuilder;
         
         if (resolvedWords != undefined) {
@@ -205,6 +281,7 @@ const CrawlIntentHandler = {
 
                 if (media.fields.Crawl != undefined) {
                     actionQuery = "";
+                    //TODO: ADD TRIGGER TO SPEAK ACTIONQUERY AFTER VIDEO FINISHES.
                     var apl = require("apl/videoplayer.json");
                     apl.document.mainTemplate.items[0].items[0].source = media.fields.Crawl;
                     rb.addDirective({
@@ -248,12 +325,12 @@ const CrawlIntentHandler = {
             }
         }
         else {
-            speakOutput = "You asked me for the opening crawl for " + spokenWords + ", but I don't think that's the name of a movie from the Star Wars saga. " + actionQuery;
+            speakOutput = "You asked me for the opening crawl for " + spokenWords + ", but I don't think that's the name of a movie from the Star Wars saga, or one of the television shows. " + actionQuery;
         }
 
         return rb
-            .speak(speakOutput)
-            .reprompt(actionQuery)
+            .speak(changeVoice(speakOutput))
+            .reprompt(changeVoice(actionQuery))
             .getResponse();
 
     }
@@ -297,8 +374,8 @@ const QuizIntentHandler = {
         const speakOutput = "I picked a " + type + ". " + item.fields.QuizDescription + " What am I thinking of?";
 
         return handlerInput.responseBuilder
-            .speak(speakOutput)
-            .reprompt(speakOutput)
+            .speak(changeVoice(speakOutput))
+            .reprompt(changeVoice(speakOutput))
             .getResponse();
     }
 };
@@ -308,13 +385,16 @@ const HelpIntentHandler = {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'AMAZON.HelpIntent';
     },
-    handle(handlerInput) {
+    async handle(handlerInput) {
         console.log(Alexa.getIntentName(handlerInput.requestEnvelope));
-        const speakOutput = "You said help";
+        const help = await getRandomSpeech("Help");
+        const actionQuery = await getRandomSpeech("ActionQuery");
+
+        var speakOutput = help + " " + actionQuery;
 
         return handlerInput.responseBuilder
-            .speak(speakOutput)
-            .reprompt(speakOutput)
+            .speak(changeVoice(speakOutput))
+            .reprompt(changeVoice(actionQuery))
             .getResponse();
     }
 };
@@ -325,12 +405,12 @@ const CancelAndStopIntentHandler = {
             && (Alexa.getIntentName(handlerInput.requestEnvelope) === 'AMAZON.CancelIntent'
                 || Alexa.getIntentName(handlerInput.requestEnvelope) === 'AMAZON.StopIntent');
     },
-    handle(handlerInput) {
+    async handle(handlerInput) {
         console.log(Alexa.getIntentName(handlerInput.requestEnvelope));
-        const speakOutput = "Goodbye";
+        const goodbye = await getRandomSpeech("Goodbye");
 
         return handlerInput.responseBuilder
-            .speak(speakOutput)
+            .speak(changeVoice(goodbye))
             .getResponse();
     }
 };
@@ -365,7 +445,7 @@ const IntentReflectorHandler = {
         const speakOutput = "You hit the " + intentName + ". Goodbye";
 
         return handlerInput.responseBuilder
-            .speak(speakOutput)
+            .speak(changeVoice(speakOutput))
             //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
             .getResponse();
     }
@@ -379,13 +459,17 @@ const ErrorHandler = {
     canHandle() {
         return true;
     },
-    handle(handlerInput, error) {
-        const speakOutput = "Uh, we had a slight weapons malfunction, but uh... everything's perfectly all right now. We're fine. We're all fine here now, thank you.";
+    async handle(handlerInput, error) {
+        const actionQuery = await getRandomSpeech("ActionQuery");
+        const speakOutput = "Uh, we had a slight weapons malfunction, but uh... everything's perfectly all right now. We're fine. We're all fine here now, thank you. " + actionQuery;
         console.log(`~~~~ Error handled: ${JSON.stringify(error.stack)}`);
 
+        var airtable = await new Airtable({apiKey: process.env.airtable_key}).base(process.env.airtable_base_error);
+        await airtable("Error").create({"Stack": JSON.stringify(error.stack)}, function(err, record) {if (err) {console.error(err);}});
+
         return handlerInput.responseBuilder
-            .speak(speakOutput)
-            .reprompt(speakOutput)
+            .speak(changeVoice(speakOutput))
+            .reprompt(changeVoice(actionQuery))
             .getResponse();
     }
 };
@@ -516,6 +600,14 @@ function supportsAPLT(handlerInput) {
     return false;
 }
 
+function changeVoice(speech) {
+    if (voice != "") {
+        //console.log("<voice name='" + voice + "'>" + speech + "</voice>");
+        return "<voice name='" + voice + "'><prosody rate='" + rate + "'>" + speech + "</prosody></voice>";
+    }
+    return speech;
+}
+
 function httpGet(base, filter, table = "Data"){
     //console.log("IN HTTP GET");
     //console.log("BASE = " + base);
@@ -561,6 +653,9 @@ function httpGet(base, filter, table = "Data"){
 const RequestLog = {
     async process(handlerInput) {
         console.log("REQUEST ENVELOPE = " + JSON.stringify(handlerInput.requestEnvelope));
+        const pollyVoice = await httpGet(process.env.airtable_base_speech, "", "Voice");
+        voice = pollyVoice.records[0].fields.Name;
+        rate = pollyVoice.records[0].fields.Rate;
     }
   };
   
@@ -582,8 +677,9 @@ exports.handler = Alexa.SkillBuilders.custom()
         TrailerIntentHandler,
         CrawlIntentHandler,
         MediaIntentHandler,
-        MediaItemIntentHandler,
+        RandomItemIntentHandler,
         QuizIntentHandler,
+        ActorIntentHandler,
         HelpIntentHandler,
         CancelAndStopIntentHandler,
         SessionEndedRequestHandler,

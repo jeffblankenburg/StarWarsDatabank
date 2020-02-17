@@ -239,17 +239,24 @@
           ]
         },
         {
-          "name": "MediaItemIntent",
+          "name": "RandomItemIntent",
           "slots": [
+            {
+              "name": "type",
+              "type": "Type"
+            },
             {
               "name": "media",
               "type": "Media"
             }
           ],
           "samples": [
-            "give me something random from {media}",
-            "tell me something from {media}",
-            "give me something from {media}"
+            "give me a random {type}",
+            "give me a {type}",
+            "{type}",
+            "{media}",
+            "give me something from {media}",
+            "give me something random"
           ]
         }
       ],
@@ -268,6 +275,62 @@
               "name": {
                 "value": "Droid",
                 "synonyms": ["droids"]
+              }
+            },
+            {
+              "id": "Creature",
+              "name": {
+                "value": "Creature",
+                "synonyms": ["creatures"]
+              }
+            },
+            {
+              "id": "Vehicle",
+              "name": {
+                "value": "Vehicle",
+                "synonyms": ["vehicles"]
+              }
+            },
+            {
+              "id": "Weapon",
+              "name": {
+                "value": "Weapon",
+                "synonyms": ["weapons"]
+              }
+            },
+            {
+              "id": "Technology",
+              "name": {
+                "value": "Technology",
+                "synonyms": ["technologies"]
+              }
+            },
+            {
+              "id": "Thing",
+              "name": {
+                "value": "Thing",
+                "synonyms": ["things, items"]
+              }
+            },
+            {
+              "id": "Location",
+              "name": {
+                "value": "Location",
+                "synonyms": ["locations, planets, cities, city, planet"]
+              }
+            },
+            {
+              "id": "Species",
+              "name": {
+                "value": "Species",
+                "synonyms": ["species"]
+              }
+            },
+            {
+              "id": "Organization",
+              "name": {
+                "value": "Organization",
+                "synonyms": ["organizations, groups, teams, team, group"]
               }
             }
           ],
