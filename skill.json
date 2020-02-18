@@ -75,7 +75,7 @@
           "largeIconUri": "https://s3.amazonaws.com/CAPS-SSE/echo_developer/1f96/9fe821135ef147dd879479238e524ede/APP_ICON_LARGE?versionId=a7aTjm8SNN7fNxmfcNjr3Uly2u_4ZlhG&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20191118T133852Z&X-Amz-SignedHeaders=host&X-Amz-Expires=86400&X-Amz-Credential=AKIAJFEYRBGIHK2BBYKA%2F20191118%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=3506bb0f85d56a94313a71d14a39df4de3ddad106c86b0cdc6c0954ef0c1b781",
           "name": "Star Wars Databank (Unofficial)",
           "summary": "The ultimate power in the galaxy!  A full reference to everything in the Star Wars Universe.  Ask about anything!",
-          "description": "The ultimate power in the galaxy!  A full reference to everything in the Star Wars Universe.  You can ask about any character, droid, creature, vehicle, weapon, technology, location, species, or organization.  Try things like:\n\n\"Tell me about Ahsoka Tano\"\n\"Who is Amilyn Holdo?\"\n\"What is IG-88?\"\n\"What is a rathtar?\"\n\"Give me information about the Millennium Falcon\"\n\"What is an ion cannon?\"\n\"Tell me about moisture vaporators\"\n\"What is sabacc?\"\n\"Tell me about Dagobah\"\n\"What is a kowakian monkey-lizard?\"\n\"Tell me about Crimson Dawn\"",
+          "description": "The ultimate power in the galaxy!  A full reference to everything in the Star Wars Universe.  You can ask about any character, droid, creature, vehicle, weapon, technology, location, species, or organization.  Try things like:\n\n\"Tell me about Ahsoka Tano\"\n\"Who is Amilyn Holdo?\"\n\"What is IG-88?\"\n\"What is a rathtar?\"\n\"Give me information about the Millennium Falcon\"\n\"What is an ion cannon?\"\n\"Tell me about moisture vaporators\"\n\"What is sabacc?\"\n\"Tell me about Dagobah\"\n\"What is a kowakian monkey-lizard?\"\n\"Tell me about Crimson Dawn\"\nI made this as a Star Wars fan, and this skill is not associated with Star Wars, Lucasfilm, or Disney in any way.",
           "examplePhrases": [
             "Alexa, open Star Wars Databank",
             "tell me about Luke Skywalker",
@@ -85,7 +85,7 @@
         }
       },
       "isAvailableWorldwide": true,
-      "testingInstructions": "Sample Testing Instructions.",
+      "testingInstructions": "I have clearly made the name of my skill include the word UNOFFICIAL.  But as I review the skills store, there are lots of skills that don't have an invocation name that follows the rules you are requiring of me.\n\nhttps://www.amazon.com/Trivia-Game-for-Star-Wars/dp/B01F99FYKC\n\nhttps://www.amazon.com/Bloc-io-Trivia-Star-Wars-Universe/dp/B01E0VAEV4\n\nhttps://www.amazon.com/Zuke-Technologies-LLC-Star-Quotes/dp/B07322QTS9\n\nhttps://www.amazon.com/Nolan-Flynn-Star-Wars-Quotes/dp/B0732PG26B\n\nhttps://www.amazon.com/Hashedin-Star-Wars-Quotes/dp/B0737DCJMJ\n\nhttps://www.amazon.com/nazwhale-Star-Wars-Facts/dp/B0725WTNWZ",
       "category": "EDUCATION_AND_REFERENCE",
       "distributionCountries": []
     }
