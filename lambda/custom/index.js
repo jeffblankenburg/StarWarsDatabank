@@ -465,7 +465,7 @@ const ErrorHandler = {
         console.log(`~~~~ Error handled: ${JSON.stringify(error.stack)}`);
 
         var airtable = await new Airtable({apiKey: process.env.airtable_key}).base(process.env.airtable_base_error);
-        await airtable("Error").create({"Stack": JSON.stringify(error.stack)}, function(err, record) {if (err) {console.error(err);}});
+        await airtable("Error").create({"JSON": JSON.stringify(handlerInput.requestEnvelope), "Stack": JSON.stringify(error.stack)}, function(err, record) {if (err) {console.error(err);}});
 
         return handlerInput.responseBuilder
             .speak(changeVoice(speakOutput))
