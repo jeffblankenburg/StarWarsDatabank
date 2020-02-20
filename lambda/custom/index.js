@@ -14,7 +14,7 @@ const LaunchRequestHandler = {
     async handle(handlerInput) {
         console.log(Alexa.getRequestType(handlerInput.requestEnvelope));
         const welcome = await getRandomSpeech("Welcome");
-        const actionQuery = await getRandomSpeech("ActionQuery");
+        const actionQuery = await getRandomSpeech("StartQuery");
 
         var speakOutput = welcome + " " + actionQuery;
 
@@ -118,13 +118,15 @@ const ActorIntentHandler = {
         var spokenWords = getSpokenWords(handlerInput, "character");
         var resolvedWords = getResolvedWords(handlerInput, "character");
         const actionQuery = await getRandomSpeech("ActionQuery");
+        const actorSpeech = await getRandomSpeech("Actor");
         var speakOutput = "";
         if (resolvedWords != undefined) {
             item = await getSpecificDataById("Character", resolvedWords[0].value.id);
             console.log("ITEM = " + JSON.stringify(item));
             
             if (item.fields.Actor != undefined) {
-                speakOutput = resolvedWords[0].value.name + " is played by " + item.fields.Actor + ". " + actionQuery;
+                //speakOutput = resolvedWords[0].value.name + " is played by " + item.fields.Actor + ". " + actionQuery;
+                speakOutput = actorSpeech.replace("CHARACTER", resolvedWords[0].value.name).replace("ACTOR", item.fields.Actor) + " " + actionQuery;
             }
             else speakOutput = "I don't seem to know the actor for " + spokenWords + ".  I've asked my data manager to investigate. " + actionQuery;
         }
@@ -172,13 +174,27 @@ const RandomItemIntentHandler = {
         var actionQuery = await getRandomSpeech("ActionQuery");
         var type;
         var item;
+        var speakOutput = "";
+        var instead = "";
         var rb = handlerInput.responseBuilder;
 
         if (resolvedType != undefined) type = resolvedType[0].value.name;
         else type = getRandomItem(types);
 
         if (resolvedMedia != undefined) {
-            item = await getRandomItemByCategory(type, resolvedMedia[0].value.name);
+            var media = await getSpecificDataById("Media", resolvedMedia[0].value.id);
+            console.log("MEDIA = " + JSON.stringify(media));
+            while(media.fields[type] === undefined) {
+                if (resolvedType != undefined){
+                    var notFoundSpeech = await getRandomSpeech("TypeNotFound");
+                    speakOutput = notFoundSpeech.replace("TYPE", resolvedType[0].value.name).replace("MEDIA", media.fields.Pronunciation) + " ";
+                    instead = "instead";
+                }
+                type = getRandomItem(types)
+            }
+            var mediaItem = getRandomItem(media.fields[type]);
+            console.log("MEDIA ITEM = " + JSON.stringify(mediaItem));
+            item = await getSpecificDataById(type, mediaItem);
         }
         else {
             item = await getRandomItemByCategory(type);
@@ -186,7 +202,7 @@ const RandomItemIntentHandler = {
         //TODO: THIS IS A CHEAP, TIMESAVING HACK.  PLEASE FIX.
         if (item.fields.VoiceDescription === undefined) item.fields.VoiceDescription = item.fields.Name + ".  I don't have any information about this " + type + " yet.  My data is still being completed.  My apologies. " + actionQuery;
 
-        var speakOutput = "I have chosen a " + type + " for you. " + item.fields.VoiceDescription + " " + actionQuery;
+        speakOutput += "I have chosen a " + type + " for you " + instead + ". " + item.fields.VoiceDescription + " " + actionQuery;
         if (item.fields.Image != undefined) {
             var imageURL = item.fields.Image[0].url;
             if (supportsAPL(handlerInput)) {
@@ -296,7 +312,7 @@ const CrawlIntentHandler = {
                     speakOutput = "Unfortunately, there are only opening crawls for the 9 movies in the Star Wars saga. " + resolvedWords.value.name +  " doesn't have one. " + actionQuery;
                 }
             }
-            else if (supportsAPLT(handlerInput) != undefined) {
+            else if (supportsAPLT(handlerInput)) {
                 //TODO: THIS DOESN'T ACTUALLY WORK YET.  PLEASE FIX.
                 console.log("USING ECHO DOT WITH CLOCK");
                 rb.addDirective({
@@ -461,7 +477,8 @@ const ErrorHandler = {
     },
     async handle(handlerInput, error) {
         const actionQuery = await getRandomSpeech("ActionQuery");
-        const speakOutput = "Uh, we had a slight weapons malfunction, but uh... everything's perfectly all right now. We're fine. We're all fine here now, thank you. " + actionQuery;
+        const errorMessage = await getRandomSpeech("Error");
+        const speakOutput = errorMessage + " " + actionQuery;
         console.log(`~~~~ Error handled: ${JSON.stringify(error.stack)}`);
 
         var airtable = await new Airtable({apiKey: process.env.airtable_key}).base(process.env.airtable_base_error);
@@ -593,10 +610,10 @@ function supportsAPLT(handlerInput) {
     if (handlerInput
         && handlerInput.requestEnvelope
         && handlerInput.requestEnvelope.context
-        && handlerInput.requestEnvelope.context.system
-        && handlerInput.requestEnvelope.context.system.device
-        && handlerInput.requestEnvelope.context.system.device.supportedInterfaces
-        && handlerInput.requestEnvelope.context.system.device.supportedInterfaces["Alexa.Presentation.APLT"]) return true;
+        && handlerInput.requestEnvelope.context.System
+        && handlerInput.requestEnvelope.context.System.device
+        && handlerInput.requestEnvelope.context.System.device.supportedInterfaces
+        && handlerInput.requestEnvelope.context.System.device.supportedInterfaces["Alexa.Presentation.APLT"]) return true;
     return false;
 }
 

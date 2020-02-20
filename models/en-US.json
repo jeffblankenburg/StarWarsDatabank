@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "star wars databank",
+      "invocationName": "holo cron",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
@@ -256,7 +256,12 @@
             "{type}",
             "{media}",
             "give me something from {media}",
-            "give me something random"
+            "give me something random",
+            "give me a {type} from {media}",
+            "{type} from {media}",
+            "give me a random {type} from {media}",
+            "show me a {media} {type}",
+            "tell me about a {type}"
           ]
         }
       ],

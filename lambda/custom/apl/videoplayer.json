@@ -29,7 +29,19 @@
                         }
                     ],
                     "height": "100%",
-                    "width": "100%"
+                    "width": "100%",
+                    "onEnd": [
+                        {
+                          "type": "SendEvent",
+                          "arguments": [
+                            "textWasPressed",
+                            "Send this data to the skill"
+                          ],
+                          "components": [
+                            "idForTheTextComponent"
+                          ]
+                        }
+                    ]
                 }
             ]
         }

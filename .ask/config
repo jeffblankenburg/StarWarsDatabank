@@ -10,7 +10,7 @@
         },
         "interactionModel": {
           "en-US": {
-            "eTag": "a6d1002ce03d328540eb2f5d264f48ad"
+            "eTag": "30a871876f6d7604a97a0d6007585674"
           }
         },
         "lambda": [
@@ -23,7 +23,7 @@
             "codeUri": "lambda/custom",
             "functionName": "StarWarsDatabank",
             "handler": "index.handler",
-            "revisionId": "85d5ca40-f1a6-47c7-99db-5b89516a8e4e",
+            "revisionId": "d8096402-c69a-4db4-92db-277914cbf96c",
             "runtime": "nodejs8.10"
           }
         ]
