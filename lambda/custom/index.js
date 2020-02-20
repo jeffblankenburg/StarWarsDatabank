@@ -15,8 +15,8 @@ const LaunchRequestHandler = {
         console.log(Alexa.getRequestType(handlerInput.requestEnvelope));
         const welcome = await getRandomSpeech("Welcome");
         const actionQuery = await getRandomSpeech("StartQuery");
-
-        var speakOutput = welcome + " " + actionQuery;
+        var soundEffect = "<audio src='soundbank://soundlibrary/scifi/amzn_sfx_scifi_door_open_05'/>";
+        var speakOutput = soundEffect + " " + welcome + " " + actionQuery;
 
         return handlerInput.responseBuilder
             .speak(changeVoice(speakOutput))
@@ -268,8 +268,8 @@ const TrailerIntentHandler = {
         }
 
         return rb
-            .speak(changeVoice(speakOutput))
-            .reprompt(changeVoice(actionQuery))
+            //.speak(changeVoice(speakOutput))
+            //.reprompt(changeVoice(actionQuery))
             .getResponse();
 
     }
@@ -345,12 +345,29 @@ const CrawlIntentHandler = {
         }
 
         return rb
-            .speak(changeVoice(speakOutput))
-            .reprompt(changeVoice(actionQuery))
+            //.speak(changeVoice(speakOutput))
+            //.reprompt(changeVoice(actionQuery))
             .getResponse();
 
     }
 };
+
+const VideoEndedIntent = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'Alexa.Presentation.APL.UserEvent'
+        && handlerInput.requestEnvelope.request.arguments[0] === 'VIDEOENDED';
+    },
+    async handle(handlerInput) {
+        console.log(handlerInput.requestEnvelope.request.arguments[0]);
+        const actionQuery = await getRandomSpeech("ActionQuery");
+
+        return handlerInput.responseBuilder
+            .speak(changeVoice(actionQuery))
+            .reprompt(changeVoice(actionQuery))
+            .getResponse();
+    }
+};
+
 //TODO: Build an intent to let the user know what all of the categories are.
 //TODO: Build an intent for all of the media that we support.
 //TODO: Save the question we asked, so that we know they answered it correctly next time.
@@ -424,9 +441,10 @@ const CancelAndStopIntentHandler = {
     async handle(handlerInput) {
         console.log(Alexa.getIntentName(handlerInput.requestEnvelope));
         const goodbye = await getRandomSpeech("Goodbye");
+        var speakOutput = "<audio src='soundbank://soundlibrary/doors/doors_high_tech/high_tech_10'/> " + goodbye;
 
         return handlerInput.responseBuilder
-            .speak(changeVoice(goodbye))
+            .speak(changeVoice(speakOutput))
             .getResponse();
     }
 };
@@ -698,6 +716,7 @@ exports.handler = Alexa.SkillBuilders.custom()
         QuizIntentHandler,
         ActorIntentHandler,
         HelpIntentHandler,
+        VideoEndedIntent,
         CancelAndStopIntentHandler,
         SessionEndedRequestHandler,
         IntentReflectorHandler)

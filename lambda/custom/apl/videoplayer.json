@@ -25,23 +25,22 @@
                             "height": "100%",
                             "autoplay": true,
                             "source": "https://starwarsdatabank.s3.amazonaws.com/openingcrawl/Star+Wars+Episode+I+The+Phantom+Menace+Opening+Crawl++StarWars.com.mp4",
-                            "scale": "best-fit"
+                            "scale": "best-fit",
+                            "onEnd": [
+                                {
+                                  "type": "SendEvent",
+                                  "arguments": [
+                                    "VIDEOENDED"
+                                  ],
+                                  "components": [
+                                    "idForTheTextComponent"
+                                  ]
+                                }
+                            ]
                         }
                     ],
                     "height": "100%",
-                    "width": "100%",
-                    "onEnd": [
-                        {
-                          "type": "SendEvent",
-                          "arguments": [
-                            "textWasPressed",
-                            "Send this data to the skill"
-                          ],
-                          "components": [
-                            "idForTheTextComponent"
-                          ]
-                        }
-                    ]
+                    "width": "100%"
                 }
             ]
         }
