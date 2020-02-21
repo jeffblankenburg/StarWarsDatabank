@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "holo cron",
+      "invocationName": "star wars databank",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
@@ -1584,22 +1584,22 @@
         },
         {
           "values": [
-{"id": "recZnBQuRRK1qWahT", "name": { "value": "Battlefront 2","synonyms": ["battlefront 2", "battlefront"]}},
-{"id": "rec9333XgYFmwODDb", "name": { "value": "Clone Wars","synonyms": ["the clone wars"]}},
-{"id": "recGe9VDUGTYKvXzs", "name": { "value": "Episode 1","synonyms": ["the phantom menace"]}},
-{"id": "rec5AWqrwtf5AJyFS", "name": { "value": "Episode 2","synonyms": ["attack of the clones"]}},
-{"id": "recpmrDtdGp6bpuj4", "name": { "value": "Episode 3","synonyms": ["revenge of the sith"]}},
-{"id": "recJcxtIxF9UQKhQW", "name": { "value": "Episode 4","synonyms": ["a new hope", "new hope"]}},
-{"id": "rechxOmIQ7Ut0zrsu", "name": { "value": "Episode 5","synonyms": ["empire", "the empire strikes back", "empire strikes back"]}},
-{"id": "rec7aLgv5x0I6M5Mb", "name": { "value": "Episode 6","synonyms": ["return of the jedi", "jedi"]}},
-{"id": "recyCTLDkE82D9P8Q", "name": { "value": "Episode 7","synonyms": ["the force awakens", "force awakens"]}},
-{"id": "rec0vm8Incm7e4om1", "name": { "value": "Episode 8","synonyms": ["the last jedi", "last jedi"]}},
-{"id": "recWgQE4gZhJHy6Gu", "name": { "value": "Episode 9","synonyms": ["rise of skywalker", "the rise of skywalker"]}},
-{"id": "recJk9oPTn467iczc", "name": { "value": "Rebels","synonyms": ["star wars rebels"]}},
-{"id": "recarEMefml8DXkDW", "name": { "value": "Resistance","synonyms": ["star wars resistance"]}},
-{"id": "recdRvWTd9XSp0g85", "name": { "value": "Rogue One","synonyms": ["rogue one a star wars story"]}},
-{"id": "recQ45QfJup4jOO6d", "name": { "value": "Solo","synonyms": ["han solo movie", "solo a star wars story"]}},
-{"id": "receVgdltqwt1Hw0d", "name": { "value": "The Mandalorian","synonyms": ["the mandalorian"]}}
+            {"id": "recZnBQuRRK1qWahT", "name": { "value": "Battlefront 2","synonyms": ["battlefront 2", "battlefront"]}},
+            {"id": "rec9333XgYFmwODDb", "name": { "value": "Clone Wars","synonyms": ["the clone wars"]}},
+            {"id": "recGe9VDUGTYKvXzs", "name": { "value": "Episode 1","synonyms": ["the phantom menace"]}},
+            {"id": "rec5AWqrwtf5AJyFS", "name": { "value": "Episode 2","synonyms": ["attack of the clones"]}},
+            {"id": "recpmrDtdGp6bpuj4", "name": { "value": "Episode 3","synonyms": ["revenge of the sith"]}},
+            {"id": "recJcxtIxF9UQKhQW", "name": { "value": "Episode 4","synonyms": ["a new hope", "new hope"]}},
+            {"id": "rechxOmIQ7Ut0zrsu", "name": { "value": "Episode 5","synonyms": ["empire", "the empire strikes back", "empire strikes back"]}},
+            {"id": "rec7aLgv5x0I6M5Mb", "name": { "value": "Episode 6","synonyms": ["return of the jedi", "jedi"]}},
+            {"id": "recyCTLDkE82D9P8Q", "name": { "value": "Episode 7","synonyms": ["the force awakens", "force awakens"]}},
+            {"id": "rec0vm8Incm7e4om1", "name": { "value": "Episode 8","synonyms": ["the last jedi", "last jedi"]}},
+            {"id": "recWgQE4gZhJHy6Gu", "name": { "value": "Episode 9","synonyms": ["rise of skywalker", "the rise of skywalker"]}},
+            {"id": "recJk9oPTn467iczc", "name": { "value": "Rebels","synonyms": ["star wars rebels"]}},
+            {"id": "recarEMefml8DXkDW", "name": { "value": "Resistance","synonyms": ["star wars resistance"]}},
+            {"id": "recdRvWTd9XSp0g85", "name": { "value": "Rogue One","synonyms": ["rogue one a star wars story"]}},
+            {"id": "recQ45QfJup4jOO6d", "name": { "value": "Solo","synonyms": ["han solo movie", "solo a star wars story"]}},
+            {"id": "receVgdltqwt1Hw0d", "name": { "value": "The Mandalorian","synonyms": ["the mandalorian"]}}
           ],
           "name": "Media"
         }

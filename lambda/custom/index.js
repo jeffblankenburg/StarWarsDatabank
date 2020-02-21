@@ -441,7 +441,7 @@ const CancelAndStopIntentHandler = {
     async handle(handlerInput) {
         console.log(Alexa.getIntentName(handlerInput.requestEnvelope));
         const goodbye = await getRandomSpeech("Goodbye");
-        var speakOutput = "<audio src='soundbank://soundlibrary/doors/doors_high_tech/high_tech_10'/> " + goodbye;
+        var speakOutput = goodbye + " <audio src='soundbank://soundlibrary/doors/doors_high_tech/high_tech_10'/>";
 
         return handlerInput.responseBuilder
             .speak(changeVoice(speakOutput))
