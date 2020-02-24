@@ -1,0 +1,21 @@
+{
+    "type": "Alexa.Presentation.APLT.RenderDocument",
+    "token": "developer-provided-string",
+    "targetProfile": "FOUR_CHARACTER_CLOCK",
+    "document": {
+      "version": "1.0",
+      "type": "APLT",
+      "onMount": {},
+      "mainTemplate": {
+        "item": {
+          "type": "Text",
+          "msPerCharacter": 800,
+          "id": "myTextId",
+          "textAlign": "right",
+          "text": "GOOd dAy",
+          "overflow": "marquee"
+        }
+      }
+    },
+    "datasources": {}
+  }

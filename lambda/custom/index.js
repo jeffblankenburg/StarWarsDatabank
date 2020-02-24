@@ -267,11 +267,12 @@ const TrailerIntentHandler = {
             speakOutput = "You asked me for the trailer to " + spokenWords + ", but I don't think that's the name of a movie or television show from the Star Wars Universe. " + actionQuery;
         }
 
-        return rb
-            //.speak(changeVoice(speakOutput))
-            //.reprompt(changeVoice(actionQuery))
-            .getResponse();
-
+        if (speakOutput != "") {
+            rb.speak(changeVoice(speakOutput))
+            rb.reprompt(changeVoice(actionQuery))
+        }
+        
+        return rb.getResponse();
     }
 };
 
@@ -315,25 +316,25 @@ const CrawlIntentHandler = {
             else if (supportsAPLT(handlerInput)) {
                 //TODO: THIS DOESN'T ACTUALLY WORK YET.  PLEASE FIX.
                 console.log("USING ECHO DOT WITH CLOCK");
-                rb.addDirective({
-                    "type": "Alexa.Presentation.APLT.RenderDocument",
-                    "document": {
-                        "type": "APLT",
-                        "version": "1.0",
-                        "mainTemplate": {
-                            "items": [
-                                {
-                                    "type": "Text",
-                                    "text" : "thIS IS yOUr APL",//media.fields.ClockCrawl,
-                                    "overflow": "marquee",
-                                    "msPerCharacter": 500
-                                }
-                            ]
-                        }
-                    },
-                    "datasources": {}
-                })
+                var apl = require("apl/crawl.json");
+                const TOKEN = "apltToken";
                 speakOutput = media.fields.VoiceCrawl + " " + actionQuery;
+                
+                return handlerInput.responseBuilder
+                    .speak(changeVoice(speakOutput))
+                    .reprompt(changeVoice(actionQuery))
+                    .addDirective({
+                        type: 'Alexa.Presentation.APLT.RenderDocument',
+                        token: TOKEN,
+                        version: '1.0',
+                        document: require('apl/aplDocument.json'),
+                        datasources: {
+                        'textData': {
+                            'type': 'object', 
+                            'text': media.fields.ClockCrawl //Stylized to show supported chars only. Unsupported chars are converted to space on device: " "
+                        }
+                        }
+                    }).getResponse();
             }
             else {
                 console.log("NO DISPLAY CAPABILITIES.");
@@ -344,11 +345,12 @@ const CrawlIntentHandler = {
             speakOutput = "You asked me for the opening crawl for " + spokenWords + ", but I don't think that's the name of a movie from the Star Wars saga, or one of the television shows. " + actionQuery;
         }
 
-        return rb
-            //.speak(changeVoice(speakOutput))
-            //.reprompt(changeVoice(actionQuery))
-            .getResponse();
-
+        if (speakOutput != "") {
+            rb.speak(changeVoice(speakOutput))
+            rb.reprompt(changeVoice(actionQuery))
+        }
+        
+        return rb.getResponse();
     }
 };
 

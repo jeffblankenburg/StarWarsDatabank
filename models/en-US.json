@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "star wars databank",
+      "invocationName": "unofficial star wars databank",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
